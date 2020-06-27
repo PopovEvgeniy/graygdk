@@ -77,7 +77,7 @@ void Halt(const char *message)
  COM_Base::COM_Base()
 {
  HRESULT status;
- status=CoInitialize(NULL);
+ status=CoInitializeEx(NULL,COINIT_APARTMENTTHREADED);
  if(status!=S_OK)
  {
   if(status!=S_FALSE)
@@ -132,7 +132,7 @@ void Synchronization::set_timer(const unsigned long int interval)
 
 void Synchronization::wait_timer()
 {
- WaitForSingleObject(timer,INFINITE);
+ WaitForSingleObjectEx(timer,INFINITE,TRUE);
 }
 
 Engine::Engine()
