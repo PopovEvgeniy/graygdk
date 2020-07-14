@@ -202,7 +202,7 @@ HWND Engine::get_window()
 
 HDC Engine::get_context()
 {
- return GetDC(window);
+ return GetWindowDC(window);
 }
 
 void Engine::prepare_engine()
