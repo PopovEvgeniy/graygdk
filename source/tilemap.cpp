@@ -23,7 +23,7 @@ void draw_map()
 
 }
 
-int main(void)
+int main()
 {
  GRAYGDK::Screen screen;
  GRAYGDK::Sprite font;
