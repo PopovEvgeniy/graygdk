@@ -86,9 +86,9 @@ void Halt(const char *message)
 {
  HRESULT status;
  status=CoInitializeEx(NULL,COINIT_APARTMENTTHREADED);
- if(status!=S_OK)
+ if (status!=S_OK)
  {
-  if(status!=S_FALSE)
+  if (status!=S_FALSE)
   {
    Halt("Can't initialize COM");
   }
@@ -109,7 +109,7 @@ Synchronization::Synchronization()
 
 Synchronization::~Synchronization()
 {
- if(timer==NULL)
+ if (timer==NULL)
  {
   CancelWaitableTimer(timer);
   CloseHandle(timer);
@@ -131,7 +131,7 @@ void Synchronization::set_timer(const unsigned long int interval)
 {
  LARGE_INTEGER start;
  start.QuadPart=0;
- if(SetWaitableTimer(timer,&start,interval,NULL,NULL,FALSE)==FALSE)
+ if (SetWaitableTimer(timer,&start,interval,NULL,NULL,FALSE)==FALSE)
  {
   Halt("Can't set timer");
  }
@@ -161,15 +161,15 @@ Engine::Engine()
 
 Engine::~Engine()
 {
- if(window!=NULL) CloseWindow(window);
- if(window_class.hbrBackground!=NULL) DeleteObject(window_class.hbrBackground);
+ if (window!=NULL) CloseWindow(window);
+ if (window_class.hbrBackground!=NULL) DeleteObject(window_class.hbrBackground);
  UnregisterClass(window_class.lpszClassName,window_class.hInstance);
 }
 
 void Engine::get_instance()
 {
  window_class.hInstance=GetModuleHandle(NULL);
- if(window_class.hInstance==NULL)
+ if (window_class.hInstance==NULL)
  {
   Halt("Can't get the application instance");
  }
@@ -236,7 +236,7 @@ void Engine::prepare_engine()
 
 void Engine::destroy_window()
 {
- if(window!=NULL)
+ if (window!=NULL)
  {
   CloseWindow(window);
   window=NULL;
@@ -257,11 +257,11 @@ void Engine::create_window()
 void Engine::capture_mouse()
 {
  RECT border;
- if(GetClientRect(window,&border)==FALSE)
+ if (GetClientRect(window,&border)==FALSE)
  {
   Halt("Can't capture window");
  }
- if(ClipCursor(&border)==FALSE)
+ if (ClipCursor(&border)==FALSE)
  {
   Halt("Can't capture cursor");
  }
@@ -275,7 +275,7 @@ bool Engine::process_message()
  run=true;
  while(PeekMessage(&Message,window,0,0,PM_NOREMOVE)==TRUE)
  {
-  if(GetMessage(&Message,window,0,0)==TRUE)
+  if (GetMessage(&Message,window,0,0)==TRUE)
   {
    TranslateMessage(&Message);
    DispatchMessage(&Message);
@@ -301,12 +301,12 @@ Frame::Frame()
 
 Frame::~Frame()
 {
- if(buffer!=NULL)
+ if (buffer!=NULL)
  {
   free(buffer);
   buffer=NULL;
  }
- if(shadow!=NULL)
+ if (shadow!=NULL)
  {
   free(shadow);
   shadow=NULL;
@@ -319,7 +319,7 @@ unsigned int *Frame::create_buffer(const char *error)
  unsigned int *target;
  pixels=static_cast<size_t>(frame_width)*static_cast<size_t>(frame_height);
  target=static_cast<unsigned int*>(calloc(pixels,sizeof(unsigned int)));
- if(target==NULL)
+ if (target==NULL)
  {
   Halt(error);
  }
@@ -584,7 +584,7 @@ void Display::get_video_mode()
 void Display::check_video_mode()
 {
  this->get_video_mode();
- if(display.dmBitsPerPel<16)
+ if (display.dmBitsPerPel<16)
  {
   display.dmBitsPerPel=16;
   this->set_video_mode();
@@ -595,7 +595,7 @@ void Display::check_video_mode()
 void Display::set_display_mode(const unsigned long int screen_width,const unsigned long int screen_height)
 {
  this->get_video_mode();
- if((display.dmPelsWidth!=screen_width)||(display.dmPelsHeight!=screen_height))
+ if ((display.dmPelsWidth!=screen_width)||(display.dmPelsHeight!=screen_height))
  {
   display.dmPelsWidth=screen_width;
   display.dmPelsHeight=screen_height;
@@ -650,7 +650,7 @@ void Render::refresh()
 {
  HDC context;
  context=this->get_context();
- if(context==NULL)
+ if (context==NULL)
  {
   Halt("Can't get window context");
  }
@@ -718,7 +718,7 @@ Keyboard::Keyboard()
 
 Keyboard::~Keyboard()
 {
- if(preversion!=NULL) free(preversion);
+ if (preversion!=NULL) free(preversion);
 }
 
 unsigned char *Keyboard::create_buffer(const char *error)
@@ -736,9 +736,9 @@ bool Keyboard::check_state(const unsigned char code,const unsigned char state)
 {
  bool result;
  result=false;
- if(Keys[code]==state)
+ if (Keys[code]==state)
  {
-  if(preversion[code]!=state) result=true;
+  if (preversion[code]!=state) result=true;
  }
  preversion[code]=Keys[code];
  return result;
@@ -753,7 +753,7 @@ bool Keyboard::check_hold(const unsigned char code)
 {
  bool result;
  result=false;
- if(Keys[code]==KEY_PRESS) result=true;
+ if (Keys[code]==KEY_PRESS) result=true;
  preversion[code]=Keys[code];
  return result;
 }
@@ -784,7 +784,7 @@ Mouse::~Mouse()
 
 void Mouse::get_position()
 {
- if(GetCursorPos(&position)==FALSE)
+ if (GetCursorPos(&position)==FALSE)
  {
   Halt("Can't get the mouse cursor position");
  }
@@ -815,7 +815,7 @@ void Mouse::hide()
 
 void Mouse::set_position(const unsigned long int x,const unsigned long int y)
 {
- if(SetCursorPos(x,y)==FALSE)
+ if (SetCursorPos(x,y)==FALSE)
  {
   Halt("Can't set the mouse cursor position");
  }
@@ -891,7 +891,7 @@ bool Gamepad::read_state()
 {
  bool result;
  result=false;
- if(joyGetPosEx(active,&current)==JOYERR_NOERROR) result=true;
+ if (joyGetPosEx(active,&current)==JOYERR_NOERROR) result=true;
  return result;
 }
 
@@ -912,7 +912,7 @@ bool Gamepad::check_button(const GAMEPAD_BUTTONS button,const JOYINFOEX &target)
 {
  bool result;
  result=false;
- if(target.dwButtons&button) result=true;
+ if (target.dwButtons&button) result=true;
  return result;
 }
 
@@ -925,7 +925,7 @@ unsigned int Gamepad::get_button_amount()
 {
  unsigned int result;
  result=0;
- if(this->read_configuration()==true) result=configuration.wNumButtons;
+ if (this->read_configuration()==true) result=configuration.wNumButtons;
  return result;
 }
 
@@ -945,7 +945,7 @@ bool Gamepad::check_connection()
 void Gamepad::update()
 {
  preversion=current;
- if(this->read_state()==false) this->clear_state();
+ if (this->read_state()==false) this->clear_state();
 }
 
 unsigned long int Gamepad::get_sticks_amount()
@@ -970,7 +970,7 @@ unsigned long int Gamepad::get_sticks_amount()
 
 void Gamepad::set_active(const unsigned int gamepad)
 {
- if(active<max_amount)
+ if (active<max_amount)
  {
   this->clear_state();
   active=gamepad;
@@ -1027,23 +1027,23 @@ GAMEPAD_DIRECTION Gamepad::get_stick_x(const GAMEPAD_STICKS stick)
  GAMEPAD_DIRECTION result;
  unsigned long int control;
  result=GAMEPAD_NEUTRAL_DIRECTION;
- if(stick==GAMEPAD_LEFT_STICK)
+ if (stick==GAMEPAD_LEFT_STICK)
  {
-  if(this->get_sticks_amount()>0)
+  if (this->get_sticks_amount()>0)
   {
    control=(configuration.wXmax-configuration.wXmin)/2;
-   if(current.dwXpos<control) result=GAMEPAD_NEGATIVE_DIRECTION;
-   if(current.dwXpos>control) result=GAMEPAD_POSITIVE_DIRECTION;
+   if (current.dwXpos<control) result=GAMEPAD_NEGATIVE_DIRECTION;
+   if (current.dwXpos>control) result=GAMEPAD_POSITIVE_DIRECTION;
   }
 
  }
- if(stick==GAMEPAD_RIGHT_STICK)
+ if (stick==GAMEPAD_RIGHT_STICK)
  {
-  if(this->get_sticks_amount()>1)
+  if (this->get_sticks_amount()>1)
   {
    control=(configuration.wZmax-configuration.wZmin)/2;
-   if(current.dwZpos<control) result=GAMEPAD_NEGATIVE_DIRECTION;
-   if(current.dwZpos>control) result=GAMEPAD_POSITIVE_DIRECTION;
+   if (current.dwZpos<control) result=GAMEPAD_NEGATIVE_DIRECTION;
+   if (current.dwZpos>control) result=GAMEPAD_POSITIVE_DIRECTION;
   }
 
  }
@@ -1055,23 +1055,23 @@ GAMEPAD_DIRECTION Gamepad::get_stick_y(const GAMEPAD_STICKS stick)
  GAMEPAD_DIRECTION result;
  unsigned long int control;
  result=GAMEPAD_NEUTRAL_DIRECTION;
- if(stick==GAMEPAD_LEFT_STICK)
+ if (stick==GAMEPAD_LEFT_STICK)
  {
-  if(this->get_sticks_amount()>0)
+  if (this->get_sticks_amount()>0)
   {
    control=(configuration.wYmax-configuration.wYmin)/2;
-   if(current.dwYpos<control) result=GAMEPAD_NEGATIVE_DIRECTION;
-   if(current.dwYpos>control) result=GAMEPAD_POSITIVE_DIRECTION;
+   if (current.dwYpos<control) result=GAMEPAD_NEGATIVE_DIRECTION;
+   if (current.dwYpos>control) result=GAMEPAD_POSITIVE_DIRECTION;
   }
 
  }
- if(stick==GAMEPAD_RIGHT_STICK)
+ if (stick==GAMEPAD_RIGHT_STICK)
  {
-  if(this->get_sticks_amount()>1)
+  if (this->get_sticks_amount()>1)
   {
    control=(configuration.wRmax-configuration.wRmin)/2;
-   if(current.dwRpos<control) result=GAMEPAD_NEGATIVE_DIRECTION;
-   if(current.dwRpos>control) result=GAMEPAD_POSITIVE_DIRECTION;
+   if (current.dwRpos<control) result=GAMEPAD_NEGATIVE_DIRECTION;
+   if (current.dwRpos>control) result=GAMEPAD_POSITIVE_DIRECTION;
   }
 
  }
@@ -1087,9 +1087,9 @@ bool Gamepad::check_press(const GAMEPAD_BUTTONS button)
 {
  bool result;
  result=false;
- if(this->check_button(button,current)==true)
+ if (this->check_button(button,current)==true)
  {
-  if(this->check_button(button,preversion)==false) result=true;
+  if (this->check_button(button,preversion)==false) result=true;
  }
  return result;
 }
@@ -1098,9 +1098,9 @@ bool Gamepad::check_release(const GAMEPAD_BUTTONS button)
 {
  bool result;
  result=false;
- if(this->check_button(button,current)==false)
+ if (this->check_button(button,current)==false)
  {
-  if(this->check_button(button,preversion)==true) result=true;
+  if (this->check_button(button,preversion)==true) result=true;
  }
  return result;
 }
@@ -1115,11 +1115,11 @@ Multimedia::Multimedia()
 
 Multimedia::~Multimedia()
 {
- if(player!=NULL) player->StopWhenReady();
- if(video!=NULL) video->Release();
- if(controler!=NULL) controler->Release();
- if(player!=NULL) player->Release();
- if(loader!=NULL) loader->Release();
+ if (player!=NULL) player->StopWhenReady();
+ if (video!=NULL) video->Release();
+ if (controler!=NULL) controler->Release();
+ if (player!=NULL) player->Release();
+ if (loader!=NULL) loader->Release();
 }
 
 wchar_t *Multimedia::create_buffer(const size_t length)
@@ -1127,7 +1127,7 @@ wchar_t *Multimedia::create_buffer(const size_t length)
  wchar_t *target;
  target=NULL;
  target=static_cast<wchar_t*>(calloc(length+1,sizeof(wchar_t)));
- if(target==NULL)
+ if (target==NULL)
  {
   Halt("Can't allocate memory");
  }
@@ -1157,7 +1157,7 @@ wchar_t *Multimedia::convert_file_name(const char *target)
 void Multimedia::open(const wchar_t *target)
 {
  player->StopWhenReady();
- if(loader->RenderFile(target,NULL)!=S_OK)
+ if (loader->RenderFile(target,NULL)!=S_OK)
  {
   Halt("Can't load a multimedia file");
  }
@@ -1169,9 +1169,9 @@ bool Multimedia::is_end()
  bool result;
  long long current,stop;
  result=false;
- if(controler->GetPositions(&current,&stop)==S_OK)
+ if (controler->GetPositions(&current,&stop)==S_OK)
  {
-  if(current>=stop) result=true;
+  if (current>=stop) result=true;
  }
  else
  {
@@ -1184,7 +1184,7 @@ void Multimedia::rewind()
 {
  long long position;
  position=0;
- if(controler->SetPositions(&position,AM_SEEKING_AbsolutePositioning,NULL,AM_SEEKING_NoPositioning)!=S_OK)
+ if (controler->SetPositions(&position,AM_SEEKING_AbsolutePositioning,NULL,AM_SEEKING_NoPositioning)!=S_OK)
  {
   Halt("Can't set start position");
  }
@@ -1193,7 +1193,7 @@ void Multimedia::rewind()
 
 void Multimedia::create_loader()
 {
- if(CoCreateInstance(CLSID_FilterGraph,NULL,CLSCTX_INPROC_SERVER,IID_IGraphBuilder,reinterpret_cast<void**>(&loader))!=S_OK)
+ if (CoCreateInstance(CLSID_FilterGraph,NULL,CLSCTX_INPROC_SERVER,IID_IGraphBuilder,reinterpret_cast<void**>(&loader))!=S_OK)
  {
   Halt("Can't create a multimedia loader");
  }
@@ -1202,7 +1202,7 @@ void Multimedia::create_loader()
 
 void Multimedia::create_player()
 {
- if(loader->QueryInterface(IID_IMediaControl,reinterpret_cast<void**>(&player))!=S_OK)
+ if (loader->QueryInterface(IID_IMediaControl,reinterpret_cast<void**>(&player))!=S_OK)
  {
   Halt("Can't create a multimedia player");
  }
@@ -1211,7 +1211,7 @@ void Multimedia::create_player()
 
 void Multimedia::create_controler()
 {
- if(loader->QueryInterface(IID_IMediaSeeking,reinterpret_cast<void**>(&controler))!=S_OK)
+ if (loader->QueryInterface(IID_IMediaSeeking,reinterpret_cast<void**>(&controler))!=S_OK)
  {
   Halt("Can't create a player controler");
  }
@@ -1220,7 +1220,7 @@ void Multimedia::create_controler()
 
 void Multimedia::create_video_player()
 {
- if(loader->QueryInterface(IID_IVideoWindow,reinterpret_cast<void**>(&video))!=S_OK)
+ if (loader->QueryInterface(IID_IVideoWindow,reinterpret_cast<void**>(&video))!=S_OK)
  {
   Halt("Can't create a video player");
  }
@@ -1248,15 +1248,15 @@ bool Multimedia::check_playing()
  OAFilterState state;
  bool result;
  result=false;
- if(player->GetState(INFINITE,&state)==E_FAIL)
+ if (player->GetState(INFINITE,&state)==E_FAIL)
  {
   Halt("Can't get the multimedia state");
  }
  else
  {
-  if(state==State_Running)
+  if (state==State_Running)
   {
-   if(this->is_end()==false) result=true;
+   if (this->is_end()==false) result=true;
   }
 
  }
@@ -1373,7 +1373,7 @@ bool System::delete_file(const char *name)
 
 void System::enable_logging(const char *name)
 {
- if(freopen(name,"wt",stdout)==NULL)
+ if (freopen(name,"wt",stdout)==NULL)
  {
   Halt("Can't create log file");
  }
@@ -1387,7 +1387,7 @@ Binary_File::Binary_File()
 
 Binary_File::~Binary_File()
 {
- if(target!=NULL)
+ if (target!=NULL)
  {
   fclose(target);
   target=NULL;
@@ -1398,17 +1398,28 @@ Binary_File::~Binary_File()
 void Binary_File::open(const char *name,const char *mode)
 {
  target=fopen(name,mode);
- if(target==NULL)
+ if (target==NULL)
  {
   Halt("Can't open the binary file");
  }
 
 }
 
+void Binary_File::close()
+{
+ if (target!=NULL)
+ {
+  fclose(target);
+  target=NULL;
+ }
+
+}
+
 void Binary_File::create_temp()
 {
+ this->close();
  target=tmpfile();
- if(target==NULL)
+ if (target==NULL)
  {
   Halt("Can't create a temporary file");
  }
@@ -1417,22 +1428,14 @@ void Binary_File::create_temp()
 
 void Binary_File::open_read(const char *name)
 {
+ this->close();
  this->open(name,"rb");
 }
 
 void Binary_File::open_write(const char *name)
 {
+ this->close();
  this->open(name,"w+b");
-}
-
-void Binary_File::close()
-{
- if(target!=NULL)
- {
-  fclose(target);
-  target=NULL;
- }
-
 }
 
 void Binary_File::set_position(const long int offset)
@@ -1468,7 +1471,7 @@ bool Binary_File::check_error()
 {
  bool result;
  result=false;
- if(ferror(target)!=0) result=true;
+ if (ferror(target)!=0) result=true;
  return result;
 }
 
@@ -1551,9 +1554,9 @@ void Primitive::draw_filled_rectangle(const unsigned long int x,const unsigned l
  unsigned long int step_x,step_y,stop_x,stop_y;
  stop_x=x+width;
  stop_y=y+height;
- for(step_x=x;step_x<stop_x;++step_x)
+ for (step_x=x;step_x<stop_x;++step_x)
  {
-  for(step_y=y;step_y<stop_y;++step_y)
+  for (step_y=y;step_y<stop_y;++step_y)
   {
    surface->draw_pixel(step_x,step_y,color.red,color.green,color.blue);
   }
@@ -1571,14 +1574,14 @@ Image::Image()
 
 Image::~Image()
 {
- if(data!=NULL) free(data);
+ if (data!=NULL) free(data);
 }
 
 unsigned char *Image::create_buffer(const size_t length)
 {
  unsigned char *result;
  result=static_cast<unsigned char*>(calloc(length,sizeof(unsigned char)));
- if(result==NULL)
+ if (result==NULL)
  {
   Halt("Can't allocate memory for image buffer");
  }
@@ -1587,7 +1590,7 @@ unsigned char *Image::create_buffer(const size_t length)
 
 void Image::clear_buffer()
 {
- if(data!=NULL)
+ if (data!=NULL)
  {
   free(data);
   data=NULL;
@@ -1610,13 +1613,13 @@ void Image::load_tga(const char *name)
  target.read(&head,3);
  target.read(&color_map,5);
  target.read(&image,10);
- if((head.color_map!=0)||(image.color!=24))
+ if ((head.color_map!=0)||(image.color!=24))
  {
   Halt("Invalid image format");
  }
- if(head.type!=2)
+ if (head.type!=2)
  {
-  if(head.type!=10)
+  if (head.type!=10)
   {
    Halt("Invalid image format");
   }
@@ -1628,17 +1631,17 @@ void Image::load_tga(const char *name)
  height=image.height;
  uncompressed_length=this->get_length();
  uncompressed=this->create_buffer(uncompressed_length);
- if(head.type==2)
+ if (head.type==2)
  {
   target.read(uncompressed,uncompressed_length);
  }
- if(head.type==10)
+ if (head.type==10)
  {
   compressed=this->create_buffer(compressed_length);
   target.read(compressed,compressed_length);
   while(index<uncompressed_length)
   {
-   if(compressed[position]<128)
+   if (compressed[position]<128)
    {
     amount=compressed[position]+1;
     amount*=3;
@@ -1648,7 +1651,7 @@ void Image::load_tga(const char *name)
    }
    else
    {
-    for(amount=compressed[position]-127;amount>0;--amount)
+    for (amount=compressed[position]-127;amount>0;--amount)
     {
      memmove(uncompressed+index,compressed+(position+1),3);
      index+=3;
@@ -1676,7 +1679,7 @@ void Image::load_pcx(const char *name)
  target.open_read(name);
  length=static_cast<size_t>(target.get_length()-128);
  target.read(&head,128);
- if((head.color*head.planes!=24)&&(head.compress!=1))
+ if ((head.color*head.planes!=24)&&(head.compress!=1))
  {
   Halt("Incorrect image format");
  }
@@ -1712,9 +1715,9 @@ void Image::load_pcx(const char *name)
  }
  free(original);
  original=this->create_buffer(uncompressed_length);
- for(x=0;x<width;++x)
+ for (x=0;x<width;++x)
  {
-  for(y=0;y<height;++y)
+  for (y=0;y<height;++y)
   {
    index=static_cast<size_t>(x)*3+static_cast<size_t>(y)*row;
    position=static_cast<size_t>(x)+static_cast<size_t>(y)*line;
@@ -1766,7 +1769,7 @@ Surface::Surface()
 Surface::~Surface()
 {
  surface=NULL;
- if(image!=NULL) free(image);
+ if (image!=NULL) free(image);
 }
 
 IMG_Pixel *Surface::create_buffer(const unsigned long int image_width,const unsigned long int image_height)
@@ -1775,7 +1778,7 @@ IMG_Pixel *Surface::create_buffer(const unsigned long int image_width,const unsi
  size_t length;
  length=static_cast<size_t>(image_width)*static_cast<size_t>(image_height);
  result=reinterpret_cast<IMG_Pixel*>(calloc(length,3));
- if(result==NULL)
+ if (result==NULL)
  {
   Halt("Can't allocate memory for image buffer");
  }
@@ -1794,7 +1797,7 @@ void Surface::restore()
 
 void Surface::clear_buffer()
 {
- if(image!=NULL)
+ if (image!=NULL)
  {
   free(image);
   image=NULL;
@@ -1851,7 +1854,7 @@ bool Surface::compare_pixels(const size_t first,const size_t second) const
  }
  else
  {
-  if(image[first].blue!=image[second].blue) result=true;
+  if (image[first].blue!=image[second].blue) result=true;
  }
  return result;
 }
@@ -1901,7 +1904,7 @@ void Surface::mirror_image(const MIRROR_TYPE kind)
   }
 
  }
- if(kind==MIRROR_VERTICAL)
+ if (kind==MIRROR_VERTICAL)
  {
    for (x=0;x<width;++x)
   {
@@ -1977,7 +1980,7 @@ void Canvas::increase_frame()
 
 void Canvas::set_frames(const unsigned long int amount)
 {
- if(amount>1) frames=amount;
+ if (amount>1) frames=amount;
 }
 
 unsigned long int Canvas::get_frames() const
@@ -2011,9 +2014,9 @@ Background::~Background()
 void Background::slow_draw_background()
 {
  unsigned long int x,y;
- for(x=0;x<background_width;++x)
+ for (x=0;x<background_width;++x)
  {
-  for(y=0;y<background_height;++y)
+  for (y=0;y<background_height;++y)
   {
    this->draw_image_pixel(this->get_offset(start,x,y),x,y);
   }
@@ -2053,6 +2056,12 @@ void Background::set_kind(const BACKGROUND_TYPE kind)
   break;
  }
  current_kind=kind;
+}
+
+void Background::set_setting(const BACKGROUND_TYPE kind,const unsigned long int frames)
+{
+ if (kind!=NORMAL_BACKGROUND) this->set_frames(frames);
+ this->set_kind(kind);
 }
 
 void Background::set_target(const unsigned long int target)
@@ -2343,9 +2352,9 @@ void Tileset::draw_tile(const unsigned long int x,const unsigned long int y)
 {
  size_t tile_offset;
  unsigned long int tile_x,tile_y;
- for(tile_x=0;tile_x<tile_width;++tile_x)
+ for (tile_x=0;tile_x<tile_width;++tile_x)
  {
-  for(tile_y=0;tile_y<tile_height;++tile_y)
+  for (tile_y=0;tile_y<tile_height;++tile_y)
   {
    tile_offset=offset+this->get_offset(0,tile_x,tile_y);
    this->draw_image_pixel(tile_offset,x+tile_x,y+tile_y);
