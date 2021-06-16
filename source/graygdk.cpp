@@ -2014,16 +2014,21 @@ unsigned long int Surface::get_image_height() const
 
 void Surface::mirror_image(const MIRROR_TYPE kind)
 {
- unsigned long int x,y;
+ unsigned long int x,y,index;
  IMG_Pixel *mirrored_image;
+ x=0;
+ y=0;
  mirrored_image=this->create_buffer(width,height);
  if (kind==MIRROR_HORIZONTAL)
  {
-  for (x=0;x<width;++x)
+  for (index=width*height;index>0;--index)
   {
-   for (y=0;y<height;++y)
+   mirrored_image[this->get_offset(0,x,y)]=image[this->get_offset(0,(width-x-1),y)];
+   ++x;
+   if (x==width)
    {
-    mirrored_image[this->get_offset(0,x,y)]=image[this->get_offset(0,(width-x-1),y)];
+    x=0;
+    ++y;
    }
 
   }
@@ -2031,11 +2036,14 @@ void Surface::mirror_image(const MIRROR_TYPE kind)
  }
  if (kind==MIRROR_VERTICAL)
  {
-   for (x=0;x<width;++x)
+  for (index=width*height;index>0;--index )
   {
-   for (y=0;y<height;++y)
+   mirrored_image[this->get_offset(0,x,y)]=image[this->get_offset(0,x,(height-y-1))];
+   ++x;
+   if (x==width)
    {
-    mirrored_image[this->get_offset(0,x,y)]=image[this->get_offset(0,x,(height-y-1))];
+    x=0;
+    ++y;
    }
 
   }
@@ -2137,6 +2145,7 @@ Background::Background()
  background_height=0;
  maximum_width=0;
  maximum_height=0;
+ current=0;
  current_kind=NORMAL_BACKGROUND;
 }
 
@@ -2161,6 +2170,25 @@ void Background::get_maximum_height()
  if (maximum_height>this->get_surface_height())
  {
   maximum_height=this->get_surface_height();
+ }
+
+}
+
+void Background::slow_draw_background()
+{
+ unsigned long int x,y,index;
+ x=0;
+ y=0;
+ for (index=maximum_width*maximum_height;index>0;--index)
+ {
+  this->draw_image_pixel(this->get_offset(start,x,y),x,y);
+  ++x;
+  if (x==maximum_width)
+  {
+   x=0;
+   ++y;
+  }
+
  }
 
 }
@@ -2226,18 +2254,15 @@ void Background::step()
 
 void Background::draw_background()
 {
- unsigned long int x,y,index;
- x=0;
- y=0;
- for (index=maximum_width*maximum_height;index>0;--index)
+ if (current!=this->get_frame())
  {
-  this->draw_image_pixel(this->get_offset(start,x,y),x,y);
-  if (x==maximum_width)
-  {
-   x=0;
-   ++y;
-  }
-  ++x;
+  this->slow_draw_background();
+  this->save();
+  current=this->get_frame();
+ }
+ else
+ {
+  this->restore();
  }
 
 }
@@ -2268,12 +2293,13 @@ void Sprite::draw_transparent_sprite()
   {
    this->draw_image_pixel(this->get_offset(start,x,y),x+current_x,y+current_y);
   }
+  ++x;
   if (x==sprite_width)
   {
    x=0;
    ++y;
   }
-  ++x;
+
  }
 
 }
@@ -2286,12 +2312,13 @@ void Sprite::draw_normal_sprite()
  for (index=sprite_width*sprite_height;index>0;--index)
  {
   this->draw_image_pixel(this->get_offset(start,x,y),x+current_x,y+current_y);
+  ++x;
   if (x==sprite_width)
   {
    x=0;
    ++y;
   }
-  ++x;
+
  }
 
 }
@@ -2537,12 +2564,13 @@ void Tileset::draw_tile(const unsigned long int x,const unsigned long int y)
  for (index=tile_width*tile_height;index>0;--index)
  {
   this->draw_image_pixel(offset+this->get_offset(0,tile_x,tile_y),x+tile_x,y+tile_y);
+  ++tile_x;
   if (tile_x==tile_width)
   {
    tile_x=0;
    ++tile_y;
   }
-  ++tile_x;
+
  }
 
 }
