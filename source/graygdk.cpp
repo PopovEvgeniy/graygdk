@@ -145,7 +145,7 @@ void Synchronization::wait_timer()
 
 Engine::Engine()
 {
- window_class.lpszClassName=TEXT("NEONGDK");
+ window_class.lpszClassName=TEXT("GRAYGDK");
  window_class.style=CS_HREDRAW|CS_VREDRAW|CS_OWNDC;
  window_class.cbSize=sizeof(WNDCLASSEX);
  window_class.lpfnWndProc=Process_Message;
@@ -788,10 +788,8 @@ bool Screen::update()
 
 bool Screen::sync()
 {
- bool run;
- run=this->update();
  this->wait_timer();
- return run;
+ return this->update();
 }
 
 Screen* Screen::get_handle()
