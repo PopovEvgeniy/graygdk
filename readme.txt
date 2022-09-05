@@ -4,7 +4,7 @@ Gray game development kit is an ultra-fast 2D game engine for Windows 2000 or hi
 
 License
 
-Eugene game development kit distributed under Zlib license.
+Gray game development kit distributed under Zlib license.
 
 Features
 
@@ -15,7 +15,7 @@ Features
  Easy to use object-orientated API
  Animated and static sprites.
  Scrollable and static backgrounds.
- Tile-maps.
+ Sprite-sheets.
  Image loader with TGA support.
  Text drawing subsystem.
  Custom fonts.
