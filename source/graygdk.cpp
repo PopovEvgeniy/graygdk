@@ -1195,14 +1195,15 @@ namespace GRAYGDK
 
   Memory::Memory()
   {
-   memory.dwLength=sizeof(MEMORYSTATUS);
-   memory.dwAvailPageFile=0;
-   memory.dwAvailPhys=0;
-   memory.dwAvailVirtual=0;
+   memory.dwLength=sizeof(MEMORYSTATUSEX);
    memory.dwMemoryLoad=0;
-   memory.dwTotalPageFile=0;
-   memory.dwTotalPhys=0;
-   memory.dwTotalVirtual=0;
+   memory.ullAvailExtendedVirtual=0;
+   memory.ullAvailPageFile=0;
+   memory.ullAvailPhys=0;
+   memory.ullAvailVirtual=0;
+   memory.ullTotalPageFile=0;
+   memory.ullTotalPhys=0;
+   memory.ullTotalVirtual=0;
   }
 
   Memory::~Memory()
@@ -1210,33 +1211,50 @@ namespace GRAYGDK
 
   }
 
-  unsigned long int Memory::get_total_physical()
+  void Memory::get_status()
   {
-   GlobalMemoryStatus(&memory);
-   return memory.dwTotalPhys;
+   if (GlobalMemoryStatusEx(&memory)==FALSE)
+   {
+    memory.dwLength=sizeof(MEMORYSTATUSEX);
+    memory.dwMemoryLoad=0;
+    memory.ullAvailExtendedVirtual=0;
+    memory.ullAvailPageFile=0;
+    memory.ullAvailPhys=0;
+    memory.ullAvailVirtual=0;
+    memory.ullTotalPageFile=0;
+    memory.ullTotalPhys=0;
+    memory.ullTotalVirtual=0;
+   }
+
   }
 
-  unsigned long int Memory::get_free_physical()
+  unsigned long long int Memory::get_total_physical()
   {
-   GlobalMemoryStatus(&memory);
-   return memory.dwAvailPhys;
+   this->get_status();
+   return memory.ullTotalPhys;
   }
 
-  unsigned long int Memory::get_total_virtual()
+  unsigned long long int Memory::get_free_physical()
   {
-   GlobalMemoryStatus(&memory);
-   return memory.dwTotalVirtual;
+   this->get_status();
+   return memory.ullAvailPhys;
   }
 
-  unsigned long int Memory::get_free_virtual()
+  unsigned long long int Memory::get_total_virtual()
   {
-   GlobalMemoryStatus(&memory);
-   return memory.dwAvailVirtual;
+   this->get_status();
+   return memory.ullTotalVirtual;
+  }
+
+  unsigned long long int Memory::get_free_virtual()
+  {
+   this->get_status();
+   return memory.ullAvailVirtual;
   }
 
   unsigned long int Memory::get_usage()
   {
-   GlobalMemoryStatus(&memory);
+   this->get_status();
    return memory.dwMemoryLoad;
   }
 
