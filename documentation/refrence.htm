@@ -13,8 +13,7 @@
       Table of contents</big>
     <ul id="mozToc">
       <!--mozToc h1 1 h2 2 h3 3 h4 4 h5 5 h6 6-->
-      <li><a href="#mozTocId665557">Part 1. Welcome to Eugene game development
-          kit</a>
+      <li><a href="#mozTocId665557">Part 1. Welcome to Gray game development kit</a>
         <ul>
           <li><a href="#mozTocId471990">Chapter 1. Introduction</a></li>
           <li><a href="#mozTocId85003">Chapter 2. A special thanks</a></li>
@@ -42,7 +41,7 @@
           <li><a href="#mozTocId904725">Chapter 5. Image kind</a></li>
           <li><a href="#mozTocId738557">Chapter 6. Background</a></li>
           <li><a href="#mozTocId309905">Chapter 7. Base sprite subsystem</a></li>
-          <li><a href="#mozTocId662651">Chapter 8. Ordinary sprites</a></li>
+          <li><a href="#mozTocId662651"> Chapter 8. Ordinary sprites</a></li>
           <li><a href="#mozTocId146800">Chapter 9. Sprite sheet</a></li>
           <li><a href="#mozTocId752257">Chapter 10. Text</a></li>
           <li><a href="#mozTocId67980">Chapter 11. Loading images</a></li>
@@ -60,7 +59,8 @@
         <ul>
           <li><a href="#mozTocId648026">Chapter 1. The sub–namespace</a></li>
           <li><a href="#mozTocId909723">Chapter 2. Memory</a></li>
-          <li><a href="#mozTocId950985">Chapter 3. Multimedia</a></li>
+          <li><a href="#mozTocId401702">Chapter 3. Sound</a></li>
+          <li><a href="#mozTocId950985">Chapter 4. Multimedia</a></li>
         </ul>
       </li>
       <li><a href="#mozTocId209024">Part 6. Misc</a>
@@ -71,12 +71,12 @@
           <li><a href="#mozTocId573582">Chapter 3. Resource manager</a></li>
         </ul>
       </li>
-      <li><a href="#mozTocId590919">Part 7. Binary files</a>
+      <li><a href="#mozTocId590919"> Part 7. Binary files</a>
         <ul>
           <li><a href="#mozTocId200879">Chapter 1. The sub–namespace</a></li>
-          <li><a href="#mozTocId961921">Chapter 2. Base binary file subsystem</a></li>
-          <li><a href="#mozTocId424835">Chapter 3. File reader</a></li>
-          <li><a href="#mozTocId511135">Chapter 4. File writer</a></li>
+          <li><a href="#mozTocId961921"> Chapter 2. Base binary file subsystem</a></li>
+          <li><a href="#mozTocId424835"> Chapter 3. File reader</a></li>
+          <li><a href="#mozTocId511135"> Chapter 4. File writer</a></li>
         </ul>
       </li>
       <li><a href="#mozTocId291572">Part 8. Input</a>
@@ -96,7 +96,8 @@
           <li><a href="#mozTocId293644">Chapter 3. Base graphics subsystem</a></li>
           <li><a href="#mozTocId472209">Chapter 4. Game–pad</a></li>
           <li><a href="#mozTocId804583">Chapter 5. Input</a></li>
-          <li><a href="#mozTocId692266">Chapter 6. Multimedia</a></li>
+          <li><a href="#mozTocId324372">Chapter 6. Sound</a></li>
+          <li><a href="#mozTocId692266">Chapter 7. Multimedia</a></li>
         </ul>
       </li>
       <li><a href="#mozTocId78453">Version history</a></li>
@@ -308,7 +309,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       optimization.<br>
       <br>
       <span style="text-decoration: underline;"> Note for Visual C++ users</span><br
-
         style="text-decoration: underline;">
       <br>
       Disable pre–compiled headers before start compilation. Old Visual C++
@@ -981,12 +981,30 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="font-style: italic;"> unsigned long int Memory::get_usage();</span>
       – Return percentage of physical memory usage.<br>
     </big>
-    <h2><a name="mozTocId950985" class="mozTocH2"></a><big>Chapter 3. Multimedia</big></h2>
+    <h2><a class="mozTocH2" name="mozTocId401702"></a><big>Chapter 3. Sound</big></h2>
+    <big><br>
+      <span style="text-decoration: underline;">Simple sound subsystem</span><br>
+      <br>
+      Sound subsystem intend for playing <a href="https://en.wikipedia.org/wiki/Wav">Waveform
+        Audio File Format</a> sounds.<br>
+      <br style="text-decoration: underline;">
+      <span style="text-decoration: underline;">Working with sound</span><br style="text-decoration: underline;">
+      <br>
+      Sound subsystem implemented as few macros.<br>
+      <br style="font-style: italic;">
+      <span style="font-style: italic;">SOUND_STOP</span> stop playing all
+      sounds. It didn't take arguments.<br>
+      <br style="font-style: italic;">
+      <span style="font-style: italic;">SOUND_PLAY</span> play a sound once. It
+      takes string literal as argument.<br>
+      <br style="font-style: italic;">
+      <span style="font-style: italic;">MUSIC_PLAY</span> play a sound in loop.
+      It takes string literal as argument.<br>
+    </big>
+    <h2><a name="mozTocId950985" class="mozTocH2"></a><big>Chapter 4. Multimedia</big></h2>
     <big><span style="text-decoration: underline;">Improve your game</span><br>
       <br>
-      What are good things for a video games? A sounds and video. The sound can
-      improve game atmosphere. The video is very useful as splash between game
-      levels. It can use for show game story.<br>
+      Multimedia subsystem intend for playing audio and video.<br>
       <br style="text-decoration: underline;">
       <span style="text-decoration: underline;"> Supported formats</span><br>
       <br>
@@ -1806,8 +1824,13 @@ Multimedia API</a>. </big>
         </tr>
       </tbody>
     </table>
+    <big><br>
+    </big>
+    <h2><a class="mozTocH2" name="mozTocId324372"></a><big>Chapter 6. Sound</big></h2>
+    <big>Sound subsystem working over <a href="https://msdn.microsoft.com/ru-ru/library/windows/desktop/dd743606%28v=vs.85%29.aspx">Windows
+        Multimedia</a>.</big><br>
     <big> </big>
-    <h2><a name="mozTocId692266" class="mozTocH2"></a><big>Chapter 6. Multimedia</big></h2>
+    <h2><a name="mozTocId692266" class="mozTocH2"></a><big>Chapter 7. Multimedia</big></h2>
     <big><br>
       Multimedia subsystem working over <a href="https://docs.microsoft.com/en-us/windows/desktop/DirectShow/directshow">DirectShow</a>.
       It is available as part of <a href="https://docs.microsoft.com/en-us/windows/desktop/directx-sdk--august-2009-">DirectX</a>.
@@ -1826,6 +1849,7 @@ Multimedia API</a>. </big>
       2.0.7 – Source code synced with Eugene game development kit 6.3.1.<br>
       2.0.8 – Source code synced with Eugene game development kit 6.3.2.<br>
       2.0.9 – Memory subsystem improved.<br>
+      2.1 – Simple sound subsystem ported from Neon game development kit 5.8.1.<br>
     </big><big> </big>
     <p></p>
   </body>
