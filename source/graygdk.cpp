@@ -2908,11 +2908,6 @@ namespace GRAYGDK
    text.destroy_sheet();
   }
 
-  void Text::reset_orientation()
-  {
-   orientation=GRAYGDK::HORIZONTAL_TEXT;
-  }
-
   void Text::increase_position()
   {
    if (orientation==GRAYGDK::HORIZONTAL_TEXT)
@@ -2966,7 +2961,6 @@ namespace GRAYGDK
   void Text::load_font(Image *font)
   {
    text.load_sheet(font,16,16);
-   this->reset_orientation();
   }
 
   void Text::load_font(Image &font)
@@ -3018,7 +3012,6 @@ namespace GRAYGDK
   void Text::destroy_font()
   {
    text.destroy_sheet();
-   this->reset_orientation();
   }
 
  }
