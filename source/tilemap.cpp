@@ -4,17 +4,14 @@ int main()
 {
  GRAYGDK::Graphics::Screen screen;
  GRAYGDK::Graphics::Text text;
- GRAYGDK::Graphics::Image image;
  GRAYGDK::Graphics::Sheet tilemap;
  GRAYGDK::Input::Keyboard keyboard;
  unsigned int x,y;
  keyboard.initialize();
  screen.initialize();
- image.load_tga("font.tga");
- text.load_font(image);
+ text.load_font("font.tga");
  text.set_position(text.get_font_width(),text.get_font_height());
- image.load_tga("grass.tga");
- tilemap.load_sheet(image,6,3);
+ tilemap.load_sheet("grass.tga",6,3);
  tilemap.set_transparent(false);
  while (screen.sync())
  {

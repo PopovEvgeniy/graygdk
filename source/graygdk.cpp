@@ -2974,6 +2974,11 @@ namespace GRAYGDK
    this->load_font(font.get_handle());
   }
 
+  void Text::load_font(const char *name)
+  {
+   text.load_sheet(name,16,16);
+  }
+
   void Text::draw_character(const char target)
   {
    text.select(static_cast<unsigned char>(target)+1);
