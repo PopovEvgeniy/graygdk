@@ -2067,7 +2067,7 @@ namespace GRAYGDK
    height=0;
   }
 
-  void Image::load_tga(const char *name)
+  unsigned char *Image::load_tga(const char *name)
   {
    File::Input_File target;
    this->destroy_image();
@@ -2077,7 +2077,7 @@ namespace GRAYGDK
     this->load_tga(target);
     target.close();
    }
-
+   return this->get_data();
   }
 
   Picture::Picture()
