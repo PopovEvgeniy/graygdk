@@ -945,7 +945,6 @@ typedef enum
    void set_target(const GRAYGDK::BOX &first_target,const GRAYGDK::BOX &second_target);
    bool check_collision() const;
    bool check_collision(const GRAYGDK::BOX &first_target,const GRAYGDK::BOX &second_target);
-   GRAYGDK::BOX generate_box(const unsigned int x,const unsigned int y,const unsigned int width,const unsigned int height) const;
   };
 
  }
@@ -958,6 +957,7 @@ typedef enum
 
  namespace Tools
  {
+  GRAYGDK::BOX generate_box(const unsigned int x,const unsigned int y,const unsigned int width,const unsigned int height);
   void quit();
   bool enable_logging(const char *name);
   void randomize();
