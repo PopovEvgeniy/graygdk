@@ -2602,7 +2602,7 @@ namespace GRAYGDK
   {
    if (target->is_storage_empty()==false)
    {
-    this->destroy_sprite();
+    this->destroy();
     this->set_image_size(target->get_image_width(),target->get_image_height());
     this->create_storage();
     this->reset_animation_setting();
@@ -2620,7 +2620,7 @@ namespace GRAYGDK
    this->clone(target.get_handle());
   }
 
-  void Sprite::destroy_sprite()
+  void Sprite::destroy()
   {
    billboard.destroy_texture();
    this->destroy_image();
@@ -2711,7 +2711,7 @@ namespace GRAYGDK
    return columns;
   }
 
-  void Sheet::destroy_sheet()
+  void Sheet::destroy()
   {
    billboard.destroy_texture();
    this->destroy_image();
@@ -2788,7 +2788,7 @@ namespace GRAYGDK
 
   Background::~Background()
   {
-   stage.destroy_sprite();
+   stage.destroy();
   }
 
   void Background::prepare(const Screen *screen)
@@ -2865,9 +2865,9 @@ namespace GRAYGDK
    stage.destroy_image();
   }
 
-  void Background::destroy_background()
+  void Background::destroy()
   {
-   stage.destroy_sprite();
+   stage.destroy();
   }
 
   unsigned int Background::get_frame() const
@@ -2905,7 +2905,7 @@ namespace GRAYGDK
 
   Text::~Text()
   {
-   text.destroy_sheet();
+   text.destroy();
   }
 
   void Text::increase_position()
@@ -3011,7 +3011,7 @@ namespace GRAYGDK
 
   void Text::destroy_font()
   {
-   text.destroy_sheet();
+   text.destroy();
   }
 
  }
