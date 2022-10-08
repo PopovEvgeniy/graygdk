@@ -2926,12 +2926,12 @@ namespace GRAYGDK
    text.set_position(current_x,current_y);
   }
 
-  GRAYGDK::TEXT_ORIENTATION Text::get_orientation() const
+  GRAYGDK::TEXT_KIND Text::get_orientation() const
   {
    return orientation;
   }
 
-  void Text::set_orientation(const GRAYGDK::TEXT_ORIENTATION target)
+  void Text::set_orientation(const GRAYGDK::TEXT_KIND target)
   {
    orientation=target;
   }
@@ -2956,6 +2956,12 @@ namespace GRAYGDK
   void Text::set_size(const unsigned int width,const unsigned int height)
   {
    text.set_size(width,height);
+  }
+
+  void Text::set_setting(const unsigned int width,const unsigned int height,const GRAYGDK::TEXT_KIND kind)
+  {
+   this->set_size(width,height);
+   this->set_orientation(kind);
   }
 
   void Text::load_font(Image *font)

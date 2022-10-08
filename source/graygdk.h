@@ -94,7 +94,7 @@ namespace GRAYGDK
  {
   HORIZONTAL_TEXT=0,
   VERTICAL_TEXT=1
- } TEXT_ORIENTATION;
+ } TEXT_KIND;
 
  typedef enum
  {
@@ -890,7 +890,7 @@ typedef enum
   {
    private:
    Graphics::Sheet text;
-   GRAYGDK::TEXT_ORIENTATION orientation;
+   GRAYGDK::TEXT_KIND orientation;
    unsigned int current_x;
    unsigned int current_y;
    void increase_position();
@@ -898,12 +898,13 @@ typedef enum
    public:
    Text();
    ~Text();
-   GRAYGDK::TEXT_ORIENTATION get_orientation() const;
-   void set_orientation(const GRAYGDK::TEXT_ORIENTATION target);
+   GRAYGDK::TEXT_KIND get_orientation() const;
+   void set_orientation(const GRAYGDK::TEXT_KIND target);
    unsigned int get_font_width() const;
    unsigned int get_font_height() const;
    void set_position(const unsigned int x,const unsigned int y);
    void set_size(const unsigned int width,const unsigned int height);
+   void set_setting(const unsigned int width,const unsigned int height,const GRAYGDK::TEXT_KIND kind);
    void load_font(Image *font);
    void load_font(Image &font);
    void load_font(const char *name);
