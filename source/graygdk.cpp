@@ -102,9 +102,6 @@ namespace GRAYGDK
   {
    switch (Message)
    {
-    case WM_CREATE:
-    ;
-    break;
     case WM_PAINT:
     ValidateRect(window,NULL);
     break;
