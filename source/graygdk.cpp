@@ -1543,18 +1543,16 @@ namespace GRAYGDK
   GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_stick_x(const GRAYGDK::GAMEPAD_STICKS stick)
   {
    GRAYGDK::GAMEPAD_DIRECTION directional;
-   unsigned long int control;
    directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
    if (stick==GRAYGDK::GAMEPAD_LEFT_STICK)
    {
     if (this->get_sticks_amount()>0)
     {
-     control=(configuration.wXmax-configuration.wXmin)/2;
-     if (current.dwXpos<control)
+     if (current.dwXpos<=configuration.wXmin)
      {
       directional=GRAYGDK::GAMEPAD_NEGATIVE_DIRECTION;
      }
-     if (current.dwXpos>control)
+     if (current.dwXpos>=configuration.wXmax)
      {
       directional=GRAYGDK::GAMEPAD_POSITIVE_DIRECTION;
      }
@@ -1566,12 +1564,11 @@ namespace GRAYGDK
    {
     if (this->get_sticks_amount()>1)
     {
-     control=(configuration.wZmax-configuration.wZmin)/2;
-     if (current.dwZpos<control)
+     if (current.dwZpos<=configuration.wZmin)
      {
       directional=GRAYGDK::GAMEPAD_NEGATIVE_DIRECTION;
      }
-     if (current.dwZpos>control)
+     if (current.dwZpos>=configuration.wZmax)
      {
       directional=GRAYGDK::GAMEPAD_POSITIVE_DIRECTION;
      }
@@ -1585,18 +1582,16 @@ namespace GRAYGDK
   GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_stick_y(const GRAYGDK::GAMEPAD_STICKS stick)
   {
    GRAYGDK::GAMEPAD_DIRECTION directional;
-   unsigned long int control;
    directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
    if (stick==GRAYGDK::GAMEPAD_LEFT_STICK)
    {
     if (this->get_sticks_amount()>0)
     {
-     control=(configuration.wYmax-configuration.wYmin)/2;
-     if (current.dwYpos<control)
+     if (current.dwYpos<=configuration.wYmin)
      {
       directional=GRAYGDK::GAMEPAD_NEGATIVE_DIRECTION;
      }
-     if (current.dwYpos>control)
+     if (current.dwYpos>=configuration.wYmax)
      {
       directional=GRAYGDK::GAMEPAD_POSITIVE_DIRECTION;
      }
@@ -1608,12 +1603,11 @@ namespace GRAYGDK
    {
     if (this->get_sticks_amount()>1)
     {
-     control=(configuration.wRmax-configuration.wRmin)/2;
-     if (current.dwRpos<control)
+     if (current.dwRpos<=configuration.wRmin)
      {
       directional=GRAYGDK::GAMEPAD_NEGATIVE_DIRECTION;
      }
-     if (current.dwRpos>control)
+     if (current.dwRpos>=configuration.wRmax)
      {
       directional=GRAYGDK::GAMEPAD_POSITIVE_DIRECTION;
      }
