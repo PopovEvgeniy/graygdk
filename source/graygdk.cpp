@@ -4,7 +4,7 @@ Some code taken from wglext.h(https://www.khronos.org/registry/OpenGL/api/GL/wgl
 
 Gray game development kit license
 
-Copyright (C) 2020 - 2022 Popov Evgeniy Alekseyevich
+Copyright (C) 2020 - 2023 Popov Evgeniy Alekseyevich
 
 This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages
@@ -142,18 +142,27 @@ namespace GRAYGDK
    return DefWindowProc(window,Message,wParam,lParam);
   }
 
+  VOID CALLBACK set_event(PVOID lpParam,BOOLEAN TimerOrWaitFired)
+  {
+   if (lpParam!=NULL)
+   {
+    SetEvent(reinterpret_cast<HANDLE>(lpParam));
+   }
+
+  }
+
   Synchronization::Synchronization()
   {
    event=NULL;
-   timer=0;
+   timer=NULL;
   }
 
   Synchronization::~Synchronization()
   {
-   if (timer!=0)
+   if (timer!=NULL)
    {
-    timeKillEvent(timer);
-    timer=0;
+    DeleteTimerQueueTimer(NULL,timer,event);
+    timer=NULL;
    }
    if (event!=NULL)
    {
@@ -175,9 +184,9 @@ namespace GRAYGDK
 
   void Synchronization::timer_setup(const unsigned int delay)
   {
-   timer=timeSetEvent(delay,0,reinterpret_cast<LPTIMECALLBACK>(event),0,TIME_PERIODIC|TIME_CALLBACK_EVENT_SET);
-   if (timer==0)
+   if (CreateTimerQueueTimer(&timer,NULL,Internal::set_event,reinterpret_cast<PVOID>(event),0,delay,WT_EXECUTEDEFAULT)==FALSE)
    {
+    timer=NULL;
     GRAYGDK::Halt("Can't set timer setting");
    }
 

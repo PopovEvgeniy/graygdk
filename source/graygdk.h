@@ -4,7 +4,7 @@ Some code taken from wglext.h(https://www.khronos.org/registry/OpenGL/api/GL/wgl
 
 Gray game development kit license
 
-Copyright (C) 2020 - 2022 Popov Evgeniy Alekseyevich
+Copyright (C) 2020 - 2023 Popov Evgeniy Alekseyevich
 
 This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages
@@ -53,6 +53,7 @@ THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMP
 
 #if defined __WATCOMC__
   #define WINVER 0x0500
+  #define _WIN32_WINNT 0x0500
   #define OATRUE -1
 #endif
 
@@ -185,12 +186,13 @@ typedef enum
   typedef BOOL (WINAPI * PFNWGLSWAPINTERVALEXTPROC) (int interval); // This code taken from wglext.h by The Khronos Group Inc
 
   LRESULT CALLBACK Process_Message(HWND window,UINT Message,WPARAM wParam,LPARAM lParam);
+  VOID CALLBACK set_event(PVOID lpParam,BOOLEAN TimerOrWaitFired);
 
   class Synchronization
   {
    private:
    HANDLE event;
-   MMRESULT timer;
+   HANDLE timer;
    void create_event();
    void timer_setup(const unsigned int delay);
    protected:
