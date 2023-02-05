@@ -1040,7 +1040,8 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
     <h2><a name="mozTocId853711" class="mozTocH2"></a><big>Chapter 2. Abnormal
         program termination</big></h2>
     <big> You can use <span style="font-style: italic;">Halt</span> function to
-      terminate a program. This function declared in EGENEGDK name–space.<br>
+      terminate a program. This function declared in <span style="font-style: italic;">GRAYGDK</span>
+      name–space.<br>
       <br>
       <span style="font-style: italic;"> void GRAYGDK::Halt(const char
         *message);</span> – Terminate the program. Write error message to log
@@ -1051,6 +1052,9 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <br>
       <span style="font-style: italic;"> void Timer::set_timer(const double
         seconds); </span>– Set timer interval and initialize start point.<br>
+      <br>
+      <span style="font-style: italic;">double Timer::get_interval() const;</span>
+      – Return current timer interval.<br>
       <br>
       <span style="font-style: italic;"> bool Timer::check_timer();</span> –
       Return true and reinitialize start point if interval between stop and
@@ -1069,10 +1073,11 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <br>
       <span style="font-style: italic;"> typedef struct</span><br style="font-style: italic;">
       <span style="font-style: italic;"> {</span><br style="font-style: italic;">
-      <span style="font-style: italic;"> unsigned int x;</span><br style="font-style: italic;">
-      <span style="font-style: italic;"> unsigned int y;</span><br style="font-style: italic;">
-      <span style="font-style: italic;"> unsigned int width;</span><br style="font-style: italic;">
-      <span style="font-style: italic;"> unsigned int height;</span><br style="font-style: italic;">
+      &nbsp; <span style="font-style: italic;">unsigned int x;</span><br style="font-style: italic;">
+      &nbsp; <span style="font-style: italic;"> unsigned int y;</span><br style="font-style: italic;">
+      &nbsp; <span style="font-style: italic;"> unsigned int width;</span><br style="font-style: italic;">
+      &nbsp; <span style="font-style: italic;"> unsigned int height;</span><br
+        style="font-style: italic;">
       <span style="font-style: italic;"> } BOX;</span><br>
       <br>
       <span style="text-decoration: underline;"> Work with collision detector</span><br>
@@ -1894,8 +1899,8 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
     <big> </big><br>
     <big style="font-style: italic;"> typedef struct Vertex</big><br style="font-style: italic;">
     <big style="font-style: italic;"> {</big><br style="font-style: italic;">
-    <big style="font-style: italic;"> int x;</big><br style="font-style: italic;">
-    <big style="font-style: italic;"> int y;</big><br style="font-style: italic;">
+    &nbsp; <big style="font-style: italic;"> int x;</big><br style="font-style: italic;">
+    &nbsp; <big style="font-style: italic;"> int y;</big><br style="font-style: italic;">
     <big style="font-style: italic;"> };</big><br>
     <big> </big><br>
     <big> </big><big>Single texture coordinate represent by follow custom data
@@ -1903,8 +1908,8 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
     <big> </big><br>
     <big style="font-style: italic;"> typedef struct</big><br style="font-style: italic;">
     <big style="font-style: italic;"> {</big><br style="font-style: italic;">
-    <big style="font-style: italic;"> double u;</big><br style="font-style: italic;">
-    <big style="font-style: italic;"> double v;</big><br style="font-style: italic;">
+    &nbsp; <big style="font-style: italic;">double u;</big><br style="font-style: italic;">
+    &nbsp; <big style="font-style: italic;"> double v;</big><br style="font-style: italic;">
     <big style="font-style: italic;"> } Point;</big><br>
     <big> </big> <br>
     <big>All these custom types declared in <span style="font-style: italic;">Core</span>
@@ -1987,6 +1992,7 @@ Multimedia API</a>. </big>
       2.3.5 – Small changes.<br>
       2.3.6 – Source code synced with Eugene game development kit 6.6.6.<br>
       2.3.7 – Source code synced with Eugene game development kit 6.7.<br>
+      2.3.8 – Source code synced with Eugene game development kit 6.7.1.<br>
     </big> <big> </big>
     <p></p>
   </body>
