@@ -571,6 +571,18 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="font-style: italic;"> void Background::prepare(const unsigned
         int width,const unsigned int heigt);</span> – Prepare for drawing.<br>
       <br>
+      <span style="font-style: italic;">void Background::disable_mirror();</span>
+      – Disable background mirroring mode.<br>
+      <br>
+      <span style="font-style: italic;">void Background::horizontal_mirror();</span>
+      – Set horizontal background mirroring mode.<br>
+      <br>
+      <span style="font-style: italic;">void Background::vertical_mirror();</span>
+      – Set vertical background mirroring mode.<br>
+      <br>
+      <span style="font-style: italic;">void Background::complex_mirror();</span>
+      – Set both horizontal and vertical background mirroring mode.<br>
+      <br>
       <span style="font-style: italic;"> void Background::set_target(const
         unsigned int target);</span> – Set target frame in scrollable
       background.<br>
@@ -723,6 +735,18 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
     </big><big><span style="font-style: italic;">GRAYGDK::BOX
         Billboard::get_box() const;</span> – Return collision related
       information.<br>
+      <br>
+      <span style="font-style: italic;">void Billboard::disable_mirror();</span>
+      – Disable sprite mirroring mode.<br>
+      <br>
+      <span style="font-style: italic;">void Billboard::horizontal_mirror();</span>
+      – Set horizontal sprite mirroring mode.<br>
+      <br>
+      <span style="font-style: italic;">void Billboard::vertical_mirror();</span>
+      – Set vertical sprite mirroring mode.<br>
+      <br>
+      <span style="font-style: italic;">void Billboard::complex_mirror();</span>
+      – Set both horizontal and vertical sprite mirroring mode.<br>
       <br>
     </big><big> </big><big><span style="font-style: italic;">void
         Billboard::draw();</span> – Draw a sprite.<br>
@@ -979,6 +1003,18 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         x,const unsigned int y,const char *target);</span> – Draw text at
       specific position.<br>
       <br>
+      <span style="font-style: italic;">void Text::disable_mirror();</span> –
+      Disable text mirroring mode.<br>
+      <br>
+      <span style="font-style: italic;">void Text::horizontal_mirror();</span> –
+      Set horizontal text mirroring mode.<br>
+      <br>
+      <span style="font-style: italic;">void Text::vertical_mirror();</span> –
+      Set vertical text mirroring mode.<br>
+      <br>
+      <span style="font-style: italic;">void Text::complex_mirror();</span> –
+      Set both horizontal and vertical text mirroring mode.<br>
+      <br>
       <span style="font-style: italic;"> void Text::destroy_image();</span> –
       Destroy a font image.<br>
       <br>
@@ -1077,6 +1113,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       &nbsp; <span style="font-style: italic;"> unsigned int y;</span><br style="font-style: italic;">
       &nbsp; <span style="font-style: italic;"> unsigned int width;</span><br style="font-style: italic;">
       &nbsp; <span style="font-style: italic;"> unsigned int height;</span><br
+
         style="font-style: italic;">
       <span style="font-style: italic;"> } BOX;</span><br>
       <br>
@@ -1993,6 +2030,7 @@ Multimedia API</a>. </big>
       2.3.6 – Source code synced with Eugene game development kit 6.6.6.<br>
       2.3.7 – Source code synced with Eugene game development kit 6.7.<br>
       2.3.8 – Source code synced with Eugene game development kit 6.7.1.<br>
+      2.3.9 – Source code synced with Eugene game development kit 6.7.6.<br>
     </big> <big> </big>
     <p></p>
   </body>
