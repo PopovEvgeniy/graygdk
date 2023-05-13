@@ -7,7 +7,7 @@ int main()
  GRAYGDK::Input::Keyboard keyboard;
  GRAYGDK::Input::Gamepad gamepad;
  GRAYGDK::Input::Mouse mouse;
- GRAYGDK::Misc::Multimedia media;
+ GRAYGDK::Misc::Audio media;
  GRAYGDK::Graphics::Screen screen;
  GRAYGDK::Graphics::Background space;
  GRAYGDK::Graphics::Sprite ship;

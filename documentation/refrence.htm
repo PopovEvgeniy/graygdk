@@ -59,7 +59,7 @@
         <ul>
           <li><a href="#mozTocId648026">Chapter 1. The sub–namespace</a></li>
           <li><a href="#mozTocId909723">Chapter 2. Memory</a></li>
-          <li><a href="#mozTocId950985">Chapter 3. Multimedia</a></li>
+          <li><a href="#mozTocId950985">Chapter 3. Audio</a></li>
         </ul>
       </li>
       <li><a href="#mozTocId209024">Part 6. Misc</a>
@@ -94,7 +94,7 @@
           <li><a href="#mozTocId293644">Chapter 3. Base graphics subsystem</a></li>
           <li><a href="#mozTocId472209">Chapter 4. Game–pad</a></li>
           <li><a href="#mozTocId804583">Chapter 5. Input</a></li>
-          <li><a href="#mozTocId692266">Chapter 6. Multimedia</a></li>
+          <li><a href="#mozTocId692266">Chapter 6. Audio</a></li>
         </ul>
       </li>
       <li><a href="#mozTocId78453">Version history</a></li>
@@ -324,7 +324,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       optimization.<br>
       <br>
       <span style="text-decoration: underline;"> Note for Visual C++ users</span><br
-
         style="text-decoration: underline;">
       <br>
       Disable pre–compiled headers before start compilation. Old Visual C++
@@ -393,6 +392,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         subsystem</span><br>
       <br>
       Base graphics subsystem do rendering game scene. This subsystem using <a
+
         href="http://opengl.org">OPENGL</a> for render. Most modern video–card
       support hardware accelerated OPENGL. Software emulated OPENGL will
       activate if </big><big>hardware acceleration not available.</big><br>
@@ -1113,7 +1113,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       &nbsp; <span style="font-style: italic;"> unsigned int y;</span><br style="font-style: italic;">
       &nbsp; <span style="font-style: italic;"> unsigned int width;</span><br style="font-style: italic;">
       &nbsp; <span style="font-style: italic;"> unsigned int height;</span><br
-
         style="font-style: italic;">
       <span style="font-style: italic;"> } BOX;</span><br>
       <br>
@@ -1166,11 +1165,11 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="font-style: italic;"> unsigned long int Memory::get_usage();</span>
       – Return percentage of physical memory usage.</big><big><br>
     </big>
-    <h2><a name="mozTocId950985" class="mozTocH2"></a><big>Chapter 3. Multimedia</big></h2>
+    <h2><a name="mozTocId950985" class="mozTocH2"></a><big>Chapter 3. Audio</big></h2>
     <big><span style="text-decoration: underline;"></span><span style="text-decoration: underline;">A
-        few words about multimedia subsystem</span><br>
+        few words about sound subsystem</span><br>
       <br>
-      Multimedia subsystem intend for playing music and sounds. <a href="https://en.wikipedia.org/wiki/MP3">MPEG
+      Audio subsystem intend for playing music and sounds. <a href="https://en.wikipedia.org/wiki/MP3">MPEG
         Audio Layer 3</a> and <a href="https://en.wikipedia.org/wiki/Windows_Media_Audio">Waveform
         Audio File Format</a> are supported.<br>
       <span style="text-decoration: underline;"></span></big><big><br>
@@ -1178,31 +1177,31 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <br>
       You can use an additional format if you install third–party codecs.<br>
       <br>
-      <span style="text-decoration: underline;"> Working with multimedia</span><br>
+      <span style="text-decoration: underline;"> Working with sound</span><br>
       <br>
-      Just use <span style="font-style: italic;">Multimedia</span> class to
-      work with multimedia. Let's look at public methods.<br>
+      Just use <span style="font-style: italic;">Audio</span> class to work
+      with sound. Let's look at public methods.<br>
       <br>
-      <span style="font-style: italic;"> void Multimedia::initialize();</span> –
+      <span style="font-style: italic;"> void Audio::initialize();</span> –
       Initialize the subsystem.<br>
       <br>
-      <span style="font-style: italic;"> void Multimedia::initialize(const char
-        *target);</span> – Initialize the subsystem and load a multimedia file.<br>
+      <span style="font-style: italic;"> void Audio::initialize(const char
+        *target);</span> – Initialize the subsystem and load a sound file.<br>
       <br>
-      <span style="font-style: italic;"> void Multimedia::load(const char
-        *target);</span> – Load a multimedia file.<br>
+      <span style="font-style: italic;"> void Audio::load(const char *target);</span>
+      – Load a sound file.<br>
       <br>
-      <span style="font-style: italic;"> void Multimedia::play();</span> – Play
-      a content of the target file.<br>
+      <span style="font-style: italic;"> void Audio::play();</span> – Play a
+      content of the target file.<br>
       <br>
-      <span style="font-style: italic;"> void Multimedia::play_loop();</span> –
+      <span style="font-style: italic;"> void Audio::play_loop();</span> –
       Checking play status and restart play if needed.<br>
       <br>
-      <span style="font-style: italic;"> void Multimedia::stop();</span> – Stop
+      <span style="font-style: italic;"> void Audio::stop();</span> – Stop
       playing a content of the target file<br>
       <br>
-      <span style="font-style: italic;"> bool Multimedia::check_playing();</span>
-      – Return true if the multimedia resource is playing.</big><br>
+      <span style="font-style: italic;"> bool Audio::check_playing();</span> –
+      Return true if the sound resource is playing.</big><br>
     <big> </big>
     <h1><a name="mozTocId209024" class="mozTocH1"></a><big>Part 6. Misc</big></h1>
     <h2><a name="mozTocId608755" class="mozTocH2"></a><big>Chapter 1. File
@@ -1954,7 +1953,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
     <big> </big>
     <h2><a name="mozTocId472209" class="mozTocH2"></a><big>Chapter 4. Game–pad</big></h2>
     <big> Game–pad subsystem working over <a href="https://msdn.microsoft.com/ru-ru/library/windows/desktop/dd757116%28v=vs.85%29.aspx">Joystick
-Multimedia API</a>. </big>
+        Audio API</a>. </big>
     <h2><a name="mozTocId804583" class="mozTocH2"></a><big>Chapter 5. Input</big></h2>
     <big> <span style="text-decoration: underline;"> Input back–end</span><br>
       <br>
@@ -1984,8 +1983,8 @@ Multimedia API</a>. </big>
     </table>
     <br>
     <big> </big>
-    <h2><a name="mozTocId692266" class="mozTocH2"></a><big>Chapter 6. Multimedia</big></h2>
-    <big> Multimedia subsystem working over <a href="https://docs.microsoft.com/en-us/windows/desktop/DirectShow/directshow">DirectShow</a>.
+    <h2><a name="mozTocId692266" class="mozTocH2"></a><big>Chapter 6. Audio</big></h2>
+    <big> Audio subsystem working over <a href="https://docs.microsoft.com/en-us/windows/desktop/DirectShow/directshow">DirectShow</a>.
       It is available as part of <a href="https://en.wikipedia.org/wiki/DirectX">DirectX</a>.
       DirectX is pre–installed by default under modern versions of Windows. </big>
     <h1><a name="mozTocId78453" class="mozTocH1"></a><big>Version history</big></h1>
@@ -2020,7 +2019,8 @@ Multimedia API</a>. </big>
       2.2.5 – Source code synced with Eugene game development kit 6.5.8.<br>
       2.2.6 – Source code synced with Eugene game development kit 6.5.9.<br>
       2.2.7 – Small changes.<br>
-      2.2.8 – Synchronization timer back-ported from Neon game development kit 6.0.2.<br>
+      2.2.8 – Synchronization timer back-ported from Neon game development kit
+      6.0.2.<br>
       2.2.9 – Source code synced with Eugene game development kit 6.6.1.<br>
       2.3 – 2.3.1 – Small changes.<br>
       2.3.2 – Synchronization timer totally rewritten.<br>
@@ -2035,6 +2035,7 @@ Multimedia API</a>. </big>
       2.4.2 – Source code synced with Eugene game development kit 6.7.9.<br>
       2.4.3 – Source code synced with Eugene game development kit 6.8.<br>
       2.4.4 – Source code synced with Eugene game development kit 6.8.2.<br>
+      2.4.5 – Source code synced with Eugene game development kit 6.8.3.<br>
     </big> <big> </big>
     <p></p>
   </body>
