@@ -626,9 +626,9 @@ typedef enum
    Gamepad();
    ~Gamepad();
    unsigned int get_amount();
-   unsigned int get_button_amount();
+   unsigned int get_button_amount() const;
    void update();
-   unsigned long int get_sticks_amount();
+   unsigned int get_sticks_amount() const;
    void set_active(const unsigned int gamepad);
    GRAYGDK::GAMEPAD_DPAD get_dpad() const;
    GRAYGDK::GAMEPAD_DIRECTION get_stick_x(const GRAYGDK::GAMEPAD_STICKS stick);

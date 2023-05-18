@@ -211,8 +211,13 @@
     <table border="1">
       <tbody>
         <tr>
-          <td><big>Operating system </big></td>
+          <td colspan="1" rowspan="2"><big>Operating system </big></td>
           <td><big>Windows 2000 or higher </big></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><big>Windows XP or higher for 64-bit
+              system<br>
+            </big></td>
         </tr>
         <tr>
           <td><big>Additional software </big></td>
@@ -324,6 +329,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       optimization.<br>
       <br>
       <span style="text-decoration: underline;"> Note for Visual C++ users</span><br
+
         style="text-decoration: underline;">
       <br>
       Disable pre–compiled headers before start compilation. Old Visual C++
@@ -392,7 +398,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         subsystem</span><br>
       <br>
       Base graphics subsystem do rendering game scene. This subsystem using <a
-
         href="http://opengl.org">OPENGL</a> for render. Most modern video–card
       support hardware accelerated OPENGL. Software emulated OPENGL will
       activate if </big><big>hardware acceleration not available.</big><br>
@@ -1814,8 +1819,12 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       – Return amount of connected game–pad.<br>
       <br>
       <span style="font-style: italic;"> unsigned int
-        Gamepad::get_button_amount();</span> – Return amount of the game–pad
-      buttons.<br>
+        Gamepad::get_button_amount() const;</span> – Return amount of the
+      game–pad buttons.<br>
+      <br>
+      <span style="font-style: italic;">unsigned int
+        Gamepad::get_sticks_amount() const;</span> – Return amount of the
+      game–pad sticks.<br>
       <br>
       <span style="font-style: italic;"> void Gamepad::update();</span> – Update
       internal game–pad state. Always call it before call another methods.<br>
@@ -2038,6 +2047,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       2.4.6 – Source code synced with Eugene game development kit 6.8.5.<br>
       2.4.7 – Source code synced with Eugene game development kit 6.8.6.<br>
       2.4.8 – Source code synced with Eugene game development kit 6.8.7.<br>
+      2.4.9 – Source code synced with Eugene game development kit 6.8.9.<br>
     </big> <big> </big>
     <p></p>
   </body>
