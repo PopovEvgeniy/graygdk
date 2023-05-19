@@ -1521,16 +1521,6 @@ namespace GRAYGDK
 
   }
 
-  bool Gamepad::read_configuration()
-  {
-   return joyGetDevCaps(static_cast<size_t>(active),&configuration,sizeof(JOYCAPS))==JOYERR_NOERROR;
-  }
-
-  bool Gamepad::read_state()
-  {
-   return joyGetPosEx(active,&current)==JOYERR_NOERROR;
-  }
-
   void Gamepad::clear_state()
   {
    current.dwButtonNumber=0;
@@ -1559,6 +1549,20 @@ namespace GRAYGDK
    return (preversion.dwButtons&button)!=0;
   }
 
+  void Gamepad::update()
+  {
+   preversion=current;
+   if (joyGetPosEx(active,&current)!=JOYERR_NOERROR)
+   {
+    this->clear_state();
+   }
+   if (joyGetDevCaps(static_cast<size_t>(active),&configuration,sizeof(JOYCAPS))!=JOYERR_NOERROR)
+   {
+    memset(&configuration,0,sizeof(JOYCAPS));
+   }
+
+  }
+
   unsigned int Gamepad::get_amount()
   {
    return joyGetNumDevs();
@@ -1569,29 +1573,9 @@ namespace GRAYGDK
    return configuration.wNumButtons;
   }
 
-  void Gamepad::update()
-  {
-   preversion=current;
-   if (this->read_state()==false)
-   {
-    this->clear_state();
-   }
-   if (this->read_configuration()==false)
-   {
-    memset(&configuration,0,sizeof(JOYCAPS));
-   }
-
-  }
-
   unsigned int Gamepad::get_sticks_amount() const
   {
-   unsigned int sticks_amount;
-   sticks_amount=0;
-   if (configuration.wNumAxes>1)
-   {
-    sticks_amount=configuration.wNumAxes/2;
-   }
-   return sticks_amount;
+   return (configuration.wNumAxes+1)/2;
   }
 
   void Gamepad::set_active(const unsigned int gamepad)
@@ -1641,7 +1625,7 @@ namespace GRAYGDK
    return dpad;
   }
 
-  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_stick_x(const GRAYGDK::GAMEPAD_STICKS stick)
+  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_stick_x(const GRAYGDK::GAMEPAD_STICKS stick) const
   {
    GRAYGDK::GAMEPAD_DIRECTION directional;
    directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
@@ -1680,7 +1664,7 @@ namespace GRAYGDK
    return directional;
   }
 
-  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_stick_y(const GRAYGDK::GAMEPAD_STICKS stick)
+  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_stick_y(const GRAYGDK::GAMEPAD_STICKS stick) const
   {
    GRAYGDK::GAMEPAD_DIRECTION directional;
    directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
@@ -1719,22 +1703,22 @@ namespace GRAYGDK
    return directional;
   }
 
-  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_left_stick_x()
+  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_left_stick_x() const
   {
    return this->get_stick_x(GRAYGDK::GAMEPAD_LEFT_STICK);
   }
 
-  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_left_stick_y()
+  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_left_stick_y() const
   {
    return this->get_stick_y(GRAYGDK::GAMEPAD_LEFT_STICK);
   }
 
-  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_right_stick_x()
+  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_right_stick_x() const
   {
    return this->get_stick_x(GRAYGDK::GAMEPAD_RIGHT_STICK);
   }
 
-  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_right_stick_y()
+  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_right_stick_y() const
   {
    return this->get_stick_y(GRAYGDK::GAMEPAD_RIGHT_STICK);
   }
