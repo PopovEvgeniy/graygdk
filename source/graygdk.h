@@ -859,12 +859,15 @@ typedef enum
    public:
    Sheet();
    ~Sheet();
+   Sheet* get_handle();
    unsigned int get_row(const unsigned int target) const;
    unsigned int get_column(const unsigned int target) const;
    unsigned int calculate(const unsigned int row,const unsigned int column) const;
    unsigned int get_rows() const;
    unsigned int get_columns() const;
    void destroy();
+   void clone(Sheet *target);
+   void clone(Sheet &target);
    void select(const unsigned int row,const unsigned int column);
    void select(const unsigned int target);
    void step();
