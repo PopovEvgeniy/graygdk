@@ -1271,6 +1271,19 @@ namespace GRAYGDK
 
   }
 
+  void Audio::play(const bool loop)
+  {
+   if (loop==true)
+   {
+    this->play_loop();
+   }
+   else
+   {
+    this->play();
+   }
+
+  }
+
   void Audio::load(const char *target)
   {
    Core::Unicode_Convertor convertor;
@@ -2726,6 +2739,15 @@ namespace GRAYGDK
    this->set_sprite_frame();
   }
 
+  void Sprite::destroy()
+  {
+   billboard.destroy_texture();
+   this->destroy_image();
+   this->reset_billboard_setting();
+   this->reset_animation_setting();
+   this->reset_sprite_setting();
+  }
+
   void Sprite::clone(Sprite *target)
   {
    if (target!=NULL)
@@ -2749,15 +2771,6 @@ namespace GRAYGDK
   void Sprite::clone(Sprite &target)
   {
    this->clone(target.get_handle());
-  }
-
-  void Sprite::destroy()
-  {
-   billboard.destroy_texture();
-   this->destroy_image();
-   this->reset_billboard_setting();
-   this->reset_animation_setting();
-   this->reset_sprite_setting();
   }
 
   Sheet::Sheet()

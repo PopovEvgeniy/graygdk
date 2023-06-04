@@ -551,6 +551,7 @@ typedef enum
    void stop();
    void play();
    void play_loop();
+   void play(const bool loop);
    void load(const char *target);
    void initialize(const char *target);
   };
@@ -844,9 +845,9 @@ typedef enum
    void load(const char *name);
    void set_target(const unsigned int target);
    void step();
+   void destroy();
    void clone(Sprite *target);
    void clone(Sprite &target);
-   void destroy();
   };
 
   class Sheet:public Billboard,public Picture,public Animation
