@@ -633,7 +633,6 @@ typedef enum
    void update();
    unsigned int get_amount();
    unsigned int get_button_amount() const;
-   unsigned int get_sticks_amount() const;
    void set_active(const unsigned int gamepad);
    GRAYGDK::GAMEPAD_DPAD get_dpad() const;
    GRAYGDK::GAMEPAD_DIRECTION get_stick_x(const GRAYGDK::GAMEPAD_STICKS stick) const;
@@ -642,6 +641,8 @@ typedef enum
    GRAYGDK::GAMEPAD_DIRECTION get_left_stick_y() const;
    GRAYGDK::GAMEPAD_DIRECTION get_right_stick_x() const;
    GRAYGDK::GAMEPAD_DIRECTION get_right_stick_y() const;
+   bool check_left_trigger() const;
+   bool check_right_trigger() const;
    bool check_hold(const GRAYGDK::GAMEPAD_BUTTONS button) const;
    bool check_press(const GRAYGDK::GAMEPAD_BUTTONS button) const;
    bool check_release(const GRAYGDK::GAMEPAD_BUTTONS button) const;

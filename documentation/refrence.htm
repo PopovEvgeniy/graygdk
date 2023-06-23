@@ -1833,6 +1833,12 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         Gamepad::get_dpad() const;</span> – Return code of current pressed or
       holding D–pad button.<br>
       <br>
+      <span style="font-style: italic;">bool Gamepad::check_left_trigger()
+        const;</span> – Return true if the left trigger is press or holding.<br>
+      <br>
+      <span style="font-style: italic;">bool Gamepad::check_right_trigger()
+        const;</span> – Return true if the right trigger is press or holding.<br>
+      <br>
       <span style="font-style: italic;"> bool Gamepad::check_hold(const
         GRAYGDK::GAMEPAD_BUTTONS button) const;</span> – Return true if the
       button is press or holding.<br>
@@ -1844,11 +1850,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="font-style: italic;"> bool Gamepad::check_released(const
         GRAYGDK::GAMEPAD_BUTTONS button) const;</span> – Return true if the
       button was release.<br>
-      <br>
-      <span style="font-style: italic;"> unsigned long int
-        Gamepad::get_sticks_amount();</span> – Return amount of the game–pad
-      sticks.<br>
-      <br>
+      <span style="font-style: italic;"></span><br>
       <span style="font-style: italic;"> GRAYGDK::GAMEPAD_DIRECTION
         Gamepad::get_stick_x(const GRAYGDK::GAMEPAD_STICKS stick) const;</span>
       – Return x–direction of specific stick.<br>
@@ -2061,6 +2063,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       2.6.2 – Source code synced with Neon game development kit 6.3.6.<br>
       2.6.3 – Source code synced with Eugene game development kit 7.0.1.<br>
       2.6.4 – Source code synced with Eugene game development kit 7.0.2.<br>
+      2.6.5 – Source code synced with Eugene game development kit 7.0.5.<br>
     </big> <big> </big>
     <p></p>
   </body>
