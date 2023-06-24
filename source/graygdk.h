@@ -645,8 +645,6 @@ typedef enum
    GRAYGDK::GAMEPAD_DIRECTION get_left_stick_y();
    GRAYGDK::GAMEPAD_DIRECTION get_right_stick_x();
    GRAYGDK::GAMEPAD_DIRECTION get_right_stick_y();
-   bool check_left_trigger() const;
-   bool check_right_trigger() const;
    bool check_hold(const GRAYGDK::GAMEPAD_BUTTONS button) const;
    bool check_press(const GRAYGDK::GAMEPAD_BUTTONS button) const;
    bool check_release(const GRAYGDK::GAMEPAD_BUTTONS button) const;
