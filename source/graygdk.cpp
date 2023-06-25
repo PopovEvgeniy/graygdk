@@ -1642,6 +1642,47 @@ namespace GRAYGDK
    return (preversion.dwButtons&button)!=0;
   }
 
+  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_right_stick_horizontal_directional() const
+  {
+   GRAYGDK::GAMEPAD_DIRECTION directional;
+   directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
+   switch (configuration.wMid)
+   {
+    case 2064: // Playstation 2 gamepad
+    directional=Core::get_horizontal_direction(current.dwZpos,configuration.wZmax,configuration.wZmin);
+    break;
+    case 1356: // Others Playstation gamepad
+    directional=Core::get_horizontal_direction(current.dwZpos,configuration.wZmax,configuration.wZmin);
+    break;
+    default: // Other gamepad;
+    directional=Core::get_horizontal_direction(current.dwUpos,configuration.wUmax,configuration.wUmin);
+    break;
+   }
+   return directional;
+  }
+
+  GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_right_stick_vertical_directional() const
+  {
+   GRAYGDK::GAMEPAD_DIRECTION directional;
+   directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
+   switch (configuration.wMid)
+   {
+    case 1118: // Xbox gamepad
+    directional=Core::get_vertical_direction(current.dwRpos,configuration.wRmax,configuration.wRmin);
+    break;
+    case 2064: // Playstation 2 gamepad
+    directional=Core::get_vertical_direction(current.dwRpos,configuration.wRmax,configuration.wRmin);
+    break;
+    case 1356: // Others Playstation gamepad
+    directional=Core::get_vertical_direction(current.dwRpos,configuration.wRmax,configuration.wRmin);
+    break;
+    default: // Other gamepad;
+    directional=Core::get_vertical_direction(current.dwVpos,configuration.wVmax,configuration.wVmin);
+    break;
+   }
+   return directional;
+  }
+
   void Gamepad::update()
   {
    preversion=current;
@@ -1738,7 +1779,7 @@ namespace GRAYGDK
    {
     if (this->get_stick_amount()>1)
     {
-     directional=Core::get_horizontal_direction(current.dwUpos,configuration.wUmax,configuration.wUmin);
+     directional=this->get_right_stick_horizontal_directional();
     }
 
    }
@@ -1761,7 +1802,7 @@ namespace GRAYGDK
    {
     if (this->get_stick_amount()>1)
     {
-     directional=Core::get_vertical_direction(current.dwRpos,configuration.wRmax,configuration.wRmin);
+     directional=this->get_right_stick_vertical_directional();
     }
 
    }
