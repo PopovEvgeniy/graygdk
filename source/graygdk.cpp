@@ -1646,17 +1646,13 @@ namespace GRAYGDK
   {
    GRAYGDK::GAMEPAD_DIRECTION directional;
    directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
-   switch (configuration.wMid)
+   if (configuration.wMid==1356)
    {
-    case 2064: // Playstation 2 gamepad
-    directional=Core::get_horizontal_direction(current.dwZpos,configuration.wZmax,configuration.wZmin);
-    break;
-    case 1356: // Others Playstation gamepad
-    directional=Core::get_horizontal_direction(current.dwZpos,configuration.wZmax,configuration.wZmin);
-    break;
-    default: // Other gamepad;
-    directional=Core::get_horizontal_direction(current.dwUpos,configuration.wUmax,configuration.wUmin);
-    break;
+    directional=Core::get_horizontal_direction(current.dwZpos,configuration.wZmax,configuration.wZmin); // Playstation gamepad
+   }
+   else
+   {
+    directional=Core::get_horizontal_direction(current.dwUpos,configuration.wUmax,configuration.wUmin); // Other gamepad;
    }
    return directional;
   }
@@ -1665,20 +1661,13 @@ namespace GRAYGDK
   {
    GRAYGDK::GAMEPAD_DIRECTION directional;
    directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
-   switch (configuration.wMid)
+   if (configuration.wNumAxes==4)
    {
-    case 1118: // Xbox gamepad
-    directional=Core::get_vertical_direction(current.dwRpos,configuration.wRmax,configuration.wRmin);
-    break;
-    case 2064: // Playstation 2 gamepad
-    directional=Core::get_vertical_direction(current.dwRpos,configuration.wRmax,configuration.wRmin);
-    break;
-    case 1356: // Others Playstation gamepad
-    directional=Core::get_vertical_direction(current.dwRpos,configuration.wRmax,configuration.wRmin);
-    break;
-    default: // Other gamepad;
-    directional=Core::get_vertical_direction(current.dwVpos,configuration.wVmax,configuration.wVmin);
-    break;
+    directional=Core::get_vertical_direction(current.dwVpos,configuration.wVmax,configuration.wVmin); // Old gamepad
+   }
+   else
+   {
+    directional=Core::get_vertical_direction(current.dwRpos,configuration.wRmax,configuration.wRmin); // Modern gamepad
    }
    return directional;
   }
