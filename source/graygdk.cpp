@@ -1646,13 +1646,21 @@ namespace GRAYGDK
   {
    GRAYGDK::GAMEPAD_DIRECTION directional;
    directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
-   if ((configuration.wMid==1356)||(configuration.wMid==2064))
+   if (configuration.wNumAxes==4)
    {
-    directional=Core::get_horizontal_direction(current.dwZpos,configuration.wZmax,configuration.wZmin); // Playstation gamepad
+    directional=Core::get_horizontal_direction(current.dwRpos,configuration.wRmax,configuration.wRmin); // Old gamepad
    }
    else
    {
-    directional=Core::get_horizontal_direction(current.dwUpos,configuration.wUmax,configuration.wUmin); // Other gamepad;
+    if (configuration.wMid==1118)
+    {
+     directional=Core::get_horizontal_direction(current.dwUpos,configuration.wUmax,configuration.wUmin); // Xbox gamepad;
+    }
+    else
+    {
+     directional=Core::get_horizontal_direction(current.dwZpos,configuration.wZmax,configuration.wZmin); // Other modern gamepad
+    }
+
    }
    return directional;
   }
@@ -1663,7 +1671,7 @@ namespace GRAYGDK
    directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
    if (configuration.wNumAxes==4)
    {
-    directional=Core::get_vertical_direction(current.dwVpos,configuration.wVmax,configuration.wVmin); // Old gamepad
+    directional=Core::get_vertical_direction(current.dwUpos,configuration.wUmax,configuration.wUmin); // Old gamepad
    }
    else
    {
