@@ -608,8 +608,6 @@ namespace GRAYGDK
    image.set_length(0);
    source_width=0;
    source_height=0;
-   x_ratio=0;
-   y_ratio=0;
    target_width=1;
    target_height=1;
   }
@@ -630,7 +628,7 @@ namespace GRAYGDK
    source_x=0;
    if (target_x>0)
    {
-    source_x=(target_x*x_ratio)/USHRT_MAX;
+    source_x=(target_x*source_width)/target_width;
    }
    return source_x;
   }
@@ -641,7 +639,7 @@ namespace GRAYGDK
    source_y=0;
    if (target_y>0)
    {
-    source_y=(target_y*y_ratio)/USHRT_MAX;
+    source_y=(target_y*source_height)/target_height;
    }
    return source_y;
   }
@@ -709,12 +707,6 @@ namespace GRAYGDK
 
   }
 
-  void Resizer::calculate_scale_ratio()
-  {
-   x_ratio=(source_width*USHRT_MAX)/target_width+1;
-   y_ratio=(source_height*USHRT_MAX)/target_height+1;
-  }
-
   void Resizer::calculate_size()
   {
    while (target_width<source_width)
@@ -741,7 +733,6 @@ namespace GRAYGDK
    this->set_setting(width,height);
    this->calculate_size();
    this->correct_size(limit);
-   this->calculate_scale_ratio();
    this->create_texture();
    this->resize_image(target);
   }
