@@ -643,12 +643,13 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="text-decoration: underline;"> Background texture</span><br>
       <br>
       Background don't draw if background texture is don't exist. Background
-      texture will automatically create after call load_background method.<br>
+      texture will automatically create after call <span style="font-style: italic;">load_background</span>
+      method.<br>
       <br>
       <span style="text-decoration: underline;"> Important notice</span><br>
       <br>
       Always call <span style="font-style: italic;">prepare</span> method after
-      set background setting or load background.<br>
+      load background.<br>
     </big>
     <h2><a name="mozTocId309905" class="mozTocH2"></a><big>Chapter 7. Base
         sprite subsystem</big></h2>
@@ -656,7 +657,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         thing</span><br>
       <br>
       A sprite is a transparent image. It is useful for many things: enemies,
-      bonuses, etc&amp;<br>
+      bonuses, etc.<br>
     </big><big><span style="text-decoration: underline;"></span><br>
       <span style="text-decoration: underline;"> Work with base sprite subsystem</span><br>
       <br>
@@ -1823,9 +1824,8 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         Gamepad::get_button_amount() const;</span> – Return amount of the
       game–pad buttons.<br>
       <br>
-      <span style="font-style: italic;">unsigned int
-        Gamepad::get_stick_amount() const;</span> – Return amount of the game–pad
-      sticks.<br>
+      <span style="font-style: italic;">unsigned int Gamepad::get_stick_amount()
+        const;</span> – Return amount of the game–pad sticks.<br>
       <span style="font-style: italic;"></span><br>
       <span style="font-style: italic;"> void Gamepad::update();</span> – Update
       internal game–pad state. Always call it before call another methods.<br>
@@ -1850,18 +1850,20 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       button was release.<br>
       <span style="font-style: italic;"></span><br>
       <span style="font-style: italic;"> GRAYGDK::GAMEPAD_DIRECTION
-        Gamepad::get_stick_x(const GRAYGDK::GAMEPAD_STICKS stick) const;</span> –
-      Return x–direction of specific stick.<br>
+        Gamepad::get_stick_x(const GRAYGDK::GAMEPAD_STICKS stick) const;</span>
+      – Return x–direction of specific stick.<br>
       <br>
       <span style="font-style: italic;"> GRAYGDK::GAMEPAD_DIRECTION
-        Gamepad::get_stick_y(const GRAYGDK::GAMEPAD_STICKS stick) const;</span> –
-      Return y–direction of specific stick.<br>
+        Gamepad::get_stick_y(const GRAYGDK::GAMEPAD_STICKS stick) const;</span>
+      – Return y–direction of specific stick.<br>
       <br>
       <span style="font-style: italic;"> GRAYGDK::GAMEPAD_DIRECTION
-        Gamepad::get_left_stick_x() const;</span> – Return x–direction of left stick.<br>
+        Gamepad::get_left_stick_x() const;</span> – Return x–direction of left
+      stick.<br>
       <br>
       <span style="font-style: italic;"> GRAYGDK::GAMEPAD_DIRECTION
-        Gamepad::get_left_stick_y() const;</span> – Return y–direction of left stick.<br>
+        Gamepad::get_left_stick_y() const;</span> – Return y–direction of left
+      stick.<br>
       <br>
       <span style="font-style: italic;"> GRAYGDK::GAMEPAD_DIRECTION
         Gamepad::get_right_stick_x() const;</span> – Return x–direction of right
@@ -2086,6 +2088,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       2.8.8 – Source code synced with Eugene game development kit 7.3.3.<br>
       2.8.9 – Source code synced with Eugene game development kit 7.3.4.<br>
       2.9 – Source code synced with Eugene game development kit 7.3.5.<br>
+      2.9.1 – Source code synced with Simple windows game framework 7.3.5.<br>
     </big> <big> </big>
     <p></p>
   </body>
