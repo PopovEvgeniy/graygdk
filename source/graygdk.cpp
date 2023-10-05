@@ -622,7 +622,7 @@ namespace GRAYGDK
    return static_cast<size_t>(x)+static_cast<size_t>(y)*static_cast<size_t>(source_width);
   }
 
-  void Resizer::resize_image(const unsigned int *target)
+  void Resizer::scale_image(const unsigned int *target)
   {
    size_t index;
    unsigned int x,y;
@@ -635,6 +635,30 @@ namespace GRAYGDK
      ++index;
     }
 
+   }
+
+  }
+
+  void Resizer::load_image(const unsigned int *target)
+  {
+   size_t index;
+   image[0]=target[0];
+   for (index=image.get_length()-1;index>0;--index)
+   {
+    image[index]=target[index];
+   }
+
+  }
+
+  void Resizer::resize_image(const unsigned int *target)
+  {
+   if ((source_width==target_width) && (source_height==target_height))
+   {
+    this->load_image(target);
+   }
+   else
+   {
+    this->scale_image(target);
    }
 
   }
@@ -886,7 +910,7 @@ namespace GRAYGDK
    glBindTexture(GL_TEXTURE_2D,texture);
    glTexEnvi(GL_TEXTURE_ENV,GL_TEXTURE_ENV_MODE,GL_REPLACE);
    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-   glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
+   glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_NEAREST);
    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP);
    glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP);
    glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,resizer.get_width(),resizer.get_height(),0,GL_BGRA_EXT,GL_UNSIGNED_BYTE,resizer.get_buffer());
