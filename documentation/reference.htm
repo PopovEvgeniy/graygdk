@@ -330,7 +330,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       optimization.<br>
       <br>
       <span style="text-decoration: underline;"> Note for Visual C++ users</span><br
-
         style="text-decoration: underline;">
       <br>
       Disable pre–compiled headers before start compilation. Old Visual C++
@@ -399,6 +398,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         subsystem</span><br>
       <br>
       Base graphics subsystem do rendering game scene. This subsystem using <a
+
         href="http://opengl.org">OPENGL</a> for render. Most modern video–card
       support hardware accelerated OPENGL. Software emulated OPENGL will
       activate if </big><big>hardware acceleration not available.</big><br>
@@ -1116,6 +1116,12 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="font-style: italic;"> void Coordinates::initialize(const int
         viewport_width,const int viewport_height);</span> – Initialize the
       subsystem.<br>
+      <br style="font-style: italic;">
+      <span style="font-style: italic;">int Coordinates::get_viewport_width()
+        const;</span> – Return view-port width in pixels.<br>
+      <br>
+      <span style="font-style: italic;">int Coordinates::get_viewport_height()
+        const;</span> – Return view-port height in pixels.<br>
       <br>
       <span style="font-style: italic;">int
         Coordinates::get_lowest_cartesian_x() const;</span> – Return lowest
@@ -1203,7 +1209,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       &nbsp; <span style="font-style: italic;"> unsigned int y;</span><br style="font-style: italic;">
       &nbsp; <span style="font-style: italic;"> unsigned int width;</span><br style="font-style: italic;">
       &nbsp; <span style="font-style: italic;"> unsigned int height;</span><br
-
         style="font-style: italic;">
       <span style="font-style: italic;"> } BOX;</span><br>
       <br>
@@ -2242,6 +2247,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       2.9.8 – Source code synced with Eugene game development kit 7.5.8.<br>
       2.9.9 – Source code synced with Eugene game development kit 7.6.3.<br>
       3.0 – Source code synced with Eugene game development kit 7.6.4.<br>
+      3.0.1 – Source code synced with Eugene game development kit 7.6.5.<br>
     </big> <big> </big>
     <p></p>
   </body>

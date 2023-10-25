@@ -3372,6 +3372,16 @@ namespace GRAYGDK
 
   }
 
+  int Coordinates::get_viewport_width() const
+  {
+   return 2*half_viewport_width;
+  }
+
+  int Coordinates::get_viewport_height() const
+  {
+   return 2*half_viewport_height;
+  }
+
   int Coordinates::get_lowest_cartesian_x() const
   {
    return -1*half_viewport_width;
