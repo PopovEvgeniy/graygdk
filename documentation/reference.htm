@@ -398,7 +398,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         subsystem</span><br>
       <br>
       Base graphics subsystem do rendering game scene. This subsystem using <a
-
         href="http://opengl.org">OPENGL</a> for render. Most modern video–card
       support hardware accelerated OPENGL. Software emulated OPENGL will
       activate if </big><big>hardware acceleration not available.</big><br>
@@ -460,6 +459,12 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <br>
       <span style="font-style: italic;"> unsigned int Screen::get_height()
         const;</span> – Return screen height in pixels.<br>
+      <br style="font-style: italic;">
+      <span style="font-style: italic;">bool Screen::check_x(const unsigned int
+        x) const;</span> – Return true if x-coordinate is valid.<br>
+      <br>
+      <span style="font-style: italic;">bool Screen::check_y(const unsigned int
+        y) const;</span> – Return true if y-coordinate is valid.<br>
       <br>
       <span style="font-style: italic;"> Screen* Screen::get_handle();</span> –
       Return the handle to base graphics subsystem object. </big>
@@ -2248,7 +2253,8 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       2.9.9 – Source code synced with Eugene game development kit 7.6.3.<br>
       3.0 – Source code synced with Eugene game development kit 7.6.4.<br>
       3.0.1 – Source code synced with Eugene game development kit 7.6.5.<br>
-    </big> <big> </big>
+      3.0.2 – Source code synced with Eugene game development kit 7.6.6.<br>
+    <big> </big>
     <p></p>
   </body>
 </html>
