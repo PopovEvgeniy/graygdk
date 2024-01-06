@@ -2521,6 +2521,8 @@ namespace GRAYGDK
    transparent=true;
    current_x=0;
    current_y=0;
+   start_x=0;
+   start_y=0;
    sprite_width=0;
    sprite_height=0;
    mirror=Core::MIRROR_NONE;
@@ -2556,6 +2558,8 @@ namespace GRAYGDK
    transparent=true;
    current_x=0;
    current_y=0;
+   start_x=0;
+   start_y=0;
    sprite_width=0;
    sprite_height=0;
    mirror=Core::MIRROR_NONE;
@@ -2607,6 +2611,16 @@ namespace GRAYGDK
   {
    this->set_width(width);
    this->set_height(height);
+  }
+
+  void Billboard::set_start(const unsigned int x,const unsigned int y)
+  {
+   if (billboard.is_texture_exist()==true)
+   {
+    start_x=x;
+    start_y=y;
+   }
+
   }
 
   void Billboard::set_position(const unsigned int x,const unsigned int y)
@@ -2757,6 +2771,12 @@ namespace GRAYGDK
   void Billboard::complex_mirror()
   {
    mirror=Core::MIRROR_BOTH;
+  }
+
+  void Billboard::go_start()
+  {
+   current_x=start_x;
+   current_y=start_y;
   }
 
   void Billboard::draw()
