@@ -4,7 +4,7 @@ int main()
 {
  int x,y,row,column;
  GRAYGDK::Graphics::Screen screen;
- GRAYGDK::Graphics::Background sky;
+ GRAYGDK::Graphics::Scene sky;
  GRAYGDK::Graphics::Sprite ground;
  GRAYGDK::Graphics::Text text;
  GRAYGDK::Transformation::Coordinates cartesian;

@@ -9,7 +9,7 @@ int main()
  GRAYGDK::Input::Mouse mouse;
  GRAYGDK::Misc::Audio media;
  GRAYGDK::Graphics::Screen screen;
- GRAYGDK::Graphics::Background space;
+ GRAYGDK::Graphics::Scene space;
  GRAYGDK::Graphics::Sprite ship;
  GRAYGDK::Graphics::Text text;
  GRAYGDK::Tools::enable_logging("log.txt");
