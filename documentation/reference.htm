@@ -1128,6 +1128,9 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="font-style: italic;"> Text</span> class provide a simple
       interface to text subsystem. Let's look at public methods.<br>
       <br>
+      <span style="font-style: italic;">Text* Text::get_handle();</span> –
+      Return the handle to text drawing subsystem.<br>
+      <br>
       <span style="font-style: italic;"> GRAYGDK::TEXT_ORIENTATION
         Text::get_orientation() const;</span> – Get current text orientation.<br>
       <br>
@@ -1270,6 +1273,9 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       Just use <span style="font-style: italic;">Coordinates</span> class for
       doing it. Let's look at public methods.<br>
       <br>
+      <span style="font-style: italic;">Coordinates* Coordinates::get_handle();</span>
+      – Return the handle to coordinates conversion subsystem.<br>
+      <br>
       <span style="font-style: italic;"> void Coordinates::initialize(const int
         viewport_width,const int viewport_height);</span> – Initialize the
       subsystem.<br>
@@ -1337,6 +1343,9 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       Just use <span style="font-style: italic;">Isometric</span> class for
       doing it. Let's look at public methods.<br>
       <br>
+      <span style="font-style: italic;">Isometric* Isometric::get_handle();</span>
+      – Return the handle to isometric subsystem.<br>
+      <br>
     </big><big><span style="font-style: italic;">void
         Isometric::set_target(const int x,const int y);</span> – Set target
       point.<br>
@@ -1380,6 +1389,9 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       subsystem intend for help you to create an isometric levels. Just use <span
         style="font-style: italic;">World</span> class for doing it. Let's look
       at public methods.<br>
+      <br>
+      <span style="font-style: italic;">World* World::get_handle();</span> –
+      Return the handle to isometric level subsystem.<br>
       <br>
       <span style="font-style: italic;">void World::initialize(const int
         tile_width,const int tile_height,const int screen_width,const int
@@ -1432,6 +1444,9 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
     <big> Timer is a very useful thing. Just use <span style="font-style: italic;">Timer</span>
       class to work with the timer. Let's look at public methods.<br>
       <br>
+      <span style="font-style: italic;">Timer* Timer::get_handle();</span> –
+      Return the handle to the timer.<br>
+      <br>
       <span style="font-style: italic;"> void Timer::set_timer(const double
         seconds); </span>– Set timer interval and initialize start point.<br>
       <br>
@@ -1467,6 +1482,9 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="font-style: italic;"> Collision</span> class provide easy
       access to collision detector. It is a simple class with few methods. Let's
       look at public methods.<br>
+      <br>
+      <span style="font-style: italic;">Collision* Collision::get_handle();</span>
+      – Return the handle to the collision detector.<br>
     </big><br>
     <big><span style="font-style: italic;">void Collision::set_target(const
         GRAYGDK::BOX &amp;first_target,const GRAYGDK::BOX &amp;second_target);</span>
@@ -1496,6 +1514,9 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="font-style: italic;">Tilemap</span> class provide easy access
       to the tile–map. It is a simple class with few methods. Let's look at
       public methods.<br>
+      <br>
+      <span style="font-style: italic;">Tilemap* Tilemap::get_handle();</span> –
+      Return the handle to tile-map subsystem.<br>
       <br>
       <span style="font-style: italic;">void Tilemap::initialize(const unsigned
         int tile_width,const unsigned int tile_height);</span> – Initialize the
@@ -2520,7 +2541,9 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       3.2.1 – Source code synced with Eugene game development kit 7.9.2.<br>
       3.2.2 – Source code synced with Eugene game development kit 7.9.3.<br>
       3.2.3 – Source code synced with Eugene game development kit 7.9.4.<br>
+      3.2.4 – Source code synced with Eugene game development kit 7.9.5.<br>
+    </big>
     <p></p>
-    <big> <big> <big> <big> </big> </big> </big> </big>
+    <big> <big> <big> <big> <big> </big> </big> </big> </big> </big>
   </body>
 </html>
