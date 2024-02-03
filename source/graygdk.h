@@ -1,5 +1,5 @@
 /*
-Eugene game development kit made by Popov Evgeniy Alekseyevich
+Gray game development kit made by Popov Evgeniy Alekseyevich
 Some code taken from wglext.h(https://www.khronos.org/registry/OpenGL/api/GL/wglext.h) by The Khronos Group Inc
 
 Gray game development kit license
