@@ -111,6 +111,9 @@ namespace GRAYGDK
     case WM_DESTROY:
     PostQuitMessage(0);
     break;
+    case WM_ACTIVATE:
+    if (LOWORD(lParam)!=WA_INACTIVE) SetFocus(window);
+    break;
     case WM_LBUTTONDOWN:
     Buttons[GRAYGDK::MOUSE_LEFT]=KEY_PRESS;
     break;
@@ -370,6 +373,7 @@ namespace GRAYGDK
    {
     GRAYGDK::Halt("Can't create window");
    }
+   UpdateWindow(window);
    SetFocus(window);
   }
 
