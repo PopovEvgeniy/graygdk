@@ -5,7 +5,7 @@ int main()
  int x,y,row,column;
  GRAYGDK::Graphics::Screen screen;
  GRAYGDK::Graphics::Scene sky;
- GRAYGDK::Graphics::Sprite ground;
+ GRAYGDK::Graphics::Cartoon ground;
  GRAYGDK::Graphics::Text text;
  GRAYGDK::Transformation::Coordinates cartesian;
  GRAYGDK::Transformation::World level;
