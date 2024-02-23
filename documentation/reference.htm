@@ -336,6 +336,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       optimization.<br>
       <br>
       <span style="text-decoration: underline;"> Note for Visual C++ users</span><br
+
         style="text-decoration: underline;">
       <br>
       Disable pre–compiled headers before start compilation. Old Visual C++
@@ -640,6 +641,10 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <br>
       <span style="font-style: italic;">bool Background::is_last_frame() const;</span>
       – Return true if current frame is last frame.<br>
+      <br>
+      <span style="font-style: italic;">bool Background::check_frame(const
+        unsigned int target) const;</span> – Return true if target frame is
+      valid.<br>
       <br>
       <span style="font-style: italic;"> unsigned int Background::get_frame()
         const;</span> – Return current frame.<br>
@@ -1370,7 +1375,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       </big></h2>
     <big><span style="text-decoration: underline;"></span> Isometric level
       subsystem intend for help you to create an isometric levels. Just use <span
-
         style="font-style: italic;">World</span> class for doing it. Let's look
       at public methods.<br>
       <br>
@@ -1382,20 +1386,24 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         screen_height);</span> – Initialize the subsystem.<br>
       <br>
       <span style="font-style: italic;">int World::get_target_x(const int row,</span></big><big
+
       style="font-style: italic;">const int column</big><big><span style="font-style: italic;">)
         const;</span> – Get target cartesian x-coordinate from the row and
       column.<br>
       <br>
       <span style="font-style: italic;">int World::get_target_y(const int row</span></big><big
+
       style="font-style: italic;">,</big><big style="font-style: italic;">const
       int column</big><big><span style="font-style: italic;">) const;</span> –
       Get target cartesian y-coordinate </big><big>from the row and column.<br>
       <br>
     </big><big><span style="font-style: italic;">int World::get_row(const int x,</span></big><big
+
       style="font-style: italic;">const int y</big><big><span style="font-style: italic;">)
         const;</span> – Get the row from target point.<br>
       <br>
       <span style="font-style: italic;">int World::get_column(const int y</span></big><big
+
       style="font-style: italic;">,</big><big style="font-style: italic;">const
       int y</big><big><span style="font-style: italic;">) const;</span> – Get
       the column</big><big> from target point.<br>
@@ -2556,6 +2564,8 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       3.4.6 – Source code synced with Eugene game development kit 8.3.<br>
       3.4.7 – Source code synced with Eugene game development kit 8.3.1.<br>
       3.4.8 – Source code synced with Eugene game development kit 8.3.2.<br>
-    </big><big> 3.4.9 – Source code synced with Eugene game development kit 8.3.3.</big><br>
+    </big><big> 3.4.9 – Source code synced with Eugene game development kit 8.3.3.<br>
+      3.5 – Source code synced with Eugene game development kit 8.3.4.<br>
+    </big>
   </body>
 </html>
