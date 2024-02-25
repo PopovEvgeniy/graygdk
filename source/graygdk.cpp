@@ -373,7 +373,7 @@ namespace GRAYGDK
    {
     GRAYGDK::Halt("Can't create window");
    }
-
+   UpdateWindow(window);
   }
 
   HDC Engine::get_context()
