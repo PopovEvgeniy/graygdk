@@ -463,14 +463,11 @@ namespace GRAYGDK
    return (setting.dwFlags&flag)!=0;
   }
 
-  int WINGL::get_pixel_format(HDC target)
+  void WINGL::set_pixel_format(HDC target)
   {
+   int format;
    device=target;
-   return ChoosePixelFormat(device,&setting);
-  }
-
-  void WINGL::set_pixel_format(const int format)
-  {
+   format=ChoosePixelFormat(device,&setting);
    if (format==0)
    {
     GRAYGDK::Halt("Invalid pixel format");
@@ -505,9 +502,13 @@ namespace GRAYGDK
 
   void WINGL::set_render(HDC target)
   {
-   this->set_pixel_format(this->get_pixel_format(target));
-   this->create_render_context();
-   this->disable_vsync();
+   if (target!=NULL)
+   {
+    this->set_pixel_format(target);
+    this->create_render_context();
+    this->disable_vsync();
+   }
+
   }
 
   void WINGL::Swap()
