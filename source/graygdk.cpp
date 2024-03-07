@@ -458,11 +458,6 @@ namespace GRAYGDK
 
   }
 
-  bool WINGL::check_flag(const unsigned long int flag) const
-  {
-   return (setting.dwFlags&flag)!=0;
-  }
-
   void WINGL::set_pixel_format(HDC target)
   {
    int format;
@@ -522,7 +517,7 @@ namespace GRAYGDK
 
   bool WINGL::is_software_render() const
   {
-   return (this->check_flag(PFD_GENERIC_FORMAT)==true) && (this->check_flag(PFD_GENERIC_ACCELERATED)==false);
+   return ((setting.dwFlags&PFD_GENERIC_FORMAT)!=0) && ((setting.dwFlags&PFD_GENERIC_ACCELERATED)==0);
   }
 
  }
