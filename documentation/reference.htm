@@ -336,7 +336,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       optimization.<br>
       <br>
       <span style="text-decoration: underline;"> Note for Visual C++ users</span><br
-
         style="text-decoration: underline;">
       <br>
       Disable pre–compiled headers before start compilation. Old Visual C++
@@ -446,6 +445,10 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       current back–buffer content on screen. Return false if a game is
       terminated. This method ignoring fps limit and need high processor usage.<br>
       <br>
+    </big><big><span style="font-style: italic;">bool Screen::sync(const bool
+        limit);</span> – Show current back–buffer content on screen. Return
+      false if a game is terminated.</big><br>
+    <big> <br>
       <span style="font-style: italic;"> bool Screen::is_ready();</span> –
       Return true if the subsystem is already initialized.<br>
       <br>
@@ -1386,24 +1389,20 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         screen_height);</span> – Initialize the subsystem.<br>
       <br>
       <span style="font-style: italic;">int World::get_target_x(const int row,</span></big><big
-
       style="font-style: italic;">const int column</big><big><span style="font-style: italic;">)
         const;</span> – Get target cartesian x-coordinate from the row and
       column.<br>
       <br>
       <span style="font-style: italic;">int World::get_target_y(const int row</span></big><big
-
       style="font-style: italic;">,</big><big style="font-style: italic;">const
       int column</big><big><span style="font-style: italic;">) const;</span> –
       Get target cartesian y-coordinate </big><big>from the row and column.<br>
       <br>
     </big><big><span style="font-style: italic;">int World::get_row(const int x,</span></big><big
-
       style="font-style: italic;">const int y</big><big><span style="font-style: italic;">)
         const;</span> – Get the row from target point.<br>
       <br>
       <span style="font-style: italic;">int World::get_column(const int y</span></big><big
-
       style="font-style: italic;">,</big><big style="font-style: italic;">const
       int y</big><big><span style="font-style: italic;">) const;</span> – Get
       the column</big><big> from target point.<br>
@@ -2572,6 +2571,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       3.5.4 – Source code synced with Neon game development kit 7.3.2.<br>
       3.5.5 – Source code synced with Neon game development kit 7.3.3.<br>
       3.5.6 – Source code synced with Eugene game development kit 8.4.1.<br>
+      3.5.7 – Source code synced with Eugene game development kit 8.4.2.<br>
     </big>
   </body>
 </html>
