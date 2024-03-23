@@ -997,14 +997,10 @@ namespace GRAYGDK
 
   }
 
-  void Rectangle::load_data()
+  void Rectangle::draw_rectangle()
   {
    glVertexPointer(2,GL_INT,0,vertex);
    glTexCoordPointer(2,GL_FLOAT,0,point);
-  }
-
-  void Rectangle::draw_rectangle()
-  {
    glBindTexture(GL_TEXTURE_2D,texture);
    glDrawArrays(GL_TRIANGLE_FAN,0,RECTANGLE_VERTEXES);
   }
@@ -1056,7 +1052,6 @@ namespace GRAYGDK
    if (texture!=0)
    {
     this->set_data(kind);
-    this->load_data();
     this->draw_rectangle();
    }
 
