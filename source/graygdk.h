@@ -1133,9 +1133,9 @@ typedef enum
    Collision();
    ~Collision();
    Collision* get_handle();
-   void set_target(const GRAYGDK::BOX &first_target,const GRAYGDK::BOX &second_target);
+   void set_target(const GRAYGDK::BOX first_target,const GRAYGDK::BOX second_target);
    bool check_collision() const;
-   bool check_collision(const GRAYGDK::BOX &first_target,const GRAYGDK::BOX &second_target);
+   bool check_collision(const GRAYGDK::BOX first_target,const GRAYGDK::BOX second_target);
   };
 
   class Tilemap

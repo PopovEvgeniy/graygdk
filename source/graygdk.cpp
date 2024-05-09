@@ -4054,7 +4054,7 @@ namespace GRAYGDK
    return ((first.y+first.height)>=second.y) && (first.y<=(second.y+second.height));
   }
 
-  void Collision::set_target(const GRAYGDK::BOX &first_target,const GRAYGDK::BOX &second_target)
+  void Collision::set_target(const GRAYGDK::BOX first_target,const GRAYGDK::BOX second_target)
   {
    first=first_target;
    second=second_target;
@@ -4065,7 +4065,7 @@ namespace GRAYGDK
    return this->check_horizontal_collision() && this->check_vertical_collision();
   }
 
-  bool Collision::check_collision(const GRAYGDK::BOX &first_target,const GRAYGDK::BOX &second_target)
+  bool Collision::check_collision(const GRAYGDK::BOX first_target,const GRAYGDK::BOX second_target)
   {
    this->set_target(first_target,second_target);
    return this->check_collision();
