@@ -435,7 +435,7 @@ namespace GRAYGDK
    setting.cDepthBits=16;
    setting.nSize=sizeof(PIXELFORMATDESCRIPTOR);
    setting.nVersion=1;
-   setting.dwFlags=PFD_DRAW_TO_WINDOW|PFD_SUPPORT_OPENGL|PFD_DOUBLEBUFFER;
+   setting.dwFlags=PFD_DRAW_TO_WINDOW|PFD_SUPPORT_OPENGL|PFD_DOUBLEBUFFER|PFD_STEREO_DONTCARE;
    setting.iPixelType=PFD_TYPE_RGBA;
    setting.iLayerType=PFD_MAIN_PLANE;
   }
@@ -1138,6 +1138,7 @@ namespace GRAYGDK
 
   void Render::set_common_setting()
   {
+   glDrawBuffer(GL_BACK);
    glShadeModel(GL_FLAT);
    glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
    glAlphaFunc(GL_GREATER,0.1f);
