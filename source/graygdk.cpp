@@ -292,11 +292,6 @@ namespace GRAYGDK
     CloseWindow(window);
     window=NULL;
    }
-   if (window_class.hbrBackground!=NULL)
-   {
-    DeleteObject(window_class.hbrBackground);
-    window_class.hbrBackground=NULL;
-   }
    UnregisterClass(window_class.lpszClassName,window_class.hInstance);
   }
 
