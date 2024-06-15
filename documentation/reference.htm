@@ -336,7 +336,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       optimization.<br>
       <br>
       <span style="text-decoration: underline;"> Note for Visual C++ users</span><br
-
         style="text-decoration: underline;">
       <br>
       Disable pre–compiled headers before start compilation. Old Visual C++
@@ -462,8 +461,8 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="font-style: italic;"> unsigned int Screen::get_fps() const;</span>
       – Return current fps value.<br>
       <br>
-      <span style="font-style: italic;"> unsigned int Screen::get_color()
-        const;</span> – Return current color depth in bits per pixel.<br>
+      <span style="font-style: italic;"> unsigned int Screen::get_color() const;</span>
+      – Return current color depth in bits per pixel.<br>
       <br>
       <span style="font-style: italic;"> unsigned int Screen::get_width() const;</span>
       – Return screen width in pixels.<br>
@@ -720,7 +719,6 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
         &amp;background);</span> – Load a background </big><big>from the buffer</big><big>.<br>
       <br>
     </big><big><span style="font-style: italic;">void Scene::load(</span></big><big
-
       style="font-style: italic;">const char *name</big><big><span style="font-style: italic;">);</span>
       – Load a background from target file.</big><br>
     <big><br>
@@ -1484,16 +1482,16 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       – Return the handle to the collision detector.<br>
     </big><br>
     <big><span style="font-style: italic;">void Collision::set_target(const
-        GRAYGDK::BOX first_target,const GRAYGDK::BOX second_target);</span>
-      – Set targets for collision detector.<br>
+        GRAYGDK::BOX first_target,const GRAYGDK::BOX second_target);</span> –
+      Set targets for collision detector.<br>
       <br>
       <span style="font-style: italic;"> bool Collision::check_collision()
         const;</span> – Return true if collision between two objects is
       accepted.<br>
       <br>
       <span style="font-style: italic;"> bool Collision::check_collision(const
-        GRAYGDK::BOX first_target,const GRAYGDK::BOX second_target);</span>
-      – Set collision targets and check collision between it.<br>
+        GRAYGDK::BOX first_target,const GRAYGDK::BOX second_target);</span> –
+      Set collision targets and check collision between it.<br>
     </big>
     <h2><a class="mozTocH2" name="mozTocId890935"></a><big><span style="font-style: italic;"></span>Chapter
         6. Tile–map</big></h2>
@@ -1590,6 +1588,14 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       <span style="font-style: italic;"> unsigned long long int
         Memory::get_free_virtual();</span> – Return free <a href="https://en.wikipedia.org/wiki/Virtual_memory">virtual
         memory</a> size in bytes.<br>
+      <br>
+      <span style="font-style: italic;">unsigned long long int
+        Memory::get_physical_usge();</span> – Return usage physical memory in
+      bytes.<br>
+      <br>
+      <span style="font-style: italic;">unsigned long long int
+        Memory::get_virtual_usge();</span> – Return usage virtual memory in
+      bytes.<br>
       <br>
       <span style="font-style: italic;"> unsigned long int Memory::get_usage();</span>
       – Return percentage of physical memory usage.</big><big><br>
@@ -2609,6 +2615,7 @@ C++ Redistributable Packages</a> if you game code compiled under Visual C++.
       3.8.6 – Source code synced with Eugene game development kit 8.7.8.<br>
       3.8.7 – Source code synced with Eugene game development kit 8.7.9.<br>
       3.8.8 – Source code synced with Black game development kit 5.7.6.<br>
+      3.8.9 – Source code synced with Eugene game development kit 8.8.3.<br>
     </big>
   </body>
 </html>
