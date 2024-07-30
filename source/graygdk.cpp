@@ -2820,6 +2820,11 @@ namespace GRAYGDK
    return sprite_height;
   }
 
+  bool Billboard::is_load() const
+  {
+   return billboard.is_texture_exist();
+  }
+
   GRAYGDK::BOX Billboard::get_box() const
   {
    GRAYGDK::BOX collision;
