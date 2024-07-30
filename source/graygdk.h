@@ -942,6 +942,7 @@ typedef enum
    Text* get_handle();
    GRAYGDK::TEXT_KIND get_orientation() const;
    void set_orientation(const GRAYGDK::TEXT_KIND target);
+   bool is_font_load() const;
    unsigned int get_font_width() const;
    unsigned int get_font_height() const;
    void set_position(const unsigned int x,const unsigned int y);
