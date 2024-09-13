@@ -1,5 +1,5 @@
 /*
-Gray game development kit made by Popov Evgeniy Alekseyevich
+Gray game development kit was made by Popov Evgeniy Alekseyevich
 Some code taken from wglext.h(https://www.khronos.org/registry/OpenGL/api/GL/wglext.h) by The Khronos Group Inc
 
 Gray game development kit license
@@ -407,7 +407,27 @@ namespace GRAYGDK
 
   WINGL::WINGL()
   {
-   memset(&setting,0,sizeof(PIXELFORMATDESCRIPTOR));
+   render=NULL;
+   wglSwapIntervalEXT=NULL;
+   setting.bReserved=0;
+   setting.cAccumAlphaBits=0;
+   setting.cAccumBits=0;
+   setting.cAccumBlueBits=0;
+   setting.cAccumGreenBits=0;
+   setting.cAccumRedBits=0;
+   setting.cAlphaBits=0;
+   setting.cAlphaShift=0;
+   setting.cAuxBuffers=0;
+   setting.cBlueBits=0;
+   setting.cBlueShift=0;
+   setting.cGreenBits=0;
+   setting.cGreenShift=0;
+   setting.cRedBits=0;
+   setting.cRedShift=0;
+   setting.cStencilBits=0;
+   setting.dwDamageMask=0;
+   setting.dwLayerMask=0;
+   setting.dwVisibleMask=0;
    setting.cColorBits=24;
    setting.cDepthBits=16;
    setting.nSize=sizeof(PIXELFORMATDESCRIPTOR);
@@ -415,8 +435,6 @@ namespace GRAYGDK
    setting.dwFlags=PFD_DRAW_TO_WINDOW|PFD_SUPPORT_OPENGL|PFD_DOUBLEBUFFER|PFD_STEREO_DONTCARE;
    setting.iPixelType=PFD_TYPE_RGBA;
    setting.iLayerType=PFD_MAIN_PLANE;
-   render=NULL;
-   wglSwapIntervalEXT=NULL;
   }
 
   WINGL::~WINGL()

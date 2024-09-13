@@ -1,5 +1,5 @@
 /*
-Gray game development kit made by Popov Evgeniy Alekseyevich
+Gray game development kit was made by Popov Evgeniy Alekseyevich
 Some code taken from wglext.h(https://www.khronos.org/registry/OpenGL/api/GL/wglext.h) by The Khronos Group Inc
 
 Gray game development kit license
@@ -178,7 +178,7 @@ typedef enum
  namespace Internal
  {
 
-  typedef BOOL (WINAPI * PFNWGLSWAPINTERVALEXTPROC) (int interval); // This code taken from wglext.h by The Khronos Group Inc
+  typedef BOOL (WINAPI * PFNWGLSWAPINTERVALEXTPROC) (int interval); // This code is taken from wglext.h by The Khronos Group Inc
 
   LRESULT CALLBACK Process_Message(HWND window,UINT Message,WPARAM wParam,LPARAM lParam);
   VOID CALLBACK set_event(PVOID lpParam,BOOLEAN TimerOrWaitFired);
