@@ -226,7 +226,7 @@
         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
         IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-        CLAIM, &nbsp;&nbsp; DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+        CLAIM,&nbsp; DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
         CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
         THE MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.</big><br>
     </p>
@@ -871,12 +871,12 @@
         Set the sprite position to the start position.<br>
         <br>
       </big><big><span style="font-style: italic;">void Billboard::go_start_x();</span>
-        – Set </big><big>the x-coordinate of</big><big> sprite position to </big><big>x-coordinate
-        of</big><big> start position.<br>
+        – Set </big><big>the x-coordinate of</big><big> the sprite position to
+        the </big><big>x-coordinate of</big><big> the start position.<br>
         <br>
       </big><big><span style="font-style: italic;">void Billboard::go_start_y();</span>
-        – Set the </big><big>y-coordinate of</big><big> sprite position to </big><big>y-coordinate
-        of</big><big> start position.</big><br>
+        – Set the </big><big>y-coordinate of</big><big> the sprite position to
+        the </big><big>y-coordinate of</big><big> the start position.</big><br>
       <br>
       <big><span style="font-style: italic;">void Billboard::draw();</span> –
         Draw a sprite.<br>
@@ -1179,17 +1179,17 @@
           *name);</span> – Load a font from the target file.<br>
         <br>
         <span style="font-style: italic;"> void Text::print(const char target);</span>
-        – Draw a single character in the current position.<br>
+        – Draw a single character at the current position.<br>
         <br>
         <span style="font-style: italic;"> void Text::print(const char *target);</span>
         – Draw a text at the current position.<br>
         <br>
         <span style="font-style: italic;"> void Text::print(const unsigned int
           x, const unsigned int y, const char target);</span> – Draw a single
-        character in the specific position.<br>
+        character at the specific position.<br>
         <br>
         <span style="font-style: italic;"> void Text::print(const unsigned int
-          x, const unsigned int y, const char *target);</span> – Draw a text in
+          x, const unsigned int y, const char *target);</span> – Draw a text at
         the specific position.<br>
         <br>
         <span style="font-style: italic;">void Text::disable_mirror();</span> –
@@ -1490,8 +1490,8 @@
         <br>
         <span style="text-decoration: underline;"> Collision detail</span><br>
       </big></p>
-    <p><big>The detector uses the bounding box collision method to detect
-        collisions. The collision-related information is stored in a custom data
+    <p><big>The detector uses the bounding box collision method to detect a
+        collision. The collision-related information is stored in a custom data
         type.<br>
         <br>
         <span style="font-style: italic;"> typedef struct</span><span style="font-style: italic;"><br>
@@ -1708,7 +1708,7 @@
       <big> </big></p>
     <h2><a class="mozTocH2" name="mozTocId59386"></a><big>Chapter 2. Tools</big></h2>
     <p><big>This module is implemented as a few functions</big><big>. All these
-        functions are declared in <span style="font-style: italic;">Tools</span>
+        functions are declared in the <span style="font-style: italic;">Tools</span>
         sub-namespace.<br>
         <br>
         <span style="font-style: italic;">void quit();</span> </big><big>–</big><big>
@@ -1739,12 +1739,13 @@
         resource manager is implemented as a few template functions. All these
         functions are declared in <span style="font-style: italic;">Resource</span>
         sub-namespace.<br>
-        <br>
-        <span style="font-style: italic;">create</span> create a single resource
-        or an array of resources. It has two forms. First, create a single
-        resource. First form takes a handle to resource handle as arguments.
-        Second form: create an array of resources. The second form takes a
-        handle to resource handle and resource amount as arguments.</big></p>
+        <br style="font-style: italic;">
+        <span style="font-style: italic;">create</span>
+        creates a resources. The first form of this function creates a single
+        resource. It takes a handle to a resource handle as an argument. The
+        second form creates an array of resources. It takes a handle to a
+        resource handle and a resource amount.<br>
+      </big></p>
     <p><big><span style="font-style: italic;"> destroy</span> delete a resource
         if it already exists. This function takes resource handle as an
         argument.</big></p>
@@ -2312,7 +2313,6 @@
         </span></big></p>
     <p><big><span style="font-style: italic;">void Gamepad::set_active(const
           unsigned int gamepad);</span> – Set the current active Game-Pad.<span
-
           style="font-style: italic;"><br>
         </span></big></p>
     <p><big><span style="font-style: italic;">GRAYGDK::GAMEPAD_DPAD
@@ -2691,6 +2691,6 @@
       4.1.2: Source code synced with Eugene game development kit 9.0.8.<br>
       4.1.3: Source code synced with Eugene game development kit 9.0.9.<br>
       4.1.4: Source code synced with Eugene game development kit 9.1.</big><br>
-    <big> 4.1.4.1 – 4.1.4.3: Documentation updated.</big><br>
+    <big> 4.1.4.1 – 4.1.4.4: Documentation updated.</big><br>
   </body>
 </html>
