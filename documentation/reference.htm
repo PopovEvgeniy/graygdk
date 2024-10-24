@@ -95,7 +95,7 @@
           <li><a href="#mozTocId783369">Chapter 1. The sub-namespace</a></li>
           <li><a href="#mozTocId685403">Chapter 2. Keyboard</a></li>
           <li><a href="#mozTocId686993">Chapter 3. Mouse</a></li>
-          <li><a href="#mozTocId861609">Chapter 4. Game-pad</a></li>
+          <li><a href="#mozTocId861609">Chapter 4. Gamepad</a></li>
         </ul>
       </li>
       <li><a href="#mozTocId54918">Part 10. Internal details of the engine
@@ -105,7 +105,7 @@
               programmer</a></li>
           <li><a href="#mozTocId318160">Chapter 2. Internal classes</a></li>
           <li><a href="#mozTocId293644">Chapter 3. Base graphics subsystem</a></li>
-          <li><a href="#mozTocId472209">Chapter 4. Game-Pad</a></li>
+          <li><a href="#mozTocId472209">Chapter 4. Gamepad</a></li>
           <li><a href="#mozTocId804583">Chapter 5. Input</a></li>
           <li><a href="#mozTocId692266">Chapter 6. Audio</a></li>
         </ul>
@@ -158,8 +158,8 @@
         <br>
         <span style="text-decoration: underline;">Feedback</span><br>
         <br>
-        Send me an <a href="mailto:tuzik87@inbox.ru">email</a> if you want
-        contact with me.</big></p>
+        Send me an <a href="mailto:tuzik87@inbox.ru">email</a> if you want to
+        contact me.</big></p>
     <h2><a class="mozTocH2" name="mozTocId85003"></a><big>Chapter 2. A special
         thanks</big></h2>
     <p><big>I want to say «Big thanks for technical consultation» to these
@@ -181,8 +181,9 @@
     <p><big><span style="text-decoration: underline;">Gray game development kit
           license</span><br>
         <br>
-      </big><big>Copyright (C) 2020 – 2024 Popov Evgeniy Alekseyevich<br>
-        &nbsp; This software is provided 'as–is', without any express or implied<br>
+      </big><big>Copyright (C) 2020 – 2024 Popov Evgeniy Alekseyevich</big></p>
+    <p><big>&nbsp;This software is provided 'as–is', without any express or
+        implied<br>
         &nbsp;warranty. In no event will the authors be held liable for any
         damages<br>
         &nbsp;arising from the use of this software.<br>
@@ -207,8 +208,8 @@
       <span style="text-decoration: underline;"></span><big><span style="text-decoration: underline;">Third–party
           license</span><br>
         <br>
-      </big><big>Copyright (c) 2007 – 2010 The Khronos Group Inc.<br>
-        &nbsp; Permission is hereby granted, free of charge, to any person
+      </big><big>Copyright (c) 2007 – 2010 The Khronos Group Inc.</big></p>
+    <p><big>&nbsp;Permission is hereby granted, free of charge, to any person
         obtaining a<br>
         &nbsp;copy of this software and/or associated documentation files (the<br>
         &nbsp;"Materials"), to deal in the Materials without restriction,
@@ -409,8 +410,8 @@
         <span style="text-decoration: underline;"> Fps limitation</span><br>
         <br>
         FPS is an important thing. Many FPS are needed for good animation, but
-        it also needs high processor usage. FPS limit is 60 by default. It has
-        an ideal value.<br>
+        it also needs high processor usage. The FPS limit is 60 by default. It
+        has an ideal value.<br>
         <br>
         <span style="text-decoration: underline;"> Work with the base graphics
           subsystem</span><br>
@@ -546,7 +547,7 @@
     <h2><a class="mozTocH2" name="mozTocId904725"></a><big>Chapter 5. Image kind</big></h2>
     <p><big>The image kinds look like the predefined constants. You can see it
         below.</big></p>
-    <table style="width: 682px; height: 106px;" border="1">
+    <table style="width: 710px; height: 106px;" border="1">
       <tbody>
         <tr>
           <td><big>Image kind<br>
@@ -1253,9 +1254,9 @@
         <br>
         <span style="text-decoration: underline;"> Supported format</span><br>
       </big></p>
-    <p><big>All loading images must have the correct specification. You can load
-        an image from 24 bit </big><big><a href="https://en.wikipedia.org/wiki/Truevision_TGA">Truevision
-          TGA</a> pictures.</big></p>
+    <p><big>All loading images must have the correct specifications. You can
+        load an image from a 24-bit </big><big><a href="https://en.wikipedia.org/wiki/Truevision_TGA">Truevision
+          TGA</a> picture.</big></p>
     <p><big><span style="text-decoration: underline;">Recommend software</span><br>
         <br>
         You can use a wide range of graphics software to convert your images to
@@ -1273,17 +1274,15 @@
         2. Cartesian coordinates and screen coordinates</big></h2>
     <p><big><span style="text-decoration: underline;">Cartesian coordinates</span><br>
         <br>
-        Cartesian coordinates start at the center of the screen. Look at this
-        picture to understand it.<br>
+        The Cartesian coordinates start at the center of the screen. Look at
+        this picture to understand it.<br>
       </big></p>
-    <p><big><img style="width: 380px; height: 249px;" alt="" src="sheet.png"><br>
+    <p><big><img style="width: 107px; height: 111px;" alt="" src="cartesian_system.png"><br>
         <br>
-        <span style="text-decoration: underline;">Cartesian coordinates to
-          screen coordinates conversion and screen coordinates to Cartesian
-          coordinates conversion</span><br>
+        <span style="text-decoration: underline;">Coordinates conversion</span><br>
         <br>
-        You can convert Cartesian coordinates to screen coordinates. You can
-        also convert screen coordinates to Cartesian coordinates.<br>
+        You can convert the Cartesian coordinates to the screen coordinates. You
+        can also convert the screen coordinates to the Cartesian coordinates.<br>
         <br>
         Just use the <span style="font-style: italic;">Coordinates</span> class
         to do it. Let's look at the publicly available methods.<br>
@@ -1353,14 +1352,13 @@
             style="color: black;"></span></a> is a very popular way for
         pseudo-3D games. Many old-school games are isometric games.<br>
         <br>
-      </big><big><span style="text-decoration: underline;">Cartesian coordinates
-          to isometric coordinates conversion and isometric coordinates to
-          Cartesian coordinates conversion</span><br>
+      </big><big><span style="text-decoration: underline;">Coordinates
+          conversion</span><br>
         <br>
-        You can convert Cartesian coordinates to isometric coordinates. You can
-        also convert isometric coordinates to Cartesian coordinates.<br>
-        Just use the <span style="font-style: italic;">Isometric</span> class
-        to do it. Let's look at the publicly available methods.<br>
+        You can convert the Cartesian coordinates to the isometric coordinates.
+        You can also convert the isometric coordinates to the Cartesian
+        coordinates. Just use the <span style="font-style: italic;">Isometric</span>
+        class to do it. Let's look at the publicly available methods.<br>
         <br>
         <span style="font-style: italic;">Isometric *Isometric::get_handle(); -</span>
         Return the handle to the isometric subsystem.<br>
@@ -1412,8 +1410,8 @@
     <h2><a class="mozTocH2" name="mozTocId143616"></a><big>Chapter 4. Isometric
         Level<br>
       </big></h2>
-    <p><big> The isometric level subsystem is intended to help you create
-        isometric levels. Just use the <span style="font-style: italic;">World</span>
+    <p><big> The isometric level subsystem is intended to help you create an
+        isometric level. Just use the <span style="font-style: italic;">World</span>
         class to do it. Let's look at the publicly available methods.<br>
         <br>
         <span style="font-style: italic;">World *World::get_handle(); -</span>
@@ -1463,12 +1461,12 @@
     <h2><a class="mozTocH2" name="mozTocId853711"></a><big>Chapter 2. Abnormal
         program termination</big></h2>
     <p><big>You can use the <span style="font-style: italic;">Halt</span>
-        function to terminate a program. This function is declared in <em>GRAYGDK</em>
+        function to terminate a program. This function is declared in the <em>GRAYGDK</em>
         namespace.<br>
         <br>
         <span style="font-style: italic;"> void GRAYGDK::Halt(const char
-          *message);</span> Terminate the program. Write an error message to the
-        log file if logging is enabled.</big><big> </big></p>
+          *message); -</span> Terminate the program. Write an error message to
+        the log file if logging is enabled.</big><big> </big></p>
     <h2><a class="mozTocH2" name="mozTocId656377"></a><big>Chapter 3. Timer</big></h2>
     <p><big> A timer is a very useful thing. Just use the <span style="font-style: italic;">
           Timer</span> class to work with the timer. Let's look at the publicly
@@ -1743,7 +1741,7 @@
         Manager</big></h2>
     <p><big>A resource is an instance of a user-defined class or structure. The
         resource manager is implemented as a few template functions. All these
-        functions are declared in <span style="font-style: italic;">Resource</span>
+        functions are declared in the <span style="font-style: italic;">Resource</span>
         sub-namespace.<br>
         <br style="font-style: italic;">
         <span style="font-style: italic;">create</span> creates a resources. The
@@ -1752,7 +1750,7 @@
         resources. It takes a handle to a resource handle and a resource amount.<br>
       </big></p>
     <p><big><span style="font-style: italic;"> destroy</span> delete a resource
-        if it already exists. This function takes resource handle as an
+        if it already exists. This function takes a resource handle as an
         argument.</big></p>
     <p><big><span style="font-style: italic;">destroy_array</span> delete the
         resource array if it already exists. This function takes a resource
@@ -2179,17 +2177,17 @@
       </tbody>
     </table>
     <p><big> </big></p>
-    <h2><a class="mozTocH2" name="mozTocId861609"></a><big>Chapter 4. Game-pad</big></h2>
+    <h2><a class="mozTocH2" name="mozTocId861609"></a><big>Chapter 4. Gamepad</big></h2>
     <p><big><span style="text-decoration: underline;">Best friend of a retro
           gamer</span><br>
         <br>
         What is a good choice for a game control device when the user plays an
-        arcade or an old-school style video game? A Game-pad. This engine
+        arcade or an old-school style video game? A gamepad. This engine
         provides simple access to it.</big></p>
     <p><big><span style="text-decoration: underline;">Numbers of connected
-          Game-Pads</span><br>
+          gamepads</span><br>
         <br>
-        You can connect a few Game-Pads. Any connected gamepad has an internal
+        You can connect a few gamepads. Any connected gamepad has an internal
         index. The first gamepad index is 0. It will be activated by default.<br>
         <br>
         <span style="text-decoration: underline;"> Ordinary button codes</span><br>
@@ -2297,27 +2295,28 @@
         </tr>
       </tbody>
     </table>
-    <p><big><span style="text-decoration: underline;">Working with a Game-pad</span><br>
+    <p><big><span style="text-decoration: underline;">Working with a gamepad</span><br>
         <br>
-        Just use <span style="font-style: italic;">Gamepad</span> class to work
-        with a Game-pad. Let's look at the publicly available methods.<br>
+        Just use the <span style="font-style: italic;">Gamepad</span> class to work
+        with a gamepad. Let's look at the publicly available methods.<br>
         <br>
         <span style="font-style: italic;"> unsigned int Gamepad::get_amount(); -</span>
-        Return the number of connected Game-Pad.<span style="font-style: italic;"><br>
+        Return the number of connected gamepad.<span style="font-style: italic;"><br>
         </span></big></p>
     <p><big><span style="font-style: italic;">unsigned int
           Gamepad::get_button_amount() const; -</span> Return the number of the
-        Game-Pad buttons.<br>
+        gamepad buttons.<br>
         <br>
         <span style="font-style: italic;">unsigned int
           Gamepad::get_stick_amount() const; -</span> Return the number of the
-        Game-Pad sticks.<br>
+        gamepad sticks.<br>
         <br>
         <span style="font-style: italic;"> void Gamepad::update(); -</span>
-        Update the internal Game-Pad state.<span style="font-style: italic;"><br>
+        Update the internal gamepad state.<span style="font-style: italic;"><br>
         </span></big></p>
     <p><big><span style="font-style: italic;">void Gamepad::set_active(const
           unsigned int gamepad); -</span> Set the current active Game-Pad.<span
+
           style="font-style: italic;"><br>
         </span></big></p>
     <p><big><span style="font-style: italic;">GRAYGDK::GAMEPAD_DPAD
@@ -2443,14 +2442,14 @@
       <big>All these custom types are declared in the <span style="font-style: italic;">Core</span>
         sub-namespace.</big><br>
       <big> </big></p>
-    <h2><a class="mozTocH2" name="mozTocId472209"></a><big>Chapter 4. Game-Pad</big></h2>
-    <p><big>Game-Pad subsystem working over the <a href="https://msdn.microsoft.com/ru-ru/library/windows/desktop/dd757116%28v=vs.85%29.aspx">Joystick
+    <h2><a class="mozTocH2" name="mozTocId472209"></a><big>Chapter 4. Gamepad</big></h2>
+    <p><big>The gamepad subsystem working over the <a href="https://msdn.microsoft.com/ru-ru/library/windows/desktop/dd757116%28v=vs.85%29.aspx">Joystick
           Multimedia API</a>. </big></p>
     <h2><a class="mozTocH2" name="mozTocId804583"></a><big>Chapter 5. Input</big></h2>
     <p><big><span style="text-decoration: underline;">Input backend</span><br>
         <br>
-        Keyboard and mouse input subsystems are simple. It works over a standard
-        Microsoft Windows API.<br>
+        The keyboard and mouse input subsystems are simple. It works over a
+        standard Microsoft Windows API.<br>
         <br>
         <span style="text-decoration: underline;"> Internal key state</span><br>
       </big></p>
@@ -2538,7 +2537,7 @@
       2.5.4: The synchronization timer improved.<br>
       2.5.5: The source code synced with the Eugene game development kit 6.9.4.<br>
       2.5.6: The source code synced with the Neon game development kit 6.3.4.<br>
-      2.5.7: Visual C++ 2003 support added.<br>
+      2.5.7: Visual C++ 2003 support has beeb added.<br>
       2.5.8: Small changes.<br>
       2.5.9: The source code synced with the Eugene game development kit 6.9.7.<br>
       2.6: Small changes.<br>
@@ -2681,7 +2680,7 @@
       3.9.7: The source code synced with the Black Game Development Kit 5.9.<br>
       3.9.8: The source code synced with the Black Game Development Kit 5.9.4.<br>
       3.9.9: The source code synced with the Black Game Development Kit 5.9.6.<br>
-      4.0: The keyboard input subsystem backported from Neon game development kit 7.9.1.<br>
+      4.0: The keyboard input subsystem backported from the Neon game development kit 7.9.1.<br>
       4.0.1: The source code synced with the Eugene game development kit 8.9.7.<br>
       4.0.2: The source code synced with the Eugene game development kit 8.9.8.<br>
       4.0.3: The source code synced with the Eugene game development kit 8.9.9.<br>
@@ -2699,6 +2698,6 @@
       4.1.4.1-4.1.4.7: Documentation updated.<br>
       4.1.5: The source code synced with the Eugene game development kit 9.2.<br>
       4.1.5.1-4.1.5.3: Documentation updated.<br>
-    </big>
+    </big><big> 4.1.6: The source code synced with the Eugene game development kit 9.2.</big><br>
   </body>
 </html>
