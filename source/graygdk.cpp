@@ -2977,7 +2977,7 @@ namespace GRAYGDK
    return current_kind;
   }
 
-  void Sprite::set_setting(const GRAYGDK::IMAGE_KIND kind,const unsigned int frames)
+  void Sprite::set_settings(const GRAYGDK::IMAGE_KIND kind,const unsigned int frames)
   {
    this->reset_animation_setting();
    this->set_frames(frames);
@@ -2990,7 +2990,7 @@ namespace GRAYGDK
    if (this->is_storage_empty()==false)
    {
     this->prepare(this->get_image_width(),this->get_image_height(),this->get_image());
-    this->set_setting(kind,frames);
+    this->set_settings(kind,frames);
    }
 
   }
@@ -3038,7 +3038,7 @@ namespace GRAYGDK
      this->destroy();
      this->set_image_size(target->get_image_width(),target->get_image_height());
      this->create_storage();
-     this->set_setting(target->get_kind(),target->get_frames());
+     this->set_settings(target->get_kind(),target->get_frames());
      this->set_transparent(target->get_transparent());
      this->copy_image(target->get_image());
      this->prepare(this->get_image_width(),this->get_image_height(),this->get_image());
@@ -3350,9 +3350,9 @@ namespace GRAYGDK
    this->prepare(screen.get_handle());
   }
 
-  void Background::set_setting(const GRAYGDK::IMAGE_KIND kind,const unsigned int frames)
+  void Background::set_settings(const GRAYGDK::IMAGE_KIND kind,const unsigned int frames)
   {
-   stage.set_setting(kind,frames);
+   stage.set_settings(kind,frames);
   }
 
   void Background::load(Image *background,const GRAYGDK::IMAGE_KIND kind,const unsigned int frames)
@@ -3640,7 +3640,7 @@ namespace GRAYGDK
    text.set_height(height);
   }
 
-  void Text::set_setting(const unsigned int width,const unsigned int height,const GRAYGDK::TEXT_KIND kind)
+  void Text::set_settings(const unsigned int width,const unsigned int height,const GRAYGDK::TEXT_KIND kind)
   {
    this->set_size(width,height);
    this->set_orientation(kind);

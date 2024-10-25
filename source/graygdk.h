@@ -814,7 +814,7 @@ typedef enum
    ~Sprite();
    Sprite* get_handle();
    GRAYGDK::IMAGE_KIND get_kind() const;
-   void set_setting(const GRAYGDK::IMAGE_KIND kind,const unsigned int frames);
+   void set_settings(const GRAYGDK::IMAGE_KIND kind,const unsigned int frames);
    void load(Image *buffer,const GRAYGDK::IMAGE_KIND kind,const unsigned int frames);
    void load(Image &buffer,const GRAYGDK::IMAGE_KIND kind,const unsigned int frames);
    void load(const char *name,const GRAYGDK::IMAGE_KIND kind,const unsigned int frames);
@@ -879,7 +879,7 @@ typedef enum
    void prepare(const Screen *screen);
    void prepare(Screen &screen);
    void prepare(const unsigned int width,const unsigned int height);
-   void set_setting(const GRAYGDK::IMAGE_KIND kind,const unsigned int frames);
+   void set_settings(const GRAYGDK::IMAGE_KIND kind,const unsigned int frames);
    void load(Image *background,const IMAGE_KIND kind,const unsigned int frames);
    void load(Image &background,const GRAYGDK::IMAGE_KIND kind,const unsigned int frames);
    void load(const char *name,const GRAYGDK::IMAGE_KIND kind,const unsigned int frames);
@@ -949,7 +949,7 @@ typedef enum
    void set_size(const unsigned int width,const unsigned int height);
    void set_width(const unsigned int width);
    void set_height(const unsigned int height);
-   void set_setting(const unsigned int width,const unsigned int height,const GRAYGDK::TEXT_KIND kind);
+   void set_settings(const unsigned int width,const unsigned int height,const GRAYGDK::TEXT_KIND kind);
    void load_font(Image *font);
    void load_font(Image &font);
    void load_font(const char *name);

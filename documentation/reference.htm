@@ -376,8 +376,8 @@
     <h2><a class="mozTocH2" name="mozTocId312970"></a><big>Chapter 1. Coordinate
         system</big><br>
     </h2>
-    <p><big>The engine uses the standard coordinate system by default.
-        Coordinates start at the top-left corner. Look at this picture to
+    <p><big>The engine uses the standard coordinate system by default. The
+        coordinates start at the top-left corner. Look at this picture to
         understand it.</big></p>
     <p><img style="width: 107px; height: 111px;" alt="" src="coordinate_system.png"><br>
     </p>
@@ -616,7 +616,7 @@
         Increase the target frame. Set it to 1 if the target is more than the
         number of frames.<br>
         <br>
-        <span style="font-style: italic;"> void Background::set_setting(const
+        <span style="font-style: italic;"> void Background::set_settings(const
           GRAYGDK::IMAGE_KIND kind, const unsigned int frames); -</span> Set the
         background settings.<br>
         <br>
@@ -1055,6 +1055,7 @@
           const; -</span> Return</big><big> the number of column</big><big>s.<br>
         <br>
       </big><big><span style="font-style: italic;">void Sheet::destroy()</span></big><big><span
+
           style="font-style: italic;">; -</span> </big><big><span style="font-style: italic;"></span>Destroy
         a sprite sheet image and the texture.<br>
         <br>
@@ -1168,7 +1169,7 @@
       </big><big><span style="font-style: italic;"> void Text::set_height(const
           unsigned int height); -</span> Set the font height.</big><br>
       <big><br>
-        <span style="font-style: italic;">void Text::set_setting(const unsigned
+        <span style="font-style: italic;">void Text::set_settings(const unsigned
           int width, const unsigned int height, const GRAYGDK::TEXT_KIND kind);
           -</span> Set the text output settings.<br>
         <br>
@@ -2297,11 +2298,11 @@
     </table>
     <p><big><span style="text-decoration: underline;">Working with a gamepad</span><br>
         <br>
-        Just use the <span style="font-style: italic;">Gamepad</span> class to work
-        with a gamepad. Let's look at the publicly available methods.<br>
+        Just use the <span style="font-style: italic;">Gamepad</span> class to
+        work with a gamepad. Let's look at the publicly available methods.<br>
         <br>
         <span style="font-style: italic;"> unsigned int Gamepad::get_amount(); -</span>
-        Return the number of connected gamepad.<span style="font-style: italic;"><br>
+        Return the number of connected gamepads.<span style="font-style: italic;"><br>
         </span></big></p>
     <p><big><span style="font-style: italic;">unsigned int
           Gamepad::get_button_amount() const; -</span> Return the number of the
@@ -2315,9 +2316,7 @@
         Update the internal gamepad state.<span style="font-style: italic;"><br>
         </span></big></p>
     <p><big><span style="font-style: italic;">void Gamepad::set_active(const
-          unsigned int gamepad); -</span> Set the current active Game-Pad.<span
-
-          style="font-style: italic;"><br>
+          unsigned int gamepad); -</span> Set the current active gamepad.<span style="font-style: italic;"><br>
         </span></big></p>
     <p><big><span style="font-style: italic;">GRAYGDK::GAMEPAD_DPAD
           Gamepad::get_dpad() const; -</span> Return the code of the pressed or
@@ -2443,7 +2442,7 @@
         sub-namespace.</big><br>
       <big> </big></p>
     <h2><a class="mozTocH2" name="mozTocId472209"></a><big>Chapter 4. Gamepad</big></h2>
-    <p><big>The gamepad subsystem working over the <a href="https://msdn.microsoft.com/ru-ru/library/windows/desktop/dd757116%28v=vs.85%29.aspx">Joystick
+    <p><big>The gamepad subsystem is working over the <a href="https://msdn.microsoft.com/ru-ru/library/windows/desktop/dd757116%28v=vs.85%29.aspx">Joystick
           Multimedia API</a>. </big></p>
     <h2><a class="mozTocH2" name="mozTocId804583"></a><big>Chapter 5. Input</big></h2>
     <p><big><span style="text-decoration: underline;">Input backend</span><br>
@@ -2474,14 +2473,15 @@
       </tbody>
     </table>
     <h2><a class="mozTocH2" name="mozTocId692266"></a><big>Chapter 6. Audio</big></h2>
-    <p><big>Audio subsystem working over <a href="https://docs.microsoft.com/en-us/windows/desktop/DirectShow/directshow">DirectShow</a>.
+    <p><big>Audio subsystem is working over <a href="https://docs.microsoft.com/en-us/windows/desktop/DirectShow/directshow">DirectShow</a>.
         It is available as part of <a href="https://en.wikipedia.org/wiki/DirectX">DirectX</a>.
-        DirectX is pre-installed by default under modern versions of Windows.</big></p>
+        DirectX is pre-installed by default under the modern versions of
+        Windows.</big></p>
     <h1><a class="mozTocH1" name="mozTocId670307"></a><big>Version history<br>
       </big></h1>
     <big>0.1-1.9.8: The old branch.<br>
       1.9.9: The source code synced with the Eugene game development kit 6.2.6.<br>
-      2.0-2.0.2: Small changes.<br>
+      2.0-2.0.2: The small changes.<br>
       2.0.2.1: The source code recompiled under Open Watcom V2 Fork.<br>
       2.0.3: The source code synced with the Eugene game development kit 6.2.7.<br>
       2.0.4: The source code synced with the Eugene game development kit 6.2.8.<br>
@@ -2509,13 +2509,13 @@
       2.2.4: The source code synced with the Eugene game development kit 6.5.7.<br>
       2.2.5: The source code synced with the Eugene game development kit 6.5.8.<br>
       2.2.6: The source code synced with the Eugene game development kit 6.5.9.<br>
-      2.2.7: Small changes.<br>
+      2.2.7: The small changes.<br>
       2.2.8: The synchronization timer is backported from Neon game development kit 6.0.2.<br>
       2.2.9: The source code synced with the Eugene game development kit 6.6.1.<br>
-      2.3-2.3.1: Small changes.<br>
-      2.3.2: The synchronization timer is totally rewritten.<br>
+      2.3-2.3.1: The small changes.<br>
+      2.3.2: The synchronization timer was totally rewritten.<br>
       2.3.3-2.3.4: The synchronization timer improved.<br>
-      2.3.5: Small changes.<br>
+      2.3.5: The small changes.<br>
       2.3.6: The source code synced with the Eugene game development kit 6.6.6.<br>
       2.3.7: The source code synced with the Eugene game development kit 6.7.<br>
       2.3.8: The source code synced with the Eugene game development kit 6.7.1.<br>
@@ -2537,10 +2537,10 @@
       2.5.4: The synchronization timer improved.<br>
       2.5.5: The source code synced with the Eugene game development kit 6.9.4.<br>
       2.5.6: The source code synced with the Neon game development kit 6.3.4.<br>
-      2.5.7: Visual C++ 2003 support has beeb added.<br>
-      2.5.8: Small changes.<br>
+      2.5.7: Visual C++ 2003 support has been added.<br>
+      2.5.8: The small changes.<br>
       2.5.9: The source code synced with the Eugene game development kit 6.9.7.<br>
-      2.6: Small changes.<br>
+      2.6: The small changes.<br>
       2.6.1: The source code synced with the Eugene game development kit 6.9.9.<br>
       2.6.2: The source code synced with the Neon game development kit 6.3.6.<br>
       2.6.3: The source code synced with the Eugene game development kit 7.0.1.<br>
@@ -2680,7 +2680,7 @@
       3.9.7: The source code synced with the Black Game Development Kit 5.9.<br>
       3.9.8: The source code synced with the Black Game Development Kit 5.9.4.<br>
       3.9.9: The source code synced with the Black Game Development Kit 5.9.6.<br>
-      4.0: The keyboard input subsystem backported from the Neon game development kit 7.9.1.<br>
+      4.0: The keyboard input subsystem is backported from the Neon game development kit 7.9.1.<br>
       4.0.1: The source code synced with the Eugene game development kit 8.9.7.<br>
       4.0.2: The source code synced with the Eugene game development kit 8.9.8.<br>
       4.0.3: The source code synced with the Eugene game development kit 8.9.9.<br>
@@ -2698,6 +2698,8 @@
       4.1.4.1-4.1.4.7: Documentation updated.<br>
       4.1.5: The source code synced with the Eugene game development kit 9.2.<br>
       4.1.5.1-4.1.5.3: Documentation updated.<br>
-    </big><big> 4.1.6: The source code synced with the Eugene game development kit 9.2.</big><br>
+      4.1.6: The source code synced with the Eugene game development kit 9.2.1.<br>
+      4.1.7: The source code synced with the Eugene game development kit 9.2.2.<br>
+    </big>
   </body>
 </html>
