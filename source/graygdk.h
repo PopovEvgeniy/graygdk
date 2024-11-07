@@ -352,13 +352,13 @@ typedef enum
   GRAYGDK::GAMEPAD_DIRECTION get_inverted_direction(const GRAYGDK::GAMEPAD_DIRECTION target);
   GRAYGDK::GAMEPAD_DIRECTION get_vertical_direction(const unsigned int current,const unsigned int maximum,const unsigned int minimum);
 
-  class Unicode_Convertor
+  class Unicode_Converter
   {
    private:
    wchar_t *target;
    public:
-   Unicode_Convertor();
-   ~Unicode_Convertor();
+   Unicode_Converter();
+   ~Unicode_Converter();
    wchar_t *convert(const char *source);
   };
 
