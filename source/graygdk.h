@@ -1021,6 +1021,35 @@ typedef enum
    int get_y(const int x,const int y) const;
   };
 
+ }
+
+ namespace Map
+ {
+
+  class Tilemap
+  {
+   private:
+   unsigned int cell_width;
+   unsigned int cell_height;
+   public:
+   Tilemap();
+   ~Tilemap();
+   Tilemap* get_handle();
+   void initialize(const unsigned int tile_width,const unsigned int tile_height);
+   unsigned int get_tile_width() const;
+   unsigned int get_tile_height() const;
+   unsigned int get_x(const unsigned int row) const;
+   unsigned int get_y(const unsigned int column) const;
+   unsigned int get_row(const unsigned int x) const;
+   unsigned int get_column(const unsigned int y) const;
+   unsigned int get_row_amount(const unsigned int viewport_width) const;
+   unsigned int get_column_amount(const unsigned int viewport_height) const;
+   unsigned int get_tile_amount(const unsigned int viewport_width,const unsigned int viewport_height) const;
+   bool check_row(const unsigned int row,const unsigned int viewport_width) const;
+   bool check_column(const unsigned int column,const unsigned int viewport_height) const;
+   GRAYGDK::BOX get_box(const unsigned int row,const unsigned int column) const;
+  };
+
   class World
   {
    private:
@@ -1069,30 +1098,6 @@ typedef enum
    void set_target(const GRAYGDK::BOX first_target,const GRAYGDK::BOX second_target);
    bool check_collision() const;
    bool check_collision(const GRAYGDK::BOX first_target,const GRAYGDK::BOX second_target);
-  };
-
-  class Tilemap
-  {
-   private:
-   unsigned int cell_width;
-   unsigned int cell_height;
-   public:
-   Tilemap();
-   ~Tilemap();
-   Tilemap* get_handle();
-   void initialize(const unsigned int tile_width,const unsigned int tile_height);
-   unsigned int get_tile_width() const;
-   unsigned int get_tile_height() const;
-   unsigned int get_x(const unsigned int row) const;
-   unsigned int get_y(const unsigned int column) const;
-   unsigned int get_row(const unsigned int x) const;
-   unsigned int get_column(const unsigned int y) const;
-   unsigned int get_row_amount(const unsigned int viewport_width) const;
-   unsigned int get_column_amount(const unsigned int viewport_height) const;
-   unsigned int get_tile_amount(const unsigned int viewport_width,const unsigned int viewport_height) const;
-   bool check_row(const unsigned int row,const unsigned int viewport_width) const;
-   bool check_column(const unsigned int column,const unsigned int viewport_height) const;
-   GRAYGDK::BOX get_box(const unsigned int row,const unsigned int column) const;
   };
 
  }
