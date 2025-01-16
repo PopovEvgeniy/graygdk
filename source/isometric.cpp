@@ -8,7 +8,7 @@ int main()
  GRAYGDK::Graphics::Cartoon ground;
  GRAYGDK::Graphics::Text text;
  GRAYGDK::Transformation::Coordinates cartesian;
- GRAYGDK::Transformation::Entity level;
+ GRAYGDK::Transformation::Level level;
  GRAYGDK::Input::Keyboard keyboard;
  keyboard.initialize();
  screen.initialize();
