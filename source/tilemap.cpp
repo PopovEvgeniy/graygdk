@@ -6,7 +6,7 @@ int main()
  GRAYGDK::Graphics::Text text;
  GRAYGDK::Graphics::Sheet tile;
  GRAYGDK::Input::Keyboard keyboard;
- GRAYGDK::Map::Tilemap tilemap;
+ GRAYGDK::Common::Tilemap tilemap;
  unsigned int row,column,row_amount,column_amount;
  keyboard.initialize();
  screen.initialize();
