@@ -918,14 +918,10 @@ namespace GRAYGDK
    this->set_tile_offset(1.0f,1.0f,current,total);
   }
 
-  void Shape::set_texture_coordinates(const size_t index, const float u, const float v)
+  void Shape::set_texture_coordinates(const GRAYGDK::VERTEX_INDEX index,const float u,const float v)
   {
-   if (index<4)
-   {
-    point[index].u=u;
-    point[index].v=v;
-   }
-
+   point[index].u=u;
+   point[index].v=v;
   }
 
   Rectangle::Rectangle()
@@ -2665,7 +2661,7 @@ namespace GRAYGDK
    billboard.prepare(picture);
   }
 
-  void Billboard::set_texture_coordinates(const size_t index, const float u, const float v)
+  void Billboard::set_texture_coordinates(const GRAYGDK::VERTEX_INDEX index,const float u,const float v)
   {
    billboard.set_texture_coordinates(index,u,v);
   }
@@ -3609,10 +3605,10 @@ namespace GRAYGDK
 
   void Parallax::set_texture_coordinates()
   {
-   stage.set_texture_coordinates(0,u_offset,1.0f+v_offset);
-   stage.set_texture_coordinates(1,1.0f+u_offset,1.0f+v_offset);
-   stage.set_texture_coordinates(2,1.0f+u_offset,v_offset);
-   stage.set_texture_coordinates(3,u_offset,v_offset);
+   stage.set_texture_coordinates(GRAYGDK::FIRST_VERTEX,u_offset,1.0f+v_offset);
+   stage.set_texture_coordinates(GRAYGDK::SECOND_VERTEX,1.0f+u_offset,1.0f+v_offset);
+   stage.set_texture_coordinates(GRAYGDK::THIRD_VERTEX,1.0f+u_offset,v_offset);
+   stage.set_texture_coordinates(GRAYGDK::LAST_VERTEX,u_offset,v_offset);
   }
 
   Parallax* Parallax::get_handle()
