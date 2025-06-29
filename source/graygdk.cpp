@@ -367,6 +367,8 @@ namespace GRAYGDK
     GRAYGDK::Halt("Can't create the window");
    }
    UpdateWindow(window);
+   SetForegroundWindow(window);
+   SetFocus(window);
   }
 
   HDC Engine::get_context()
