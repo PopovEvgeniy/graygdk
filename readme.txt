@@ -1,10 +1,10 @@
 Project Description
 
-GraY game development kit is an ultra-fast 2D game engine for Windows 2000 or higher. It uses OPENGL for rendering.
+Gray Game Development Kit is an ultra-fast 2D game engine for Windows 2000 or higher. It uses OPENGL for rendering.
 
 License
 
-Gray game development kit is distributed under a zlib license.
+Gray Game Development Kit is distributed under a zlib license.
 
 Features
 
