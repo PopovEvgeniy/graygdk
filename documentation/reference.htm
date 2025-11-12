@@ -652,15 +652,15 @@
    <i>void Scene::vertical_mirror(); -</i> Set the vertical background mirroring mode.<br>
    <br>
    <i>void Scene::complex_mirror(); -</i> Set both the horizontal background
-   mirroring mode and the vertical background mirroring mode.<br>
-   <br>
-   <i>bool Scene::is_mirrored const(); -</i> Return true if the background is mirrored in any way.<br>   
+   mirroring mode and the vertical background mirroring mode.<br>      
    <br>
    <i>bool Scene::is_horizontally_mirrored const(); -</i> Return true if the background is horizontally mirrored.<br>
    <br>
    <i>bool Scene::is_vertically_mirrored const(); -</i> Return true if the background is vertically mirrored.<br>
    <br>
    <i>bool Scene::is_complex_mirrored const(); -</i> Return true if the background is both horizontally and vertically mirrored.<br>
+   <br>
+   <i>bool Scene::is_mirrored const(); -</i> Return true if the background is mirrored in any way.<br> 
    <br>   
    <i>bool Scene::load(Image *background); -</i> Load a background from the buffer and return true if it is loaded.<br>
    <br>
@@ -674,7 +674,7 @@
    <br>
    <i>void Scene::destroy(); -</i> Destroy a background image and destroy the texture.<br>
    <br>
-   <i> bool Scene::is_load() const; -</i> Return true if a static background has already been loaded.<br>
+   <i>bool Scene::is_load() const; -</i> Return true if a static background has already been loaded.<br>
    <i><br>
     unsigned int Scene::get_width() const; -</i> Return the width of the background.<br>
    <br>
@@ -728,6 +728,8 @@
    <i>bool Parallax::is_complex_mirrored const(); -</i> Return true if the background is both horizontally and vertically mirrored.<br>
    <br>      
    <i>bool Parallax::load(Image *background); -</i> Load a background from the buffer and return true if it is loaded.<br>
+   <br>
+   <i>bool Parallax::is_mirrored() const; -</i> Return true if the background is mirrored in any way.<br>   
    <br>
    <i>bool Parallax::load(Image &amp; background); -</i> Load a background from the buffer and return true if it is loaded.<br>
    <br>
@@ -2425,6 +2427,7 @@
    4.7.7: The source code synced with the Eugene Game Development Kit 9.8.8.<br>
    4.7.8: The source code synced with the Eugene Game Development Kit 9.8.9.<br>
    4.7.9: The source code synced with the Eugene Game Development Kit 9.9.<br>
+   4.8: The source code synced with the Eugene Game Development Kit 9.9.1.<br>
   </big>
  </body>
 </html>
