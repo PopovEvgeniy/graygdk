@@ -1001,7 +1001,6 @@ namespace GRAYGDK
    if (glIsEnabled(GL_ALPHA_TEST)==GL_FALSE)
    {
     glEnable(GL_ALPHA_TEST);
-    glEnable(GL_BLEND);
    }
 
   }
@@ -1011,7 +1010,6 @@ namespace GRAYGDK
    if (glIsEnabled(GL_ALPHA_TEST)==GL_TRUE)
    {
     glDisable(GL_ALPHA_TEST);
-    glDisable(GL_BLEND);
    }
 
   }
@@ -1088,6 +1086,7 @@ namespace GRAYGDK
   void Render::set_perfomance_settings()
   {
    glDisable(GL_TEXTURE_1D);
+   glDisable(GL_BLEND);
    glDisable(GL_TEXTURE_GEN_Q);
    glDisable(GL_TEXTURE_GEN_R);
    glDisable(GL_TEXTURE_GEN_S);
@@ -1130,7 +1129,6 @@ namespace GRAYGDK
    glDisable(GL_MAP2_VERTEX_3);
    glDisable(GL_MAP2_VERTEX_4);
    glEnable(GL_TEXTURE_2D);
-   glEnable(GL_BLEND);
    glEnable(GL_ALPHA_TEST);
    glEnableClientState(GL_VERTEX_ARRAY);
    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
@@ -1154,7 +1152,6 @@ namespace GRAYGDK
    glDrawBuffer(GL_BACK);
    glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
    glShadeModel(GL_FLAT);
-   glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
    glAlphaFunc(GL_GREATER,0.6f);
    glClearColor(0.0,0.0,0.0,0.0);
   }
