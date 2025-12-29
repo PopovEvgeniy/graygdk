@@ -11,14 +11,14 @@ int main()
  GRAYGDK::Misc::Audio media;
  GRAYGDK::Graphics::Screen screen;
  GRAYGDK::Graphics::Scene space;
- GRAYGDK::Graphics::Sprite ship;
+ GRAYGDK::Graphics::Ribbon ship;
  GRAYGDK::Graphics::Text text;
  GRAYGDK::Tools::enable_logging("log.txt");
  keyboard.initialize();
  screen.initialize();
  space.load("space.tga");
  space.prepare(screen);
- ship.load("ship.tga",GRAYGDK::HORIZONTAL_ANIMATED,2);
+ ship.load("ship.tga",2);
  ship.set_position(screen.get_width()/2,screen.get_height()/2);
  text.load_font("font.tga");
  text.set_position(text.get_font_width(),text.get_font_height());
