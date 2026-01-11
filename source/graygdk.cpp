@@ -3499,161 +3499,6 @@ namespace GRAYGDK
    this->clone(target.get_handle());
   }
 
-  Segment::Segment()
-  {
-   stage.set_position(0,0);
-  }
-
-  Segment::~Segment()
-  {
-   stage.destroy();
-  }
-
-  Segment* Segment::get_handle()
-  {
-   return this;
-  }
-
-  void Segment::prepare(const Screen *screen)
-  {
-   if (screen!=NULL)
-   {
-    stage.set_size(screen->get_width(),screen->get_height());
-   }
-
-  }
-
-  void Segment::prepare(const unsigned int width,const unsigned int height)
-  {
-   stage.set_size(width,height);
-  }
-
-  void Segment::prepare(Screen &screen)
-  {
-   this->prepare(screen.get_handle());
-  }
-
-  bool Segment::load(Image *background,const unsigned int frames)
-  {
-   return stage.load(background,frames);
-  }
-
-  bool Segment::load(Image &background,const unsigned int frames)
-  {
-   return stage.load(background,frames);
-  }
-
-  bool Segment::load(const char *name,const unsigned int frames)
-  {
-   return stage.load(name,frames);
-  }
-
-  void Segment::disable_mirror()
-  {
-   stage.disable_mirror();
-  }
-
-  void Segment::horizontal_mirror()
-  {
-   stage.horizontal_mirror();
-  }
-
-  void Segment::vertical_mirror()
-  {
-   stage.vertical_mirror();
-  }
-
-  void Segment::complex_mirror()
-  {
-   stage.complex_mirror();
-  }
-
-  bool Segment::is_horizontally_mirrored() const
-  {
-   return stage.is_horizontally_mirrored();
-  }
-
-  bool Segment::is_vertically_mirrored() const
-  {
-   return stage.is_vertically_mirrored();
-  }
-
-  bool Segment::is_complex_mirrored() const
-  {
-   return stage.is_complex_mirrored();
-  }
-
-  bool Segment::is_mirrored() const
-  {
-   return stage.is_mirrored();
-  }
-
-  unsigned int Segment::set_target(const unsigned int target)
-  {
-   return stage.set_target(target);
-  }
-
-  void Segment::step()
-  {
-   stage.step();
-  }
-
-  void Segment::draw()
-  {
-   stage.draw(false);
-  }
-
-  void Segment::draw(const unsigned int target)
-  {
-   stage.set_target(target);
-   stage.draw(false);
-  }
-
-  void Segment::destroy_image()
-  {
-   stage.destroy_image();
-  }
-
-  void Segment::destroy()
-  {
-   stage.destroy();
-  }
-
-  bool Segment::is_load() const
-  {
-   return stage.is_load();
-  }
-
-  bool Segment::is_last_frame() const
-  {
-   return stage.is_last_frame();
-  }
-
-  bool Segment::check_frame(const unsigned int target) const
-  {
-   return stage.check_frame(target);
-  }
-
-  unsigned int Segment::get_frame() const
-  {
-   return stage.get_frame();
-  }
-
-  unsigned int Segment::get_frames() const
-  {
-   return stage.get_frames();
-  }
-
-  unsigned int Segment::get_width() const
-  {
-   return stage.get_width();
-  }
-
-  unsigned int Segment::get_height() const
-  {
-   return stage.get_height();
-  }
-
   Cartoon::Cartoon()
   {
 
@@ -4067,6 +3912,316 @@ namespace GRAYGDK
   GRAYGDK::IMAGE_KIND Background::get_kind() const
   {
    return stage.get_kind();
+  }
+
+  Segment::Segment()
+  {
+   stage.set_position(0,0);
+  }
+
+  Segment::~Segment()
+  {
+   stage.destroy();
+  }
+
+  Segment* Segment::get_handle()
+  {
+   return this;
+  }
+
+  void Segment::prepare(const Screen *screen)
+  {
+   if (screen!=NULL)
+   {
+    stage.set_size(screen->get_width(),screen->get_height());
+   }
+
+  }
+
+  void Segment::prepare(const unsigned int width,const unsigned int height)
+  {
+   stage.set_size(width,height);
+  }
+
+  void Segment::prepare(Screen &screen)
+  {
+   this->prepare(screen.get_handle());
+  }
+
+  bool Segment::load(Image *background,const unsigned int frames)
+  {
+   return stage.load(background,frames);
+  }
+
+  bool Segment::load(Image &background,const unsigned int frames)
+  {
+   return stage.load(background,frames);
+  }
+
+  bool Segment::load(const char *name,const unsigned int frames)
+  {
+   return stage.load(name,frames);
+  }
+
+  void Segment::disable_mirror()
+  {
+   stage.disable_mirror();
+  }
+
+  void Segment::horizontal_mirror()
+  {
+   stage.horizontal_mirror();
+  }
+
+  void Segment::vertical_mirror()
+  {
+   stage.vertical_mirror();
+  }
+
+  void Segment::complex_mirror()
+  {
+   stage.complex_mirror();
+  }
+
+  bool Segment::is_horizontally_mirrored() const
+  {
+   return stage.is_horizontally_mirrored();
+  }
+
+  bool Segment::is_vertically_mirrored() const
+  {
+   return stage.is_vertically_mirrored();
+  }
+
+  bool Segment::is_complex_mirrored() const
+  {
+   return stage.is_complex_mirrored();
+  }
+
+  bool Segment::is_mirrored() const
+  {
+   return stage.is_mirrored();
+  }
+
+  unsigned int Segment::set_target(const unsigned int target)
+  {
+   return stage.set_target(target);
+  }
+
+  void Segment::step()
+  {
+   stage.step();
+  }
+
+  void Segment::draw()
+  {
+   stage.draw(false);
+  }
+
+  void Segment::draw(const unsigned int target)
+  {
+   stage.set_target(target);
+   stage.draw(false);
+  }
+
+  void Segment::destroy_image()
+  {
+   stage.destroy_image();
+  }
+
+  void Segment::destroy()
+  {
+   stage.destroy();
+  }
+
+  bool Segment::is_load() const
+  {
+   return stage.is_load();
+  }
+
+  bool Segment::is_last_frame() const
+  {
+   return stage.is_last_frame();
+  }
+
+  bool Segment::check_frame(const unsigned int target) const
+  {
+   return stage.check_frame(target);
+  }
+
+  unsigned int Segment::get_frame() const
+  {
+   return stage.get_frame();
+  }
+
+  unsigned int Segment::get_frames() const
+  {
+   return stage.get_frames();
+  }
+
+  unsigned int Segment::get_width() const
+  {
+   return stage.get_width();
+  }
+
+  unsigned int Segment::get_height() const
+  {
+   return stage.get_height();
+  }
+
+  Section::Section()
+  {
+   stage.set_position(0,0);
+  }
+
+  Section::~Section()
+  {
+   stage.destroy();
+  }
+
+  Section* Section::get_handle()
+  {
+   return this;
+  }
+
+  void Section::prepare(const Screen *screen)
+  {
+   if (screen!=NULL)
+   {
+    stage.set_size(screen->get_width(),screen->get_height());
+   }
+
+  }
+
+  void Section::prepare(const unsigned int width,const unsigned int height)
+  {
+   stage.set_size(width,height);
+  }
+
+  void Section::prepare(Screen &screen)
+  {
+   this->prepare(screen.get_handle());
+  }
+
+  bool Section::load(Image *background,const unsigned int frames)
+  {
+   return stage.load(background,frames);
+  }
+
+  bool Section::load(Image &background,const unsigned int frames)
+  {
+   return stage.load(background,frames);
+  }
+
+  bool Section::load(const char *name,const unsigned int frames)
+  {
+   return stage.load(name,frames);
+  }
+
+  void Section::disable_mirror()
+  {
+   stage.disable_mirror();
+  }
+
+  void Section::horizontal_mirror()
+  {
+   stage.horizontal_mirror();
+  }
+
+  void Section::vertical_mirror()
+  {
+   stage.vertical_mirror();
+  }
+
+  void Section::complex_mirror()
+  {
+   stage.complex_mirror();
+  }
+
+  bool Section::is_horizontally_mirrored() const
+  {
+   return stage.is_horizontally_mirrored();
+  }
+
+  bool Section::is_vertically_mirrored() const
+  {
+   return stage.is_vertically_mirrored();
+  }
+
+  bool Section::is_complex_mirrored() const
+  {
+   return stage.is_complex_mirrored();
+  }
+
+  bool Section::is_mirrored() const
+  {
+   return stage.is_mirrored();
+  }
+
+  unsigned int Section::set_target(const unsigned int target)
+  {
+   return stage.set_target(target);
+  }
+
+  void Section::step()
+  {
+   stage.step();
+  }
+
+  void Section::draw()
+  {
+   stage.draw(false);
+  }
+
+  void Section::draw(const unsigned int target)
+  {
+   stage.set_target(target);
+   stage.draw(false);
+  }
+
+  void Section::destroy_image()
+  {
+   stage.destroy_image();
+  }
+
+  void Section::destroy()
+  {
+   stage.destroy();
+  }
+
+  bool Section::is_load() const
+  {
+   return stage.is_load();
+  }
+
+  bool Section::is_last_frame() const
+  {
+   return stage.is_last_frame();
+  }
+
+  bool Section::check_frame(const unsigned int target) const
+  {
+   return stage.check_frame(target);
+  }
+
+  unsigned int Section::get_frame() const
+  {
+   return stage.get_frame();
+  }
+
+  unsigned int Section::get_frames() const
+  {
+   return stage.get_frames();
+  }
+
+  unsigned int Section::get_width() const
+  {
+   return stage.get_width();
+  }
+
+  unsigned int Section::get_height() const
+  {
+   return stage.get_height();
   }
 
   Scene::Scene()
