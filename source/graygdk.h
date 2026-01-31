@@ -876,8 +876,62 @@ typedef enum
    unsigned int set_target(const unsigned int target);
    void step();
    void destroy();
-   void clone(Ribbon *target);
-   void clone(Ribbon &target);
+  };
+
+  class Tier:public Billboard,public Animation,public Picture
+  {
+   private:
+   void set_sprite_frame();
+   public:
+   Tier();
+   ~Tier();
+   Tier* get_handle();
+   bool load(Image *buffer,const unsigned int frames);
+   bool load(Image &buffer,const unsigned int frames);
+   bool load(const char *name,const unsigned int frames);
+   unsigned int set_target(const unsigned int target);
+   void step();
+   void destroy();
+  };
+
+  class Cartoon:public Billboard,public Picture
+  {
+   public:
+   Cartoon();
+   ~Cartoon();
+   Cartoon* get_handle();
+   bool load(Image *buffer);
+   bool load(Image &buffer);
+   bool load(const char *name);
+   void destroy();
+  };
+
+  class Sheet:public Billboard,public Picture,public Animation
+  {
+   private:
+   unsigned int rows;
+   unsigned int columns;
+   void reset_sheet_settings();
+   void prepare_sheet();
+   public:
+   Sheet();
+   ~Sheet();
+   Sheet* get_handle();
+   bool check_row(const unsigned int target) const;
+   bool check_column(const unsigned int target) const;
+   bool check_cell(const unsigned int row,const unsigned int column) const;
+   unsigned int get_row(const unsigned int target) const;
+   unsigned int get_column(const unsigned int target) const;
+   unsigned int calculate(const unsigned int row,const unsigned int column) const;
+   unsigned int get_rows() const;
+   unsigned int get_columns() const;
+   void destroy();
+   void select(const unsigned int row,const unsigned int column);
+   unsigned int set_target(const unsigned int target);
+   void step();
+   bool load(Image *sheet,const unsigned int row_amount,const unsigned int column_amount);
+   bool load(Image &sheet,const unsigned int row_amount,const unsigned int column_amount);
+   bool load(const char *name,const unsigned int row_amount,const unsigned int column_amount);
   };
 
   class Segment
@@ -915,68 +969,6 @@ typedef enum
    unsigned int get_frames() const;
    unsigned int get_width() const;
    unsigned int get_height() const;
-  };
-
-  class Cartoon:public Billboard,public Picture
-  {
-   public:
-   Cartoon();
-   ~Cartoon();
-   Cartoon* get_handle();
-   bool load(Image *buffer);
-   bool load(Image &buffer);
-   bool load(const char *name);
-   void destroy();
-   void clone(Cartoon *target);
-   void clone(Cartoon &target);
-  };
-
-  class Tier:public Billboard,public Animation,public Picture
-  {
-   private:
-   void set_sprite_frame();
-   public:
-   Tier();
-   ~Tier();
-   Tier* get_handle();
-   bool load(Image *buffer,const unsigned int frames);
-   bool load(Image &buffer,const unsigned int frames);
-   bool load(const char *name,const unsigned int frames);
-   unsigned int set_target(const unsigned int target);
-   void step();
-   void destroy();
-   void clone(Tier *target);
-   void clone(Tier &target);
-  };
-
-  class Sheet:public Billboard,public Picture,public Animation
-  {
-   private:
-   unsigned int rows;
-   unsigned int columns;
-   void reset_sheet_settings();
-   void prepare_sheet();
-   public:
-   Sheet();
-   ~Sheet();
-   Sheet* get_handle();
-   bool check_row(const unsigned int target) const;
-   bool check_column(const unsigned int target) const;
-   bool check_cell(const unsigned int row,const unsigned int column) const;
-   unsigned int get_row(const unsigned int target) const;
-   unsigned int get_column(const unsigned int target) const;
-   unsigned int calculate(const unsigned int row,const unsigned int column) const;
-   unsigned int get_rows() const;
-   unsigned int get_columns() const;
-   void destroy();
-   void clone(Sheet *target);
-   void clone(Sheet &target);
-   void select(const unsigned int row,const unsigned int column);
-   unsigned int set_target(const unsigned int target);
-   void step();
-   bool load(Image *sheet,const unsigned int row_amount,const unsigned int column_amount);
-   bool load(Image &sheet,const unsigned int row_amount,const unsigned int column_amount);
-   bool load(const char *name,const unsigned int row_amount,const unsigned int column_amount);
   };
 
   class Section
