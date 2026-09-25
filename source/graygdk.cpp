@@ -82,7 +82,9 @@ namespace GRAYGDK
 
  void Halt(const char *message)
  {
-  puts(message);
+  fputc('\n',stderr);
+  fputs(message,stderr);
+  fputc('\n',stderr);
   exit(EXIT_FAILURE);
  }
 
@@ -452,7 +454,7 @@ namespace GRAYGDK
 
   void WINGL::set_pixel_format(HDC device)
   {
-   int format;
+   int format=0;
    format=ChoosePixelFormat(device,&setting);
    if (format==0)
    {
@@ -538,9 +540,9 @@ namespace GRAYGDK
 
   GRAYGDK::GAMEPAD_DIRECTION get_horizontal_direction(const unsigned int current,const unsigned int maximum)
   {
-   GRAYGDK::GAMEPAD_DIRECTION directional;
-   unsigned int center,dead;
-   directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
+   GRAYGDK::GAMEPAD_DIRECTION directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
+   unsigned int center=0;
+   unsigned int dead=0;
    center=maximum/2;
    dead=maximum/10;
    if (current>(center+dead))
@@ -554,23 +556,19 @@ namespace GRAYGDK
    return directional;
   }
 
-  GRAYGDK::GAMEPAD_DIRECTION get_inverted_direction(const GRAYGDK::GAMEPAD_DIRECTION target)
+ GRAYGDK::GAMEPAD_DIRECTION get_inverted_direction(const GRAYGDK::GAMEPAD_DIRECTION target)
+ {
+  GRAYGDK::GAMEPAD_DIRECTION directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
+  if (target==GRAYGDK::GAMEPAD_POSITIVE_DIRECTION)
   {
-   GRAYGDK::GAMEPAD_DIRECTION directional;
-   switch (target)
-   {
-    case GRAYGDK::GAMEPAD_POSITIVE_DIRECTION:
-    directional=GRAYGDK::GAMEPAD_NEGATIVE_DIRECTION;
-    break;
-    case GRAYGDK::GAMEPAD_NEGATIVE_DIRECTION:
-    directional=GRAYGDK::GAMEPAD_POSITIVE_DIRECTION;
-    break;
-    default:
-    directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
-    break;
-   }
-   return directional;
+   directional=GRAYGDK::GAMEPAD_NEGATIVE_DIRECTION;
   }
+  if (target==GRAYGDK::GAMEPAD_NEGATIVE_DIRECTION)
+  {
+   directional=GRAYGDK::GAMEPAD_POSITIVE_DIRECTION;
+  }
+  return directional;
+ }
 
   GRAYGDK::GAMEPAD_DIRECTION get_vertical_direction(const unsigned int current,const unsigned int maximum)
   {
@@ -599,93 +597,109 @@ namespace GRAYGDK
   }
 
   Resizer::Resizer()
-  {
-   image=NULL;
-   source_width=0;
-   source_height=0;
-   x_ratio=0;
-   y_ratio=0;
-   target_width=1;
-   target_height=1;
-   normalization=UCHAR_MAX*UCHAR_MAX;
-  }
+ {
+  image=NULL;
+  source_width=0;
+  source_height=0;
+  x_ratio=0;
+  y_ratio=0;
+  target_width=1;
+  target_height=1;
+  normalization=UCHAR_MAX*UCHAR_MAX;
+ }
 
-  Resizer::~Resizer()
-  {
-   Resource::destroy_array(image);
-   image=NULL;
-  }
+ Resizer::~Resizer()
+ {
+  Resource::destroy_array(image);
+  image=NULL;
+ }
 
-  unsigned int Resizer::get_x_difference(const unsigned int x) const
-  {
-   return (x*x_ratio)%UCHAR_MAX;
-  }
+ unsigned int Resizer::get_x_difference(const unsigned int x) const
+ {
+  return (x*x_ratio)%UCHAR_MAX;
+ }
 
-  unsigned int Resizer::get_y_difference(const unsigned int y) const
-  {
-   return (y*y_ratio)%UCHAR_MAX;
-  }
+ unsigned int Resizer::get_y_difference(const unsigned int y) const
+ {
+  return (y*y_ratio)%UCHAR_MAX;
+ }
 
-  unsigned int Resizer::get_source_x(const unsigned int x) const
-  {
-   return (x*x_ratio)/UCHAR_MAX;
-  }
+ unsigned int Resizer::get_source_x(const unsigned int x) const
+ {
+  return (x*x_ratio)/UCHAR_MAX;
+ }
 
-  unsigned int Resizer::get_source_y(const unsigned int y) const
-  {
-   return (y*y_ratio)/UCHAR_MAX;
-  }
+ unsigned int Resizer::get_source_y(const unsigned int y) const
+ {
+  return (y*y_ratio)/UCHAR_MAX;
+ }
 
-  unsigned int Resizer::get_next_x(const unsigned int x) const
+ unsigned int Resizer::get_next_x(const unsigned int x) const
+ {
+  unsigned int next_x=0;
+  next_x=x+1;
+  if (next_x==source_width)
   {
-   unsigned int next_x;
-   next_x=x+1;
-   if (next_x==source_width)
+   --next_x;
+  }
+  return next_x;
+ }
+
+ unsigned int Resizer::get_next_y(const unsigned int y) const
+ {
+  unsigned int next_y=0;
+  next_y=y+1;
+  if (next_y==source_height)
+  {
+   --next_y;
+  }
+  return next_y;
+ }
+
+ void Resizer::scale_image(const unsigned int *target)
+ {
+  size_t index=0;
+  unsigned int x=0;
+  unsigned int y=0;
+  unsigned int source_x=0;
+  unsigned int source_y=0;
+  unsigned int next_x=0;
+  unsigned int next_y=0;
+  unsigned int first;
+  unsigned int second=0;
+  unsigned int third=0;
+  unsigned int last=0;
+  unsigned int red=0;
+  unsigned int green=0;
+  unsigned int blue=0;
+  unsigned int alpha=0;
+  unsigned int x_difference=0;
+  unsigned int y_difference=0;
+  unsigned int x_weigh=0;
+  unsigned int y_weigh=0;
+  for (y=0;y<target_height;++y)
+  {
+   source_y=this->get_source_y(y);
+   next_y=this->get_next_y(source_y);
+   y_difference=this->get_y_difference(y);
+   y_weigh=UCHAR_MAX-y_difference;
+   for (x=0;x<target_width;++x)
    {
-    --next_x;
+    source_x=this->get_source_x(x);
+    next_x=this->get_next_x(source_x);
+    x_difference=this->get_x_difference(x);
+    x_weigh=UCHAR_MAX-x_difference;
+    first=target[Core::get_offset(source_x,source_y,source_width)];
+    second=target[Core::get_offset(next_x,source_y,source_width)];
+    third=target[Core::get_offset(source_x,next_y,source_width)];
+    last=target[Core::get_offset(next_x,next_y,source_width)];
+    red=(get_pixel_component(first,Core::RED_COMPONENT)*x_weigh*y_weigh+get_pixel_component(second,Core::RED_COMPONENT)*x_difference*y_weigh+get_pixel_component(third,Core::RED_COMPONENT)*y_difference*x_weigh+get_pixel_component(last,Core::RED_COMPONENT)*x_difference*y_difference)/normalization;
+    green=(get_pixel_component(first,Core::GREEN_COMPONENT)*x_weigh*y_weigh+get_pixel_component(second,Core::GREEN_COMPONENT)*x_difference*y_weigh+get_pixel_component(third,Core::GREEN_COMPONENT)*y_difference*x_weigh+get_pixel_component(last,Core::GREEN_COMPONENT)*x_difference*y_difference)/normalization;
+    blue=(get_pixel_component(first,Core::BLUE_COMPONENT)*x_weigh*y_weigh+get_pixel_component(second,Core::BLUE_COMPONENT)*x_difference*y_weigh+get_pixel_component(third,Core::BLUE_COMPONENT)*y_difference*x_weigh+get_pixel_component(last,Core::BLUE_COMPONENT)*x_difference*y_difference)/normalization;
+    alpha=(get_pixel_component(first,Core::ALPHA_COMPONENT)*x_weigh*y_weigh+get_pixel_component(second,Core::ALPHA_COMPONENT)*x_difference*y_weigh+get_pixel_component(third,Core::ALPHA_COMPONENT)*y_difference*x_weigh+get_pixel_component(last,Core::ALPHA_COMPONENT)*x_difference*y_difference)/normalization;
+    image[index]=Core::make_pixel(red,green,blue,alpha);
+    ++index;
    }
-   return next_x;
-  }
-
-  unsigned int Resizer::get_next_y(const unsigned int y) const
-  {
-   unsigned int next_y;
-   next_y=y+1;
-   if (next_y==source_height)
-   {
-    --next_y;
-   }
-   return next_y;
-  }
-
-  void Resizer::scale_image(const unsigned int *target)
-  {
-   size_t index;
-   unsigned int x,y,source_x,source_y,next_x,next_y,first,second,third,last,red,green,blue,alpha,x_difference,y_difference,x_weigh,y_weigh;
-   index=0;
-   for (y=0;y<target_height;++y)
-   {
-    source_y=this->get_source_y(y);
-    next_y=this->get_next_y(source_y);
-    y_difference=this->get_y_difference(y);
-    y_weigh=UCHAR_MAX-y_difference;
-    for (x=0;x<target_width;++x)
-    {
-     source_x=this->get_source_x(x);
-     next_x=this->get_next_x(source_x);
-     x_difference=this->get_x_difference(x);
-     x_weigh=UCHAR_MAX-x_difference;
-     first=target[Core::get_offset(source_x,source_y,source_width)];
-     second=target[Core::get_offset(next_x,source_y,source_width)];
-     third=target[Core::get_offset(source_x,next_y,source_width)];
-     last=target[Core::get_offset(next_x,next_y,source_width)];
-     red=(get_pixel_component(first,Core::RED_COMPONENT)*x_weigh*y_weigh+get_pixel_component(second,Core::RED_COMPONENT)*x_difference*y_weigh+get_pixel_component(third,Core::RED_COMPONENT)*y_difference*x_weigh+get_pixel_component(last,Core::RED_COMPONENT)*x_difference*y_difference)/normalization;
-     green=(get_pixel_component(first,Core::GREEN_COMPONENT)*x_weigh*y_weigh+get_pixel_component(second,Core::GREEN_COMPONENT)*x_difference*y_weigh+get_pixel_component(third,Core::GREEN_COMPONENT)*y_difference*x_weigh+get_pixel_component(last,Core::GREEN_COMPONENT)*x_difference*y_difference)/normalization;
-     blue=(get_pixel_component(first,Core::BLUE_COMPONENT)*x_weigh*y_weigh+get_pixel_component(second,Core::BLUE_COMPONENT)*x_difference*y_weigh+get_pixel_component(third,Core::BLUE_COMPONENT)*y_difference*x_weigh+get_pixel_component(last,Core::BLUE_COMPONENT)*x_difference*y_difference)/normalization;
-     alpha=(get_pixel_component(first,Core::ALPHA_COMPONENT)*x_weigh*y_weigh+get_pixel_component(second,Core::ALPHA_COMPONENT)*x_difference*y_weigh+get_pixel_component(third,Core::ALPHA_COMPONENT)*y_difference*x_weigh+get_pixel_component(last,Core::ALPHA_COMPONENT)*x_difference*y_difference)/normalization;
-     image[index]=Core::make_pixel(red,green,blue,alpha);
-     ++index;
-    }
 
    }
 
@@ -1059,7 +1073,7 @@ namespace GRAYGDK
 
   unsigned int Render::get_maximum_texture_size() const
   {
-   int maximum_size;
+   int maximum_size=0;
    glGetIntegerv(GL_MAX_TEXTURE_SIZE,&maximum_size);
    return maximum_size;
   }
@@ -1161,21 +1175,21 @@ namespace GRAYGDK
    glDisable(GL_DEPTH_TEST);
   }
 
-  void Render::set_matrix_settings()
-  {
-   glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glMatrixMode(GL_TEXTURE);
-   glLoadIdentity();
-  }
+ void Render::set_matrix_settings()
+ {
+  glMatrixMode(GL_MODELVIEW);
+  glLoadIdentity();
+  glMatrixMode(GL_TEXTURE);
+  glLoadIdentity();
+ }
 
-  void Render::set_perspective(const unsigned int width,const unsigned int height)
-  {
-   glMatrixMode(GL_PROJECTION);
-   glLoadIdentity();
-   glOrtho(0.0,static_cast<double>(width),static_cast<double>(height),0.0,0.0,1.0);
-   glViewport(0,0,width,height);
-  }
+ void Render::set_perspective(const unsigned int width,const unsigned int height)
+ {
+  glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
+  glOrtho(0.0,static_cast<double>(width),static_cast<double>(height),0.0,0.0,1.0);
+  glViewport(0,0,width,height);
+ }
 
   void Render::create_render(const unsigned int width,const unsigned int height)
   {
@@ -1273,9 +1287,8 @@ namespace GRAYGDK
 
   bool Audio::is_play()
   {
-   long long int current,total;
-   current=0;
-   total=0;
+   long long int current=0;
+   long long int total=0;
    if (controler!=NULL)
    {
     if (controler->GetPositions(&current,&total)!=S_OK)
@@ -1290,8 +1303,7 @@ namespace GRAYGDK
 
   void Audio::rewind()
   {
-   long long int position;
-   position=0;
+   long long int position=0;
    if (controler!=NULL)
    {
     controler->SetPositions(&position,AM_SEEKING_AbsolutePositioning,NULL,AM_SEEKING_NoPositioning);
@@ -1384,9 +1396,8 @@ namespace GRAYGDK
 
   bool Audio::check_playing()
   {
-   OAFilterState state;
-   bool playing;
-   playing=false;
+   OAFilterState state=State_Stopped;
+   bool playing=false;
    if (player!=NULL)
    {
     if (player->GetState(INFINITE,&state)!=E_FAIL)
@@ -1547,7 +1558,7 @@ namespace GRAYGDK
 
   void Keyboard::prepare()
   {
-   size_t index;
+   size_t index=0;
    for (index=0;index<KEYBOARD;++index)
    {
     preversion[index]=KEY_RELEASE;
@@ -1557,8 +1568,7 @@ namespace GRAYGDK
 
   bool Keyboard::check_state(const unsigned char code,const unsigned char state)
   {
-   bool accept;
-   accept=false;
+   bool accept=false;
    if (preversion!=NULL)
    {
     accept=(Keys[code]==state) && (preversion[code]!=state);
@@ -1627,7 +1637,7 @@ namespace GRAYGDK
 
   bool Mouse::check_state(const GRAYGDK::MOUSE_BUTTON button,const unsigned char state)
   {
-   bool accept;
+   bool accept=false;
    accept=(Buttons[button]==state) && (preversion[button]!=state);
    preversion[button]=Buttons[button];
    return accept;
@@ -1744,8 +1754,7 @@ namespace GRAYGDK
 
   GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_right_stick_horizontal_directional() const
   {
-   GRAYGDK::GAMEPAD_DIRECTION directional;
-   directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
+   GRAYGDK::GAMEPAD_DIRECTION directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
    if (configuration.wNumAxes==4)
    {
     directional=Core::get_horizontal_direction(current.dwRpos,configuration.wRmax); // An old gamepad
@@ -1767,8 +1776,7 @@ namespace GRAYGDK
 
   GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_right_stick_vertical_directional() const
   {
-   GRAYGDK::GAMEPAD_DIRECTION directional;
-   directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
+   GRAYGDK::GAMEPAD_DIRECTION directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
    if (configuration.wNumAxes==4)
    {
     directional=Core::get_vertical_direction(current.dwUpos,configuration.wUmax); // An old gamepad
@@ -1821,8 +1829,7 @@ namespace GRAYGDK
 
   GRAYGDK::GAMEPAD_DPAD Gamepad::get_dpad() const
   {
-   GRAYGDK::GAMEPAD_DPAD dpad;
-   dpad=GRAYGDK::GAMEPAD_NONE;
+   GRAYGDK::GAMEPAD_DPAD dpad=GRAYGDK::GAMEPAD_NONE;
    switch (current.dwPOV)
    {
     case JOY_POVFORWARD:
@@ -1850,7 +1857,7 @@ namespace GRAYGDK
     dpad=GRAYGDK::GAMEPAD_DOWNRIGHT;
     break;
     default:
-    ;
+    dpad=GRAYGDK::GAMEPAD_NONE;
     break;
    }
    return dpad;
@@ -1858,8 +1865,7 @@ namespace GRAYGDK
 
   GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_stick_x(const GRAYGDK::GAMEPAD_STICKS stick) const
   {
-   GRAYGDK::GAMEPAD_DIRECTION directional;
-   directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
+   GRAYGDK::GAMEPAD_DIRECTION directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
    if (stick==GRAYGDK::GAMEPAD_LEFT_STICK)
    {
     if (this->get_stick_amount()>0)
@@ -1881,8 +1887,7 @@ namespace GRAYGDK
 
   GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_stick_y(const GRAYGDK::GAMEPAD_STICKS stick) const
   {
-   GRAYGDK::GAMEPAD_DIRECTION directional;
-   directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
+   GRAYGDK::GAMEPAD_DIRECTION directional=GRAYGDK::GAMEPAD_NEUTRAL_DIRECTION;
    if (stick==GRAYGDK::GAMEPAD_LEFT_STICK)
    {
     if (this->get_stick_amount()>0)
@@ -1957,6 +1962,15 @@ namespace GRAYGDK
 
   }
 
+  void Binary_File::open_file(const char *name,const char *mode)
+  {
+   if (name!=NULL)
+   {
+    target=fopen(name,mode);
+   }
+
+  }
+
   void Binary_File::close()
   {
    if (target!=NULL)
@@ -1978,13 +1992,15 @@ namespace GRAYGDK
 
   long int Binary_File::get_length()
   {
-   long int length;
-   length=0;
+   long int length=0;
    if (target!=NULL)
    {
-    fseek(target,0,SEEK_END);
-    length=ftell(target);
-    rewind(target);
+    if (fseek(target,0,SEEK_END)==0)
+    {
+     length=ftell(target);
+     rewind(target);
+    }
+
    }
    return length;
   }
@@ -2022,20 +2038,21 @@ namespace GRAYGDK
   void Input_File::open(const char *name)
   {
    this->close();
-   target=fopen(name,"rb");
+   this->open_file(name,"rb");
   }
 
-  void Input_File::read(void *buffer,const size_t length)
+  size_t Input_File::read(void *buffer,const size_t length)
   {
+   size_t amount=0;
    if (this->target!=NULL)
    {
     if (buffer!=NULL)
     {
-     fread(buffer,sizeof(char),length,target);
+     amount=fread(buffer,sizeof(char),length,target);
     }
 
    }
-
+   return amount;
   }
 
   Output_File::Output_File()
@@ -2056,26 +2073,13 @@ namespace GRAYGDK
   void Output_File::open(const char *name)
   {
    this->close();
-   target=fopen(name,"wb");
+   this->open_file(name,"wb");
   }
 
   void Output_File::create_temp()
   {
    this->close();
    target=tmpfile();
-  }
-
-  void Output_File::write(const void *buffer,const size_t length)
-  {
-   if (this->target!=NULL)
-   {
-    if (buffer!=NULL)
-    {
-     fwrite(buffer,sizeof(char),length,target);
-    }
-
-   }
-
   }
 
   void Output_File::flush()
@@ -2085,6 +2089,20 @@ namespace GRAYGDK
     fflush(target);
    }
 
+  }
+
+  size_t Output_File::write(const void *buffer,const size_t length)
+  {
+   size_t written=0;
+   if (this->target!=NULL)
+   {
+    if (buffer!=NULL)
+    {
+     written=fwrite(buffer,sizeof(char),length,target);
+    }
+
+   }
+   return written;
   }
 
  }
@@ -2534,7 +2552,7 @@ namespace GRAYGDK
 
   size_t Image::get_source_position(const unsigned int x,const unsigned int y,const Core::MIRROR_KIND mirror) const
   {
-   size_t position;
+   size_t position=0;
    switch (mirror)
    {
     case Core::HORIZONTAL_MIRROR:
@@ -2562,12 +2580,11 @@ namespace GRAYGDK
 
   void Image::mirror_image(const Core::MIRROR_KIND mirror)
   {
-   unsigned char *mirrored;
-   unsigned int x,y;
-   size_t index,position;
-   index=0;
-   position=0;
-   mirrored=NULL;
+   unsigned char *mirrored=NULL;
+   unsigned int x=0;
+   unsigned int y=0;
+   size_t index=0;
+   size_t position=0;
    Resource::create(&mirrored,length);
    for (y=0;y<height;++y)
    {
@@ -2587,9 +2604,9 @@ namespace GRAYGDK
 
   void Image::uncompress_tga_data(const unsigned char *source)
   {
-   size_t index,position,amount;
-   index=0;
-   position=0;
+   size_t amount=0;
+   size_t index=0;
+   size_t position=0;
    while (index<length)
    {
     if (source[position]<128)
@@ -2642,11 +2659,10 @@ namespace GRAYGDK
 
   void Image::load_tga(File::Input_File &target)
   {
-   unsigned char *buffer;
-   size_t compressed_length;
+   unsigned char *buffer=NULL;
+   size_t compressed_length=0;
    TGA_head head;
    TGA_image image;
-   buffer=NULL;
    compressed_length=static_cast<size_t>(target.get_length()-18);
    target.read(&head,sizeof(TGA_head));
    target.set_position(8);
@@ -2759,8 +2775,8 @@ namespace GRAYGDK
 
   void Picture::convert_image(const unsigned char *target)
   {
-   size_t index,position;
-   position=0;
+   size_t index=0;
+   size_t position=0;
    for (index=0;index<pixels;++index)
    {
     image[index]=Core::make_pixel(target[position+2],target[position+1],target[position],0);
@@ -3373,18 +3389,6 @@ namespace GRAYGDK
 
   }
 
-  void Sheet::reset_sheet_settings()
-  {
-   rows=1;
-   columns=1;
-  }
-
-  void Sheet::prepare_sheet()
-  {
-   this->prepare(this->get_image_width(),this->get_image_height(),this->get_image());
-   this->set_size(this->get_image_width()/rows,this->get_image_height()/columns);
-  }
-
   Sheet* Sheet::get_handle()
   {
    return this;
@@ -3405,10 +3409,21 @@ namespace GRAYGDK
    return this->check_row(row) && this->check_column(column);
   }
 
+  void Sheet::reset_sheet_settings()
+  {
+   rows=1;
+   columns=1;
+  }
+
+  void Sheet::prepare_sheet()
+  {
+   this->prepare(this->get_image_width(),this->get_image_height(),this->get_image());
+   this->set_size(this->get_image_width()/rows,this->get_image_height()/columns);
+  }
+
   unsigned int Sheet::get_row(const unsigned int target) const
   {
-   unsigned int row;
-   row=1;
+   unsigned int row=1;
    if (this->check_frame(target)==true)
    {
     row+=(target-1)%rows;
@@ -3418,8 +3433,7 @@ namespace GRAYGDK
 
   unsigned int Sheet::get_column(const unsigned int target) const
   {
-   unsigned int column;
-   column=1;
+   unsigned int column=1;
    if (this->check_frame(target)==true)
    {
     column+=(target-1)/rows;
@@ -3429,8 +3443,7 @@ namespace GRAYGDK
 
   unsigned int Sheet::calculate(const unsigned int row,const unsigned int column) const
   {
-   unsigned int target;
-   target=1;
+   unsigned int target=1;
    if (this->check_cell(row,column)==true)
    {
     target+=(row-1)+(column-1)*rows;
@@ -4493,11 +4506,11 @@ namespace GRAYGDK
 
   bool Timer::check_timer()
   {
-   bool check;
-   check=difftime(time(NULL),start)>=interval;
-   if (check==true)
+   bool check=false;
+   if (difftime(time(NULL),start)>=interval)
    {
     start=time(NULL);
+    check=true;
    }
    return check;
   }
@@ -4609,7 +4622,7 @@ namespace GRAYGDK
 
   unsigned int Tilemap::get_row_amount(const unsigned int viewport_width) const
   {
-   unsigned int amount;
+   unsigned int amount=0;
    amount=viewport_width/cell_width;
    if ((viewport_width%cell_width)!=0)
    {
@@ -4620,7 +4633,7 @@ namespace GRAYGDK
 
   unsigned int Tilemap::get_column_amount(const unsigned int viewport_height) const
   {
-   unsigned int amount;
+   unsigned int amount=0;
    amount=viewport_height/cell_height;
    if ((viewport_height%cell_height)!=0)
    {
@@ -4666,10 +4679,12 @@ namespace GRAYGDK
 
   bool file_exist(const char *name)
   {
-   FILE *target;
-   bool exist;
-   exist=false;
-   target=fopen(name,"rb");
+   FILE *target=NULL;
+   bool exist=false;
+   if (name!=NULL)
+   {
+    target=fopen(name,"rb");
+   }
    if (target!=NULL)
    {
     exist=true;
@@ -4700,7 +4715,7 @@ namespace GRAYGDK
 
   bool enable_logging(const char *name)
   {
-   return freopen(name,"wt",stdout)!=NULL;
+   return freopen(name,"wt",stderr)!=NULL;
   }
 
   void randomize()

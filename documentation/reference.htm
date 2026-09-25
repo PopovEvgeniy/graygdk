@@ -280,13 +280,13 @@
    <br>
   </big>
   <ul>
-   <li><big> user32.lib</big></li>
-   <li><big> kernel32.lib</big></li>
-   <li><big> gdi32.lib</big></li>
-   <li><big> opengl32.lib</big></li>
-   <li><big> ole32.lib</big></li>
-   <li><big> strmiids.lib</big></li>
-   <li><big> winmm.lib</big></li>
+   <li><big>libuser32.a</big></li>
+   <li><big>libkernel32.a</big></li>
+   <li><big>libgdi32.a</big></li>
+   <li><big>libopengl32.a</big></li>
+   <li><big>libole32.a</big></li>
+   <li><big>libstrmiids.a</big></li>
+   <li><big>libwinmm.a</big></li>
   </ul>
   <big><br>
    See the documentation of the compiler for more information about linking.<br>
@@ -1461,7 +1461,7 @@
    <br>
    <i>void Input_File::open(const char *name); -</i> Open a file to read.<br>
    <br>
-   <i>void Input_File::read(void *buffer, const size_t length); -</i> Read data from the file.<br>
+   <i>size_t Input_File::read(void *buffer, const size_t length); -</i> Read data from the file and return the number of read bytes.<br>
   </big>
   <h2><a id="mozTocId335215" class="mozTocH2"></a><big> Chapter 4. The file writer</big></h2>
   <big>
@@ -1473,7 +1473,7 @@
    <br>
    <i>void Output_File::create_temp(); -</i> Create a temporary file. This file will be deleted when it is closed.<br>
    <br>
-   <i>void Output_File::write(const void *buffer, const size_t length); -</i> Write data to the file.<br>
+   <i>size_t Output_File::write(const void *buffer, const size_t length); -</i> Write data to the file and return the number of written bytes.<br>
    <br>
    <i>void Output_File::flush(); -</i> Force writing the internal buffer data to the file.<br>
   </big>
@@ -2374,6 +2374,8 @@
    5.0.7: The source code synced with the Eugene Game Development Kit 10.3.1.<br>
    5.0.8: The source code synced with the Eugene Game Development Kit 10.3.2.<br>
    5.0.9: The source code synced with the Eugene Game Development Kit 10.3.3.<br>
+   5.1: The source code synced with the Eugene Game Development Kit 10.5.1.<br>
+   5.1.1-5.1.2: The small changes.<br>
   </big>
 </body>
 </html>
