@@ -2,7 +2,8 @@
 
 int main()
 {
- int row,column;
+ int row=0;
+ int column=0;
  GRAYGDK::Graphics::Screen screen;
  GRAYGDK::Graphics::Scene sky;
  GRAYGDK::Graphics::Cartoon ground;

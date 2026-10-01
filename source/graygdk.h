@@ -440,6 +440,7 @@ typedef enum
    void create_texture(const unsigned int *buffer);
    void check_texture();
    void draw_rectangle();
+   void set_face(const Core::MIRROR_KIND kind);
    public:
    Rectangle();
    ~Rectangle();
@@ -519,7 +520,7 @@ typedef enum
    unsigned long long int get_total_virtual();
    unsigned long long int get_free_virtual();
    unsigned long long int get_physical_usage();
-   unsigned long long int get_virtual_usge();
+   unsigned long long int get_virtual_usage();
    unsigned long int get_usage();
   };
 
