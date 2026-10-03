@@ -314,7 +314,7 @@ namespace GRAYGDK
 
   }
 
-  void Engine::set_backgrond_color()
+  void Engine::set_background_color()
   {
    window_class.hbrBackground=CreateSolidBrush(RGB(0,0,0));
    if (window_class.hbrBackground==NULL)
@@ -381,7 +381,7 @@ namespace GRAYGDK
   void Engine::prepare_engine()
   {
    this->get_instance();
-   this->set_backgrond_color();
+   this->set_background_color();
    this->load_icon();
    this->load_cursor();
    this->register_window_class();
@@ -1108,7 +1108,7 @@ namespace GRAYGDK
    glPixelStorei(GL_PACK_SKIP_ROWS,0);
   }
 
-  void Render::set_perfomance_settings()
+  void Render::set_performance_settings()
   {
    glDisable(GL_TEXTURE_1D);
    glDisable(GL_BLEND);
@@ -1212,7 +1212,7 @@ namespace GRAYGDK
    this->set_image_settings();
    this->set_perspective(width,height);
    this->set_render_hints();
-   this->set_perfomance_settings();
+   this->set_performance_settings();
    this->set_common_settings();
    this->set_matrix_settings();
    this->disable_depth_buffer();
@@ -1563,13 +1563,13 @@ namespace GRAYGDK
 
   Keyboard::Keyboard()
   {
-   preversion=NULL;
+   previous=NULL;
   }
 
   Keyboard::~Keyboard()
   {
-   Resource::destroy_array(preversion);
-   preversion=NULL;
+   Resource::destroy_array(previous);
+   previous=NULL;
   }
 
   void Keyboard::prepare()
@@ -1577,7 +1577,7 @@ namespace GRAYGDK
    size_t index=0;
    for (index=0;index<KEYBOARD;++index)
    {
-    preversion[index]=KEY_RELEASE;
+    previous[index]=KEY_RELEASE;
    }
 
   }
@@ -1585,19 +1585,19 @@ namespace GRAYGDK
   bool Keyboard::check_state(const unsigned char code,const unsigned char state)
   {
    bool accept=false;
-   if (preversion!=NULL)
+   if (previous!=NULL)
    {
-    accept=(Keys[code]==state) && (preversion[code]!=state);
-    preversion[code]=Keys[code];
+    accept=(Keys[code]==state) && (previous[code]!=state);
+    previous[code]=Keys[code];
    }
    return accept;
   }
 
   void Keyboard::initialize()
   {
-   if (preversion==NULL)
+   if (previous==NULL)
    {
-    Resource::create(&preversion,KEYBOARD);
+    Resource::create(&previous,KEYBOARD);
     this->prepare();
    }
 
@@ -1605,9 +1605,9 @@ namespace GRAYGDK
 
   bool Keyboard::check_hold(const unsigned char code)
   {
-   if (preversion!=NULL)
+   if (previous!=NULL)
    {
-    preversion[code]=Keys[code];
+    previous[code]=Keys[code];
    }
    return Keys[code]==KEY_PRESS;
   }
@@ -1624,14 +1624,14 @@ namespace GRAYGDK
 
   bool Keyboard::is_ready() const
   {
-   return preversion!=NULL;
+   return previous!=NULL;
   }
 
   Mouse::Mouse()
   {
-   preversion[GRAYGDK::MOUSE_LEFT]=KEY_RELEASE;
-   preversion[GRAYGDK::MOUSE_RIGHT]=KEY_RELEASE;
-   preversion[GRAYGDK::MOUSE_MIDDLE]=KEY_RELEASE;
+   previous[GRAYGDK::MOUSE_LEFT]=KEY_RELEASE;
+   previous[GRAYGDK::MOUSE_RIGHT]=KEY_RELEASE;
+   previous[GRAYGDK::MOUSE_MIDDLE]=KEY_RELEASE;
    position.x=0;
    position.y=0;
   }
@@ -1654,8 +1654,8 @@ namespace GRAYGDK
   bool Mouse::check_state(const GRAYGDK::MOUSE_BUTTON button,const unsigned char state)
   {
    bool accept=false;
-   accept=(Buttons[button]==state) && (preversion[button]!=state);
-   preversion[button]=Buttons[button];
+   accept=(Buttons[button]==state) && (previous[button]!=state);
+   previous[button]=Buttons[button];
    return accept;
   }
 
@@ -1701,7 +1701,7 @@ namespace GRAYGDK
 
   bool Mouse::check_hold(const GRAYGDK::MOUSE_BUTTON button)
   {
-   preversion[button]=Buttons[button];
+   previous[button]=Buttons[button];
    return Buttons[button]==KEY_PRESS;
   }
 
@@ -1732,7 +1732,7 @@ namespace GRAYGDK
    current.dwSize=sizeof(JOYINFOEX);
    current.dwFlags=JOY_RETURNALL;
    current.dwPOV=JOY_POVCENTERED;
-   preversion=current;
+   previous=current;
   }
 
   Gamepad::~Gamepad()
@@ -1755,7 +1755,7 @@ namespace GRAYGDK
    current.dwSize=sizeof(JOYINFOEX);
    current.dwFlags=JOY_RETURNALL;
    current.dwPOV=JOY_POVCENTERED;
-   preversion=current;
+   previous=current;
   }
 
   bool Gamepad::check_current_state(const GRAYGDK::GAMEPAD_BUTTONS button) const
@@ -1763,9 +1763,9 @@ namespace GRAYGDK
    return (current.dwButtons&button)!=0;
   }
 
-  bool Gamepad::check_preversion_state(const GRAYGDK::GAMEPAD_BUTTONS button) const
+  bool Gamepad::check_previous_state(const GRAYGDK::GAMEPAD_BUTTONS button) const
   {
-   return (preversion.dwButtons&button)!=0;
+   return (previous.dwButtons&button)!=0;
   }
 
   GRAYGDK::GAMEPAD_DIRECTION Gamepad::get_right_stick_horizontal_directional() const
@@ -1806,7 +1806,7 @@ namespace GRAYGDK
 
   void Gamepad::update()
   {
-   preversion=current;
+   previous=current;
    if (joyGetPosEx(active,&current)!=JOYERR_NOERROR)
    {
     this->clear_state();
@@ -1950,12 +1950,12 @@ namespace GRAYGDK
 
   bool Gamepad::check_press(const GRAYGDK::GAMEPAD_BUTTONS button) const
   {
-   return (this->check_current_state(button)==true) && (this->check_preversion_state(button)==false);
+   return (this->check_current_state(button)==true) && (this->check_previous_state(button)==false);
   }
 
   bool Gamepad::check_release(const GRAYGDK::GAMEPAD_BUTTONS button) const
   {
-   return (this->check_current_state(button)==false) && (this->check_preversion_state(button)==true);
+   return (this->check_current_state(button)==false) && (this->check_previous_state(button)==true);
   }
 
  }
@@ -2328,7 +2328,7 @@ namespace GRAYGDK
 
   }
 
-  void Camera::set_viewport_heigth(const unsigned int height)
+  void Camera::set_viewport_height(const unsigned int height)
   {
    if ((height>0) && (height<=screen_height))
    {
@@ -2456,7 +2456,7 @@ namespace GRAYGDK
   void Camera::set_viewport(const unsigned int width,const unsigned int height)
   {
    this->set_viewport_width(width);
-   this->set_viewport_heigth(height);
+   this->set_viewport_height(height);
    this->calculate_limits();
   }
 

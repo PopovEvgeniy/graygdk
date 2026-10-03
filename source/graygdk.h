@@ -225,7 +225,7 @@ typedef enum
    HWND window;
    HDC context;
    void get_instance();
-   void set_backgrond_color();
+   void set_background_color();
    void load_icon();
    void load_cursor();
    void register_window_class();
@@ -457,7 +457,7 @@ typedef enum
    private:
    unsigned int get_maximum_texture_size() const;
    void set_image_settings();
-   void set_perfomance_settings();
+   void set_performance_settings();
    void set_render_hints();
    void set_common_settings();
    void disable_depth_buffer();
@@ -532,7 +532,7 @@ typedef enum
   class Keyboard
   {
    private:
-   unsigned char *preversion;
+   unsigned char *previous;
    void prepare();
    bool check_state(const unsigned char code,const unsigned char state);
    public:
@@ -548,7 +548,7 @@ typedef enum
   class Mouse
   {
    private:
-   unsigned char preversion[3];
+   unsigned char previous[3];
    POINT position;
    void get_position();
    bool check_state(const GRAYGDK::MOUSE_BUTTON button,const unsigned char state);
@@ -569,12 +569,12 @@ typedef enum
   {
    private:
    JOYINFOEX current;
-   JOYINFOEX preversion;
+   JOYINFOEX previous;
    JOYCAPS configuration;
    unsigned int active;
    void clear_state();
    bool check_current_state(const GRAYGDK::GAMEPAD_BUTTONS button) const;
-   bool check_preversion_state(const GRAYGDK::GAMEPAD_BUTTONS button) const;
+   bool check_previous_state(const GRAYGDK::GAMEPAD_BUTTONS button) const;
    GRAYGDK::GAMEPAD_DIRECTION get_right_stick_horizontal_directional() const;
    GRAYGDK::GAMEPAD_DIRECTION get_right_stick_vertical_directional() const;
    public:
@@ -690,7 +690,7 @@ typedef enum
    unsigned int highest_y_offset;
    void calculate_limits();
    void set_viewport_width(const unsigned int width);
-   void set_viewport_heigth(const unsigned int height);
+   void set_viewport_height(const unsigned int height);
    public:
    Camera();
    ~Camera();
