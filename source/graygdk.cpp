@@ -432,7 +432,7 @@ namespace GRAYGDK
    settings.dwDamageMask=0;
    settings.dwLayerMask=0;
    settings.dwVisibleMask=0;
-   settings.cColorBits=0;
+   settings.cColorBits=24;
    settings.cDepthBits=16;
    settings.nSize=sizeof(PIXELFORMATDESCRIPTOR);
    settings.nVersion=1;
@@ -457,18 +457,13 @@ namespace GRAYGDK
    int format=0;
    if (device!=NULL)
    {
-    settings.cColorBits=GetDeviceCaps(device,BITSPIXEL);
-    if (settings.cColorBits>24)
-    {
-     settings.cColorBits=24;
-    }
     format=ChoosePixelFormat(device,&settings);
    }
    if (format==0)
    {
     GRAYGDK::Halt("Invalid pixel format");
    }
-   DescribePixelFormat(device,format,settings.nSize,&settings);
+   DescribePixelFormat(device,format,sizeof(PIXELFORMATDESCRIPTOR),&settings);
    if (SetPixelFormat(device,format,&settings)==FALSE)
    {
     GRAYGDK::Halt("Can't set the pixel format");
@@ -1775,7 +1770,7 @@ namespace GRAYGDK
    {
     if (configuration.wMid==1118)
     {
-     directional=Core::get_horizontal_direction(current.dwUpos,configuration.wUmax); // The Xbox gamepad;
+     directional=Core::get_horizontal_direction(current.dwUpos,configuration.wUmax); // The Xbox gamepad
     }
     else
     {
