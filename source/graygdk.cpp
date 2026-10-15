@@ -2888,13 +2888,13 @@ namespace GRAYGDK
    return frame;
   }
 
-  void Animation::set_frames(const unsigned int amount)
+  unsigned int Animation::set_frames(const unsigned int amount)
   {
    if (amount>0)
    {
     frames=amount;
    }
-
+   return frames;
   }
 
   unsigned int Animation::get_frames() const
