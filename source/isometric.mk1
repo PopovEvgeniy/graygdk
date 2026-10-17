@@ -1,0 +1,32 @@
+!define BLANK ""
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\graygdk.obj" : "D:\Образ\gray&
+gdk\Version 5.2.9\graygdk\source\graygdk.cpp" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ *wpp386 graygdk.cpp -fo=.obj -i="C:\Watcom/h;C:\Watcom/h/nt" -w4 -e25 -zq -&
+od -3s -bt=nt -mf -xs -xr
+
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\isometric.obj" : "D:\Образ\gr&
+aygdk\Version 5.2.9\graygdk\source\isometric.cpp" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ *wpp386 isometric.cpp -fo=.obj -i="C:\Watcom/h;C:\Watcom/h/nt" -w4 -e25 -zq&
+ -od -3s -bt=nt -mf -xs -xr
+
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\isometric.exe" : "D:\Образ\gr&
+aygdk\Version 5.2.9\graygdk\source\graygdk.obj" "D:\Образ\graygdk\Version 5.&
+2.9\graygdk\source\isometric.obj" "D:\Образ\graygdk\Version 5.2.9\graygdk\so&
+urce\graygdk.h" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ @%write isometric.lk1 FIL graygdk.obj,isometric.obj
+ @%append isometric.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b isometric.imp 
+ @%append isometric.lk1 LIBR isometric.imp
+!endif
+!ifneq BLANK ""
+ @%append isometric.lk1 
+!endif
+ *wlink name isometric sys nt op maxe=25 op q op symf @isometric.lk1
+

@@ -1,0 +1,32 @@
+!define BLANK ""
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\camera.obj" : "D:\Образ\grayg&
+dk\Version 5.2.9\graygdk\source\camera.cpp" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ *wpp386 camera.cpp -fo=.obj -i="C:\Watcom/h;C:\Watcom/h/nt" -w4 -e25 -zq -o&
+d -3s -bt=nt -mf -xs -xr
+
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\graygdk.obj" : "D:\Образ\gray&
+gdk\Version 5.2.9\graygdk\source\graygdk.cpp" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ *wpp386 graygdk.cpp -fo=.obj -i="C:\Watcom/h;C:\Watcom/h/nt" -w4 -e25 -zq -&
+od -3s -bt=nt -mf -xs -xr
+
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\camera.exe" : "D:\Образ\grayg&
+dk\Version 5.2.9\graygdk\source\camera.obj" "D:\Образ\graygdk\Version 5.2.9\&
+graygdk\source\graygdk.obj" "D:\Образ\graygdk\Version 5.2.9\graygdk\source\g&
+raygdk.h" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ @%write camera.lk1 FIL camera.obj,graygdk.obj
+ @%append camera.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b camera.imp 
+ @%append camera.lk1 LIBR camera.imp
+!endif
+!ifneq BLANK ""
+ @%append camera.lk1 
+!endif
+ *wlink name camera sys nt op maxe=25 op q op symf @camera.lk1
+

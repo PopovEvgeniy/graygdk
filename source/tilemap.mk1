@@ -1,0 +1,32 @@
+!define BLANK ""
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\graygdk.obj" : "D:\Образ\gray&
+gdk\Version 5.2.9\graygdk\source\graygdk.cpp" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ *wpp386 graygdk.cpp -fo=.obj -i="C:\Watcom/h;C:\Watcom/h/nt" -w4 -e25 -zq -&
+od -3s -bt=nt -mf -xs -xr
+
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\tilemap.obj" : "D:\Образ\gray&
+gdk\Version 5.2.9\graygdk\source\tilemap.cpp" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ *wpp386 tilemap.cpp -fo=.obj -i="C:\Watcom/h;C:\Watcom/h/nt" -w4 -e25 -zq -&
+od -3s -bt=nt -mf -xs -xr
+
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\tilemap.exe" : "D:\Образ\gray&
+gdk\Version 5.2.9\graygdk\source\graygdk.obj" "D:\Образ\graygdk\Version 5.2.&
+9\graygdk\source\tilemap.obj" "D:\Образ\graygdk\Version 5.2.9\graygdk\source&
+\graygdk.h" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ @%write tilemap.lk1 FIL graygdk.obj,tilemap.obj
+ @%append tilemap.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b tilemap.imp 
+ @%append tilemap.lk1 LIBR tilemap.imp
+!endif
+!ifneq BLANK ""
+ @%append tilemap.lk1 
+!endif
+ *wlink name tilemap sys nt op maxe=25 op q op symf @tilemap.lk1
+

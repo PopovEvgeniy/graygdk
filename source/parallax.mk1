@@ -1,0 +1,32 @@
+!define BLANK ""
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\graygdk.obj" : "D:\Образ\gray&
+gdk\Version 5.2.9\graygdk\source\graygdk.cpp" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ *wpp386 graygdk.cpp -fo=.obj -i="C:\Watcom/h;C:\Watcom/h/nt" -w4 -e25 -zq -&
+od -3s -bt=nt -mf -xs -xr
+
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\parallax.obj" : "D:\Образ\gra&
+ygdk\Version 5.2.9\graygdk\source\parallax.cpp" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ *wpp386 parallax.cpp -fo=.obj -i="C:\Watcom/h;C:\Watcom/h/nt" -w4 -e25 -zq &
+-od -3s -bt=nt -mf -xs -xr
+
+"D:\Образ\graygdk\Version 5.2.9\graygdk\source\parallax.exe" : "D:\Образ\gra&
+ygdk\Version 5.2.9\graygdk\source\graygdk.obj" "D:\Образ\graygdk\Version 5.2&
+.9\graygdk\source\parallax.obj" "D:\Образ\graygdk\Version 5.2.9\graygdk\sour&
+ce\graygdk.h" .AUTODEPEND
+ @D:
+ cd "D:\Образ\graygdk\Version 5.2.9\graygdk\source"
+ @%write parallax.lk1 FIL graygdk.obj,parallax.obj
+ @%append parallax.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b parallax.imp 
+ @%append parallax.lk1 LIBR parallax.imp
+!endif
+!ifneq BLANK ""
+ @%append parallax.lk1 
+!endif
+ *wlink name parallax sys nt op maxe=25 op q op symf @parallax.lk1
+

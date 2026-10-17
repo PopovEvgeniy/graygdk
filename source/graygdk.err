@@ -1,0 +1,2 @@
+graygdk.cpp(151): Warning! W726: col(3) no reference to formal parameter 'TimerOrWaitFired'
+graygdk.cpp(144): Note! N392: col(49) definition: 'unsigned char TimerOrWaitFired' in 'void __stdcall GRAYGDK::Internal::set_event( void *, unsigned char )'
