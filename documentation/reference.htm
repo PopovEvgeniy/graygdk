@@ -1,100 +1,126 @@
 <html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1251">  
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1251">
   <title>Programmer Reference Guide</title>
  </head>
  <body>
   <div align="center"><big>Gray Game Development Kit: Programmer Reference Guide</big><br>
   </div>
-  <br>  
-  <ol id="mozToc"><!--mozToc h1 1 h2 2 h3 3 h4 4 h5 5 h6 6-->
-<li><a href="#mozTocId789770">Part 1. Welcome</a>
-<ol>
-<li><a href="#mozTocId318817">Chapter 1. About the engine</a></li>
-<li><a href="#mozTocId895629">Chapter 2. Special thanks</a></li>
-<li><a href="#mozTocId732783">Chapter 3. License.</a></li>
-<li><a href="#mozTocId873492">Chapter 4. System requirements</a></li>
-<li><a href="#mozTocId146699">Chapter 5. Troubleshooting.</a></li>
-<li><a href="#mozTocId294324">Chapter 6. Supported compiler list</a></li>
-<li><a href="#mozTocId5378">Chapter 7. Platform-specific note</a></li>
-<li><a href="#mozTocId843660">Chapter 8. Engine namespace</a></li>
-<li><a href="#mozTocId184890">Chapter 9. Custom data types</a></li></ol></li>
-<li><a href="#mozTocId260181">Part 2. Base things</a>
-<ol>
-<li><a href="#mozTocId185852">Chapter 1. Coordinate system</a></li>
-<li><a href="#mozTocId812350">Chapter 2. Game loop</a></li></ol></li>
-<li><a href="#mozTocId340772">Part 3. Graphics</a>
-<ol>
-<li><a href="#mozTocId597798">Chapter 1. Sub-namespace</a></li>
-<li><a href="#mozTocId177708">Chapter 2. Base graphics subsystem</a></li>
-<li><a href="#mozTocId598926">Chapter 3. Picture subsystem</a></li>
-<li><a href="#mozTocId673524">Chapter 4. Animation subsystem</a></li>
-<li><a href="#mozTocId178110">Chapter 5. Vertex index</a></li>
-<li><a href="#mozTocId183933">Chapter 6. Background</a></li>
-<li><a href="#mozTocId398246">Chapter 7. Segment</a></li>
-<li><a href="#mozTocId654980">Chapter 8. Section</a></li>
-<li><a href="#mozTocId60013">Chapter 9. Static background</a></li>
-<li><a href="#mozTocId902550">Chapter 10. Parallax Background</a></li>
-<li><a href="#mozTocId447884">Chapter 11. Base sprite subsystem</a></li>
-<li><a href="#mozTocId772180">Chapter 12. Animated sprites</a></li>
-<li><a href="#mozTocId212182">Chapter 13. Ribbons</a></li>
-<li><a href="#mozTocId15783">Chapter 14. The tier</a></li>
-<li><a href="#mozTocId186226">Chapter 15. Static sprites</a></li>
-<li><a href="#mozTocId640907">Chapter 16. Sprite sheet</a></li>
-<li><a href="#mozTocId31034">Chapter 17. Text</a></li>
-<li><a href="#mozTocId991298">Chapter 18. Loading an image</a></li>
-<li><a href="#mozTocId65856">Chapter 19. Camera</a></li></ol></li>
-<li><a href="#mozTocId327202">Part 4. Transformation</a>
-<ol>
-<li><a href="#mozTocId544004">Chapter 1. Sub-namespace</a></li>
-<li><a href="#mozTocId839963">Chapter 2. Cartesian coordinates and the screen coordinates</a></li>
-<li><a href="#mozTocId740107">Chapter 3. Cartesian coordinates and the isometric coordinates</a></li>
-<li><a href="#mozTocId882270">Chapter 4. Isometric Level</a></li></ol></li>
-<li><a href="#mozTocId667365">Part 5. Common things</a>
-<ol>
-<li><a href="#mozTocId391697">Chapter 1. Sub-namespace</a></li>
-<li><a href="#mozTocId568018">Chapter 2. Terminating the application</a></li>
-<li><a href="#mozTocId463271">Chapter 3. Timers</a></li>
-<li><a href="#mozTocId165107">Chapter 4. Collision detection</a></li>
-<li><a href="#mozTocId56340">Chapter 5. Tilemaps</a></li></ol></li>
-<li><a href="#mozTocId793172">Part 6. Other important things</a>
-<ol>
-<li><a href="#mozTocId436789">Chapter 1. Sub-namespace</a></li>
-<li><a href="#mozTocId794878">Chapter 2. Memory</a></li>
-<li><a href="#mozTocId126242">Chapter 3. Audio</a></li></ol></li>
-<li><a href="#mozTocId191696">Part 7. Misc</a>
-<ol>
-<li><a href="#mozTocId410673">Chapter 1. Filesystem</a></li>
-<li><a href="#mozTocId820442">Chapter 2. Tools</a></li>
-<li><a href="#mozTocId814270">Chapter 3. Resource management</a></li></ol></li>
-<li><a href="#mozTocId653714">Part 8. Binary files</a>
-<ol>
-<li><a href="#mozTocId691190">Chapter 1. Sub-namespace</a></li>
-<li><a href="#mozTocId674282">Chapter 2. Base binary file subsystem</a></li>
-<li><a href="#mozTocId482478">Chapter 3. File reading</a></li>
-<li><a href="#mozTocId335215">Chapter 4. File writing</a></li></ol></li>
-<li><a href="#mozTocId918192">Part 9. User input.</a>
-<ol>
-<li><a href="#mozTocId665509">Chapter 1. Sub-namespace</a></li>
-<li><a href="#mozTocId411784">Chapter 2. Keyboard</a></li>
-<li><a href="#mozTocId342572">Chapter 3. Mouse</a></li>
-<li><a href="#mozTocId325304">Chapter 4. Gamepad</a></li></ol></li>
-<li><a href="#mozTocId807827">Part 10. Internal details of the engine subsystems</a>
-<ol>
-<li><a href="#mozTocId124737">Chapter 1. Few words for a curious programmer</a></li>
-<li><a href="#mozTocId166916">Chapter 2. Internal classes</a></li>
-<li><a href="#mozTocId984210">Chapter 3. Base graphics subsystem</a></li>
-<li><a href="#mozTocId351034">Chapter 4. Gamepad</a></li>
-<li><a href="#mozTocId405480">Chapter 5. User input.</a></li>
-<li><a href="#mozTocId37996">Chapter 6. Audio</a></li></ol></li>
-<li><a href="#mozTocId863711">Version history</a></li></ol>
-  <h1><a id="mozTocId789770" class="mozTocH1"></a><big>Part 1. Welcome.</big></h1>
+  <br>
+  <ol id="mozToc">
+   <!--mozToc h1 1 h2 2 h3 3 h4 4 h5 5 h6 6-->
+   <li><a href="#mozTocId720374">Part 1. Welcome</a>
+    <ol>
+     <li><a href="#mozTocId318817">Chapter 1. About the engine</a></li>
+     <li><a href="#mozTocId906813">Chapter 2. Special thanks</a></li>
+     <li><a href="#mozTocId732783">Chapter 3. License.</a></li>
+     <li><a href="#mozTocId873492">Chapter 4. System requirements</a></li>
+     <li><a href="#mozTocId557972">Chapter 5. Troubleshooting</a></li>
+     <li><a href="#mozTocId294324">Chapter 6. Supported compiler list</a></li>
+     <li><a href="#mozTocId5378">Chapter 7. Platform-specific note</a></li>
+     <li><a href="#mozTocId843660">Chapter 8. Engine namespace</a></li>
+     <li><a href="#mozTocId184890">Chapter 9. Custom data types</a></li>
+    </ol>
+   </li>
+   <li><a href="#mozTocId260181">Part 2. Base things</a>
+    <ol>
+     <li><a href="#mozTocId185852">Chapter 1. Coordinate system</a></li>
+     <li><a href="#mozTocId812350">Chapter 2. Game loop</a></li>
+    </ol>
+   </li>
+   <li><a href="#mozTocId340772">Part 3. Graphics</a>
+    <ol>
+     <li><a href="#mozTocId597798">Chapter 1. Sub-namespace</a></li>
+     <li><a href="#mozTocId177708">Chapter 2. Base graphics subsystem</a></li>
+     <li><a href="#mozTocId598926">Chapter 3. Picture subsystem</a></li>
+     <li><a href="#mozTocId673524">Chapter 4. Animation subsystem</a></li>
+     <li><a href="#mozTocId178110">Chapter 5. Vertex index</a></li>
+     <li><a href="#mozTocId183933">Chapter 6. Background</a></li>
+     <li><a href="#mozTocId398246">Chapter 7. Segment</a></li>
+     <li><a href="#mozTocId654980">Chapter 8. Section</a></li>
+     <li><a href="#mozTocId60013">Chapter 9. Static background</a></li>
+     <li><a href="#mozTocId902550">Chapter 10. Parallax Background</a></li>
+     <li><a href="#mozTocId447884">Chapter 11. Base sprite subsystem</a></li>
+     <li><a href="#mozTocId772180">Chapter 12. Animated sprites</a></li>
+     <li><a href="#mozTocId212182">Chapter 13. Ribbons</a></li>
+     <li><a href="#mozTocId15783">Chapter 14. The tier</a></li>
+     <li><a href="#mozTocId186226">Chapter 15. Static sprites</a></li>
+     <li><a href="#mozTocId640907">Chapter 16. Sprite sheet</a></li>
+     <li><a href="#mozTocId31034">Chapter 17. Text</a></li>
+     <li><a href="#mozTocId991298">Chapter 18. Loading an image</a></li>
+     <li><a href="#mozTocId65856">Chapter 19. Camera</a></li>
+    </ol>
+   </li>
+   <li><a href="#mozTocId327202">Part 4. Transformation</a>
+    <ol>
+     <li><a href="#mozTocId544004">Chapter 1. Sub-namespace</a></li>
+     <li><a href="#mozTocId839963">Chapter 2. Cartesian coordinates and the screen coordinates</a></li>
+     <li><a href="#mozTocId740107">Chapter 3. Cartesian coordinates and the isometric coordinates</a></li>
+     <li><a href="#mozTocId882270">Chapter 4. Isometric Level</a></li>
+    </ol>
+   </li>
+   <li><a href="#mozTocId667365">Part 5. Common things</a>
+    <ol>
+     <li><a href="#mozTocId391697">Chapter 1. Sub-namespace</a></li>
+     <li><a href="#mozTocId568018">Chapter 2. Terminating the application</a></li>
+     <li><a href="#mozTocId463271">Chapter 3. Timers</a></li>
+     <li><a href="#mozTocId165107">Chapter 4. Collision detection</a></li>
+     <li><a href="#mozTocId56340">Chapter 5. Tilemaps</a></li>
+    </ol>
+   </li>
+   <li><a href="#mozTocId793172">Part 6. Other important things</a>
+    <ol>
+     <li><a href="#mozTocId436789">Chapter 1. Sub-namespace</a></li>
+     <li><a href="#mozTocId794878">Chapter 2. Memory</a></li>
+     <li><a href="#mozTocId126242">Chapter 3. Audio</a></li>
+    </ol>
+   </li>
+   <li><a href="#mozTocId191696">Part 7. Misc</a>
+    <ol>
+     <li><a href="#mozTocId410673">Chapter 1. Filesystem</a></li>
+     <li><a href="#mozTocId820442">Chapter 2. Tools</a></li>
+     <li><a href="#mozTocId814270">Chapter 3. Resource management</a></li>
+    </ol>
+   </li>
+   <li><a href="#mozTocId653714">Part 8. Binary files</a>
+    <ol>
+     <li><a href="#mozTocId691190">Chapter 1. Sub-namespace</a></li>
+     <li><a href="#mozTocId674282">Chapter 2. Base binary file subsystem</a></li>
+     <li><a href="#mozTocId482478">Chapter 3. File reading</a></li>
+     <li><a href="#mozTocId335215">Chapter 4. File writing</a></li>
+    </ol>
+   </li>
+   <li><a href="#mozTocId918192">Part 9. User input.</a>
+    <ol>
+     <li><a href="#mozTocId665509">Chapter 1. Sub-namespace</a></li>
+     <li><a href="#mozTocId411784">Chapter 2. Keyboard</a></li>
+     <li><a href="#mozTocId342572">Chapter 3. Mouse</a></li>
+     <li><a href="#mozTocId325304">Chapter 4. Gamepad</a></li>
+    </ol>
+   </li>
+   <li><a href="#mozTocId807827">Part 10. Internal details of the engine subsystems</a>
+    <ol>
+     <li><a href="#mozTocId124737">Chapter 1. Few words for a curious programmer</a></li>
+     <li><a href="#mozTocId166916">Chapter 2. Internal classes</a></li>
+     <li><a href="#mozTocId984210">Chapter 3. Base graphics subsystem</a></li>
+     <li><a href="#mozTocId351034">Chapter 4. Gamepad</a></li>
+     <li><a href="#mozTocId754840">Chapter 5. User input</a></li>
+     <li><a href="#mozTocId37996">Chapter 6. Audio</a></li>
+    </ol>
+   </li>
+   <li><a href="#mozTocId863711">Version history</a></li>
+  </ol>
+  <h1><a id="mozTocId720374" class="mozTocH1"></a><big>Part 1. Welcome</big></h1>
   <h2><a id="mozTocId318817" class="mozTocH2"></a><big>Chapter 1. About the engine</big></h2>
   <big><u>About the engine.</u><br>
    <br>
-   Hello! My name is Popov Evgeniy Alekseyevich. I am an individual programmer. I enjoy creating software. I also like old-school video games. Do you want to develop video games for Microsoft Windows? You need a good game engine to do so. I made my own engine. I hope that my C++ game engine will be useful for many programmers.
+   Hello! My name is Popov Evgeniy Alekseyevich. I am a solo programmer. I
+   enjoy creating software. I also like old-school video games. Do you
+   want to develop video games for Microsoft Windows? You need a good game
+   engine to do so. I made my own engine. I hope that my C++ game engine
+   will be useful for many programmers. <br>
    <br>
-   <br><u>Features.</u><br>
+   <u>Features.</u><br>
    <br>
    Let me show you the engine features. Let's go.<br>
   </big>
@@ -102,10 +128,13 @@
    <li><big>Open-source code.</big></li>
    <li><big>Very fast.</big></li>
    <li><big>An easy-to-use object-oriented design.</big></li>
-   <li><big>The minimum number of external dependencies: <a href="https://learn.microsoft.com/en-us/windows/win32/directx">DirectX</a>, <a href="https://opengl.org">OpenGL</a>, and the standard <a href="https://learn.microsoft.com/en-us/windows/win32/apiindex/windows-api-list">Windows API</a> libraries.</big></li>
+   <li><big>The minimum set of external dependencies: <a href="https://learn.microsoft.com/en-us/windows/win32/directx">DirectX</a>, <a
+
+      href="https://opengl.org">OpenGL</a>, and the standard <a href="https://learn.microsoft.com/en-us/windows/win32/apiindex/windows-api-list">Windows API</a> libraries.</big></li>
    <li><big>You don't need to link a main program with the engine binary file. The engine is just the source code files.</big></li>
   </ul>
-  <big><u><br>Installation.</u><br>
+  <big><u><br>
+    Installation.</u><br>
    <br>
    How to install this engine? Follow these steps:<br>
    Copy these files to your project directory:<br>
@@ -114,31 +143,28 @@
    <li><big>graygdk.h</big></li>
    <li><big>graygdk.cpp</big></li>
   </ul>
-  <big>
-   Add it to your project.<br>
+  <big> Add them to your project.<br>
    Add this directive to your code: <i>#include "graygdk.h"</i><br>
    Yes. This is really all you need to do.<br>
   </big>
-  <h2><a id="mozTocId895629" class="mozTocH2"></a><big>Chapter 2. Special thanks.</big></h2>
-  <big>
-   I want to say «Big thanks for the technical consultation» to these people:<br>
+  <h2><a id="mozTocId906813" class="mozTocH2"></a><big>Chapter 2. Special thanks</big></h2>
+  <big> I want to say «Big thanks for the technical consultation» to these people:<br>
   </big>
   <ul>
-  <li><a href="https://github.com/dmitrysmagin"><big>Dmitry Smagin</big></a></li>
-  <li><a href="https://bsg.org.ua"><big>Pavel Samko</big></a></li>
-  <li><a href="https://github.com/EXL"><big>EXL</big></a></li>
-  <li><a href="http://www.almost-university.com"><big>Vladimir Mozhenkov</big></a></li>
-  <li><a href="https://vk.com/strong666"><big>Vitaliy Molochkov</big></a></li>
-  <li><a href="mailto:eyegem@mail.ru"><big>Evgenia Germanova</big></a></li>
-  <li><big>DDMZ</big></li>
-  <li><big>Anastasiya</big></li>
+   <li><a href="https://github.com/dmitrysmagin"><big>Dmitry Smagin</big></a></li>
+   <li><a href="https://bsg.org.ua"><big>Pavel Samko</big></a></li>
+   <li><a href="https://github.com/EXL"><big>EXL</big></a></li>
+   <li><a href="http://www.almost-university.com"><big>Vladimir Mozhenkov</big></a></li>
+   <li><a href="https://vk.com/strong666"><big>Vitaliy Molochkov</big></a></li>
+   <li><a href="mailto:eyegem@mail.ru"><big>Evgenia Germanova</big></a></li>
+   <li><big>DDMZ</big></li>
+   <li><big>Anastasiya</big></li>
   </ul>
   <big><br>
    Thanks to the PVS-Studio team for the <a href="https://www.viva64.com/en/b/0614/">free license</a>.<br>
   </big>
   <h2><a id="mozTocId732783" class="mozTocH2"></a><big>Chapter 3. License.</big></h2>
-  <big>
-   <u>The Gray Game Development Kit license.</u><br>
+  <big> <u>The Gray Game Development Kit license.</u><br>
    <br>
    Copyright (C) 2020 - 2026 Popov Evgeniy Alekseyevich<br>
    <br>
@@ -169,11 +195,16 @@
    the following conditions:<br>
    The above copyright notice and this permission notice shall be included<br>
    in all copies or substantial portions of the Materials.<br>
-   THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.<br>
+   THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.<br>
   </big>
   <h2><a id="mozTocId873492" class="mozTocH2"></a><big>Chapter 4. System requirements</big></h2>
-  <big>
-   You can see the minimum system requirements below.<br>
+  <big> You can see the minimum system requirements below.<br>
    <br>
   </big>
   <table border="1">
@@ -198,15 +229,13 @@
   </table>
   <big><br>
   </big>
-  <h2><a id="mozTocId146699" class="mozTocH2"></a><big>Chapter 5. Troubleshooting.</big></h2>
-  <big>
-   You need <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170">Visual C++ Redistributable</a> packages if your game code is compiled under Visual C++.<br>
+  <h2><a id="mozTocId557972" class="mozTocH2"></a><big>Chapter 5. Troubleshooting</big></h2>
+  <big> You need the <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170">Visual C++ Redistributable</a> packages if your game code is compiled with Visual C++.<br>
   </big>
   <h2><a id="mozTocId294324" class="mozTocH2"></a><big>Chapter 6. Supported compiler list</big></h2>
-  <big>
-   This engine was successfully tested with these compilers:<br>
+  <big> This engine was successfully tested with these compilers:<br>
   </big>
-   <ul>
+  <ul>
    <li><a href="https://jmeubank.github.io/tdm-gcc/"><big>TDM-GCC</big></a></li>
    <li><a href="http://mingw-w64.org"><big>MINGW-w64</big></a></li>
    <li><a href="http://openwatcom.org"><big>Open Watcom</big></a></li>
@@ -251,7 +280,8 @@
    <li><big> Visual C++ 2003</big></li>
    <li><big> Visual C++ 2005</big></li>
   </ul>
-  <big><u><br>Windows 2000 support.</u><br>
+  <big><u><br>
+    Windows 2000 support.</u><br>
    <br>
    You need one of the following compilers for <a href="https://en.wikipedia.org/wiki/Windows_2000">Windows 2000</a> support:<br>
    <br>
@@ -262,19 +292,23 @@
    <li><big> Visual C++ 2003</big></li>
    <li><big> Visual C++ 2005</big></li>
   </ul>
-  <big><br><u>Windows SDK and DirectX SDK.</u><br>
+  <big><br>
+   <u>Windows SDK and DirectX SDK.</u><br>
    <br>
-   You need the <a href="https://www.microsoft.com/en-us/download/details.aspx?id=15656">Windows Server 2003 SP1 Platform SDK</a> and the <a href="https://archive.org/details/dxsdk_feb2005">DirectX SDK February 2005</a> if you are using Visual C++ 2005 Express.
+   You need the <a href="https://www.microsoft.com/en-us/download/details.aspx?id=15656">Windows Server 2003 SP1 Platform SDK</a> and the <a
+
+    href="https://archive.org/details/dxsdk_feb2005">DirectX SDK February 2005</a> if you are using Visual C++ 2005 Express. <br>
    <br>
-   <br><u>A note for the Visual C++ users.</u><br>
+   <u>A note for the Visual C++ users.</u><br>
    <br>
-   Disable the precompiled headers before starting compilation. The old Visual C++ users can do it via the project creation wizard.<br>
+   Disable the precompiled headers before starting compilation. The old
+   Visual C++ users can do it via the project creation wizard.<br>
    The Visual C++ 2017 or higher users must follow these steps:<br>
    <br>
    Go to «Project Properties — C/C++ — Precompiled Headers»<br>
-   Set the «Precompiled Header» option to «Not Using Precompiled Headers».
-   <br>
-   <u><br>A note for the MINGW-w64 and TDM-GCC users.</u><br>
+   Set the «Precompiled Header» option to «Not Using Precompiled Headers». <br>
+   <u><br>
+    A note for the MINGW-w64 and TDM-GCC users.</u><br>
    <br>
    Don't forget to link your program with these files:<br>
    <br>
@@ -292,24 +326,23 @@
    See the documentation of the compiler for more information about linking.<br>
   </big>
   <h2><a id="mozTocId843660" class="mozTocH2"></a><big> Chapter 8. Engine namespace</big></h2>
-  <big>
-   <i>GRAYGDK</i> is the main namespace. All the engine classes are declared in a few nested namespaces.<br>
+  <big> <i>GRAYGDK</i> is the main namespace. All the engine classes are declared in several nested namespaces.<br>
   </big>
   <h2><a id="mozTocId184890" class="mozTocH2"></a><big> Chapter 9. Custom data types</big></h2>
-  <big>
-   Almost all custom data types are declared in the <i>GRAYGDK</i> namespace.<br>
+  <big> Almost all custom data types are declared in the <i>GRAYGDK</i> namespace.<br>
   </big>
   <h1><a id="mozTocId260181" class="mozTocH1"></a><big> Part 2. Base things</big></h1>
   <h2><a id="mozTocId185852" class="mozTocH2"></a><big> Chapter 1. Coordinate system</big></h2>
   <big>
-   The engine uses the standard coordinate system by default. The coordinates start at the top-left corner. Look at this picture to understand it.<br>
+   The engine uses the standard coordinate system by default. The
+   coordinates start at the top-left corner. Look at this picture to
+   understand it.<br>
    <br>
    <img alt="" src="coordinate_system.png" height="111" width="107"><br>
    <br>
   </big>
   <h2><a id="mozTocId812350" class="mozTocH2"></a><big> Chapter 2. Game loop</big></h2>
-  <big>
-   What is the main point of your game? A game loop. You can see the structure of a typical game loop below.<br>
+  <big> What is the main point of your game? A game loop. You can see the structure of a typical game loop below.<br>
    <br>
    <img alt="" src="game_loop.png" height="354" width="379"><br>
    <br>
@@ -322,17 +355,27 @@
   <h2><a id="mozTocId177708" class="mozTocH2"></a><big> Chapter 2. Base graphics subsystem</big></h2>
   <big><u>About the base graphics subsystem.</u><br>
    <br>
-   The base graphics subsystem renders a game scene. This subsystem uses <a href="http://opengl.org">OpenGL</a> for rendering. All modern video cards support hardware acceleration. The software implementation will activate if the acceleration is not available.
+   The base graphics subsystem renders a game scene. This subsystem uses <a
+
+    href="http://opengl.org">OpenGL</a>
+   for rendering. All modern video cards support hardware acceleration.
+   The software implementation will activate if the acceleration is not
+   available. <br>
    <br>
-   <br><u>The rendering performance.</u><br>
+   <u>The rendering performance.</u><br>
    <br>
-   Always use the latest video card drivers. It may improve the rendering performance. You can also try to change the screen resolution if you have low rendering performance.
+   Always
+   use the latest video card drivers. It may improve the rendering
+   performance. You can also try to change the screen resolution if you
+   have low rendering performance. <br>
    <br>
-   <br><u>The FPS limitation.</u><br>
+   <u>The FPS limitation.</u><br>
    <br>
-   FPS is an important thing. A high FPS is needed for a good animation, but it also needs high processor usage. The FPS limit is 60 by default.
+   FPS is an
+   important thing. A high FPS is needed for a smoot animation, but it
+   also needs high processor usage. The FPS limit is 60 by default. <br>
    <br>
-   <br><u>Working with the base graphics subsystem.</u><br>
+   <u>Working with the base graphics subsystem.</u><br>
    <br>
    The <i>Screen</i> class provides access to the base graphics subsystem. Let's look at the publicly available methods.<br>
    <br>
@@ -340,11 +383,11 @@
    <br>
    <i>void Screen::initialize(); -</i> Initialize the base graphics subsystem with the default screen resolution.<br>
    <br>
-   <i>void Screen::initialize(const unsigned int width, const unsigned int height); -</i> Initialize the base graphic subsystem with the custom screen resolution.<br>
+   <i>void Screen::initialize(const unsigned int width, const unsigned int height); -</i> Initialize the base graphics subsystem with the custom screen resolution.<br>
    <br>
    <i>bool Screen::sync(); -</i> Show the game scene. Return false if the game is terminated. This method uses the FPS limits and waits between frames.<br>
    <br>
-   <i>bool Screen::update(); - </i>Show the game scene. Return false if the game is terminated. This method ignores the FPS limit and needs high processor usage.<br>
+   <i>bool Screen::update(); - </i>Show the game scene. Return false if the game is terminated. This method ignores the FPS limit.<br>
    <br>
    <i>bool Screen::sync(const bool limit); -</i> Show the game scene. Return false if the game is terminated.<br>
    <br>
@@ -367,25 +410,25 @@
    <i>bool Screen::check_x(const unsigned int x) const; -</i> Return true if the x-coordinate is valid.<br>
    <br>
    <i>bool Screen::check_y(const unsigned int y) const; -</i> Return true if the y-coordinate is valid.<br>
-   <br>   
+   <br>
    <i>bool Screen::check_horizontal_border(const unsigned int x, const unsigned int width) const; -</i> Return true if a game object has collided with the horizontal screen border.<br>
    <br>
    <i>bool Screen::check_vertical_border(const unsigned int y, const unsigned int height) const; -</i> Return true if a game object has collided with the vertical screen border.<br>
-   <br>   
+   <br>
    <i>bool Screen::check_horizontal_border(const GRAYGDK::BOX target) const; -</i> Return true if a game object has collided with the horizontal screen border.<br>
    <br>
    <i>bool Screen::check_vertical_border(const GRAYGDK::BOX target) const; -</i> Return true if a game object has collided with the vertical screen border.<br>
    <br>
-   <i>Screen *Screen::get_pointer(); -</i> Return the pointer to the base graphics subsystem object.<br>
+   <i>Screen *Screen::get_pointer(); -</i> Return a pointer to the base graphics subsystem object.<br>
   </big>
   <h2><a id="mozTocId598926" class="mozTocH2"></a><big> Chapter 3. Picture subsystem</big></h2>
   <big><u>An important subsystem.</u><br>
    <br>
-   The picture subsystem implements image storage.
+   The picture subsystem implements image storage. <br>
+   <u><br>
+    Working with the picture subsystem.</u><br>
    <br>
-   <u><br>Working with the picture subsystem.</u><br>
-   <br>
-   The <i>Picture</i> class provides simple access to the picture subsystem. Don't use it directly. Let's look at the publicly available methods.<br>   
+   The <i>Picture</i> class provides simple access to the picture subsystem. Don't use it directly. Let's look at the publicly available methods.<br>
    <br>
    <i>void Picture::destroy_image(); -</i> Destroy the image in the storage.<br>
    <br>
@@ -395,26 +438,26 @@
    <br>
    <i>unsigned int Picture::get_image_height() const; -</i> Return the image height in pixels.<br>
    <br>
-   <i>size_t Picture::get_pixel_amount() const; -</i> Return the amount of the image pixels.<br>
+   <i>size_t Picture::get_pixel_amount() const; -</i> Return the number of the image pixels.<br>
    <br>
    <i>size_t Picture::get_image_length() const; -</i> Return the image length in bytes.<br>
    <br>
-   <i>unsigned int *Picture::get_image(); -</i> Return the pointer to the image storage.<br>
+   <i>unsigned int *Picture::get_image(); -</i> Return a pointer to the image storage.<br>
   </big>
   <h2><a id="mozTocId673524" class="mozTocH2"></a><big> Chapter 4. Animation subsystem</big></h2>
-  <big><u>An important subsystem, </u><br>
+  <big><u>An important subsystem.</u><br>
    <br>
-   The animation subsystem lets you control the animation frames.
+   The animation subsystem lets you control the animation frames. <br>
+   <u><br>
+    The frame index.</u><br>
    <br>
-   <u><br>The frame index.</u><br>
+   The frame index starts at 0. <br>
    <br>
-   The frame index starts at 0.
-   <br>
-   <br><u>Working with the animation subsystem.</u><br>
+   <u>Working with the animation subsystem.</u><br>
    <br>
    The <i>Animation</i> class provides simple access to the animation subsystem. Don't use it directly. Let's look at the publicly available methods.<br>
    <br>
-   <i>unsigned int Animation::get_frames() const; -</i> Return the number of the frames.<br>
+   <i>unsigned int Animation::get_frames() const; -</i> Return number of the frames.<br>
    <br>
    <i>unsigned int Animation::get_frame() const; -</i> Return the current frame.<br>
    <br>
@@ -423,8 +466,7 @@
    <i>bool Animation::check_frame(const unsigned int target) const; -</i> Return true if the target frame is valid.<br>
   </big>
   <h2><a id="mozTocId178110" class="mozTocH2"></a><big> Chapter 5. Vertex index</big></h2>
-  <big>
-   The vertex index correspond to the predefined constants. You can see it below.<br>
+  <big> The vertex index corresponds to the predefined constants. You can see it below.<br>
    <br>
   </big>
   <table style="width: 358px; height: 139px;" border="1">
@@ -460,19 +502,23 @@
   </big>
   <h2><a id="mozTocId183933" class="mozTocH2"></a><big> Chapter 6. Background</big></h2>
   <big>
-   A background is a big image with a few frames. Any game has a background. The background will be scaled to fit the screen resolution. The background transparency is always disabled.<br>
+   A background is a big image with a few frames. Any game has a
+   background. The background will be scaled to fit the screen. The
+   background transparency is always disabled.<br>
    <br>
-   The horizontal animated backgrounds look like the horizontal photo ribbons. The vertical animated backgrounds look like the vertical photo ribbons.</big><br>
+   The horizontal animated backgrounds look like the horizontal photo
+   ribbons. The vertical animated backgrounds look like the vertical photo
+   ribbons.</big><br>
   <h2><a id="mozTocId398246" class="mozTocH2"></a><big>Chapter 7. Segment</big></h2>
   <big><u>A few words about the segment.</u><br>
    <br>
-   The segment is a horizontal animated background.
+   The segment is a horizontal animated background. <br>
    <br>
-   <br><u>Working with the section.</u><br>
+   <u>Working with the section.</u><br>
    <br>
    Use the <i>Segment</i> class to work with the segment. Let's look at the publicly available methods.<br>
    <br>
-   <i>Segment *Segment::get_pointer();</i> - Return the pointer to the segment object.<br>
+   <i>Segment *Segment::get_pointer();</i> - Return a pointer to the segment object.<br>
    <br>
    <i>void Segment::prepare(const Screen *screen);</i> - Prepare for drawing.<br>
    <br>
@@ -512,7 +558,7 @@
    <br>
    <i>void Segment::destroy_image();</i> - Destroy the background image.<br>
    <br>
-   <i>void Segment::destroy();</i> - Destroy the background image and the texture.<br>
+   <i>void Segment::destroy();</i> - Total destroy the background.<br>
    <br>
    <i>bool Segment::is_load() const;</i> - Return true if a background has already been loaded.<br>
    <br>
@@ -530,21 +576,21 @@
    <br>
    <u>A background texture.</u><br>
    <br>
-   The background doesn't draw if the background texture doesn't exist. It will be automatically created when you load an image.
-   <br>
-   <u><br>An important notice.</u><br>
+   The background isn't drawn if the background texture doesn't exist. It will be automatically created when you load an image. <br>
+   <u><br>
+    An important notice.</u><br>
    <br>
    Always call the <i>prepare</i> method after the background has been loaded.</big><br>
   <h2><a id="mozTocId654980" class="mozTocH2"></a><big>Chapter 8. Section</big></h2>
   <big><u>A few words about the section.</u><br>
    <br>
-   The section is a vertical animated background.
+   The section is a vertical animated background. <br>
    <br>
-   <br><u>Working with the section.</u><br>
+   <u>Working with the section.</u><br>
    <br>
    Use the <i>Section</i> class to work with the section. Let's look at the publicly available methods.<br>
    <br>
-   <i>Section *Section::get_pointer();</i> - Return the pointer to the section object.<br>
+   <i>Section *Section::get_pointer();</i> - Return a pointer to the section object.<br>
    <br>
    <i>void Section::prepare(const Screen *screen);</i> - Prepare for drawing.<br>
    <br>
@@ -584,7 +630,7 @@
    <br>
    <i>void Section::destroy_image();</i> - Destroy the background image.<br>
    <br>
-   <i>void Section::destroy();</i> - Destroy the background image and the texture.<br>
+   <i>void Section::destroy();</i> - Total destroy the background.<br>
    <br>
    <i>bool Section::is_load() const;</i> - Return true if a background has already been loaded.<br>
    <br>
@@ -602,22 +648,22 @@
    <br>
    <u>A background texture.</u><br>
    <br>
-   The background doesn't draw if the background texture doesn't exist. It will be automatically created when you load an image.
-   <br>
-   <u><br>An important notice.</u><br>
+   The background isn't drawn if the background texture doesn't exist. It will be automatically created when you load an image. <br>
+   <u><br>
+    An important notice.</u><br>
    <br>
    Always call the <i>prepare</i> method after the background has been loaded.<br>
   </big>
   <h2><a id="mozTocId60013" class="mozTocH2"></a><big> Chapter 9. Static background</big></h2>
   <big><u>A few words about the static background.</u><br>
    <br>
-   The static background is a simple kind of background. It contains one frame only.
-   <br>
-   <u><br>Working with the background.</u><br>
+   The static background is a simple kind of background. It contains one frame only. <br>
+   <u><br>
+    Working with the background.</u><br>
    <br>
    Use the <i>Scene</i> class to work with the static background. Let's look at the publicly available methods.<br>
    <br>
-   <i>Scene *Scene::get_pointer(); -</i> Return the pointer to the background object.<br>
+   <i>Scene *Scene::get_pointer(); -</i> Return a pointer to the background object.<br>
    <br>
    <i>void Scene::prepare(const Screen *screen); -</i> Prepare for drawing.<br>
    <br>
@@ -661,26 +707,27 @@
    <br>
    <u>A background texture</u><br>
    <br>
-   The background doesn't draw if the background texture doesn't exist. It will be automatically created when you load an image.<br>
+   The background isn't drawn if the background texture doesn't exist. It will be automatically created when you load an image.<br>
    <br>
    <u>An important notice.</u><br>
    <br>
    Always call the <i>prepare</i> method after the background has been loaded.<br>
   </big>
-  <h2><a id="mozTocId902550" class="mozTocH2"></a><big> Chapter 10. Parallax Background<br></big></h2>
+  <h2><a id="mozTocId902550" class="mozTocH2"></a><big> Chapter 10. Parallax Background<br>
+   </big></h2>
   <big><u>A few words about the parallax background.</u><br>
    <br>
-   A parallax background is a background that supports offset scrolling.
+   A parallax background is a background that supports offset scrolling. <br>
+   <u><br>
+    The speed.</u><br>
    <br>
-   <u><br>The speed.</u><br>
+   The scrolling speed should be a positive number. <br>
    <br>
-   The scrolling speed should be a positive number.
-   <br>
-   <br><u>Working with the background.</u><br>
+   <u>Working with the background.</u><br>
    <br>
    Use the <i>Parallax</i> class to work with the parallax background. Let's look at the publicly available methods.<br>
    <br>
-   <i>Parallax *Parallax::get_pointer(); -</i> Return the pointer to the background object.<br>
+   <i>Parallax *Parallax::get_pointer(); -</i> Return a pointer to the background object.<br>
    <br>
    <i>void Parallax::prepare(const Screen *screen); -</i> Prepare for drawing.<br>
    <br>
@@ -734,7 +781,7 @@
    <br>
    <u>A background texture.</u><br>
    <br>
-   The background doesn't draw if the background texture doesn't exist. It will be automatically created when you load an image.<br>
+   The background isn't drawn if the background texture doesn't exist. It will be automatically created when you load an image.<br>
    <br>
    <u>An important notice.</u><br>
    <br>
@@ -743,9 +790,9 @@
   <h2><a id="mozTocId447884" class="mozTocH2"></a><big> Chapter 11. Base sprite subsystem</big></h2>
   <big><u>A small, important thing.</u><br>
    <br>
-   A sprite is a transparent image. It is useful for many things: enemies, bonuses, etc.
+   A sprite is a transparent image. It is useful for many things: enemies, bonuses, etc. <br>
    <br>
-   <br><u>Working with the base sprite subsystem.</u><br>
+   <u>Working with the base sprite subsystem.</u><br>
    <br>
    The <i>Billboard</i> class provides simple access to the base sprite subsystem. Don't use it directly. Let's look at the publicly available methods.<br>
    <br>
@@ -833,14 +880,16 @@
   </big>
   <h2><a id="mozTocId772180" class="mozTocH2"></a><big> Chapter 12. Animated sprites</big></h2>
   <big>
-   There are two kinds of animated sprites: the horizontal strips and the vertical strips. It is a small image with a few frames.<br>
+   There are two kinds of animated sprites: the horizontal strips and the
+   vertical strips. Each sprite is a small image with a few frames.<br>
    The horizontal strip looks like the horizontal photo ribbon. The vertical strip looks like the vertical photo ribbon.</big><br>
-  <h2><a id="mozTocId212182" class="mozTocH2"></a><big>Chapter 13. Ribbons<br></big></h2>
+  <h2><a id="mozTocId212182" class="mozTocH2"></a><big>Chapter 13. Ribbons<br>
+   </big></h2>
   <big><u>A few words about the ribbons.</u><br>
    <br>
-   The ribbons are horizontal sprite strips.
+   The ribbons are horizontal sprite strips. <br>
    <br>
-   <br><u>Working with the ribbons.</u><br>
+   <u>Working with the ribbons.</u><br>
    <br>
    Use the <i>Ribbon</i> class to work with a ribbon. It is derived from three classes: <i>Billboard</i>, <i>Animation</i>, and <i>Picture</i>. Let's look at the publicly available methods.<br>
    <br>
@@ -854,20 +903,20 @@
    <br>
    <i>void Ribbon::step(); -</i> Go to the next frame or jump to the start if the current frame is the last.<br>
    <br>
-   <i>Ribbon *Ribbon::get_pointer(); -</i> Return the pointer to the ribbon object.<br>
+   <i>Ribbon *Ribbon::get_pointer(); -</i> Return a pointer to the ribbon object.<br>
    <br>
-   <i>void Ribbon::destroy(); -</i> Destroy the sprite image and destroy the texture.<br>
+   <i>void Ribbon::destroy(); -</i> Total destroy the sprite.<br>
    <br>
    <u>A sprite texture</u><br>
    <br>
-   A sprite doesn't draw if the sprite texture doesn't exist. It will automatically be created when you load a sprite.<br>
+   A sprite isn't drawn if the sprite texture doesn't exist. It will automatically be created when you load a sprite.<br>
   </big>
   <h2><a id="mozTocId15783" class="mozTocH2"></a><big>Chapter 14. The tier</big></h2>
   <big><u>A few words about the tier.</u><br>
    <br>
-   The tier is a vertical sprite strip.
-   <br>
-   <u><br>Working with the tier.</u><br>
+   The tier is a vertical sprite strip. <br>
+   <u><br>
+    Working with the tier.</u><br>
    <br>
    Use the <i>Tier</i> class to work with a tier. It is derived from three classes: <i>Billboard</i>, <i>Animation</i>, and <i>Picture</i>. Let's look at the publicly available methods.<br>
    <br>
@@ -881,20 +930,20 @@
    <br>
    <i>void Tier::step();</i> - Go to the next frame or jump to the start if the current frame is the last.<br>
    <br>
-   <i>Tier *Tier::get_pointer();</i> - Return the pointer to the tier object.<br>
+   <i>Tier *Tier::get_pointer();</i> - Return a pointer to the tier object.<br>
    <br>
-   <i>void Tier::destroy();</i> - Destroy the sprite image and destroy the texture.<br>
+   <i>void Tier::destroy();</i> - Total destroy the sprite.<br>
    <br>
    <u>A sprite texture</u><br>
    <br>
-   A sprite doesn't draw if the sprite texture doesn't exist. It will automatically be created when you load a sprite.<br>
+   A sprite isn't drawn if the sprite texture doesn't exist. It will automatically be created when you load a sprite.<br>
   </big>
   <h2><a id="mozTocId186226" class="mozTocH2"></a><big> Chapter 15. Static sprites</big></h2>
   <big><u>A few words about static sprites.</u><br>
    <br>
-   The static sprite is a simple kind of sprite. It contains one frame only.
+   The static sprite is a simple kind of sprite. It contains one frame only. <br>
    <br>
-   <br><u>Working with the static sprites.</u><br>
+   <u>Working with the static sprites.</u><br>
    <br>
    Use the <i>Cartoon</i> class to work with a static sprite. It is derived from two classes: <i>Billboard</i> and <i>Picture</i>. Let's look at the publicly available methods.<br>
    <br>
@@ -904,27 +953,28 @@
    <br>
    <i>bool Cartoon::load(const char *name); -</i> Load a sprite from the target file and return true if it is loaded.<br>
    <br>
-   <i>Cartoon *Cartoon::get_pointer(); -</i> Return the pointer to the sprite object.<br>
+   <i>Cartoon *Cartoon::get_pointer(); -</i> Return a pointer to the sprite object.<br>
    <br>
    <i>void Cartoon::destroy(); -</i> Destroy the sprite image and the texture.<br>
    <br>
    <u>A sprite texture</u><br>
    <br>
-   A sprite doesn't draw if the sprite texture doesn't exist. It will automatically be created when you load a sprite.<br>
+   A sprite isn't drawn if the sprite texture doesn't exist. It will automatically be created when you load a sprite.<br>
   </big>
   <h2><a id="mozTocId640907" class="mozTocH2"></a><big> Chapter 16. Sprite sheet</big></h2>
-  <big>
-   <u>Some words about the sprite sheet.</u><br>
+  <big> <u>Some words about the sprite sheet.</u><br>
    <br>
-   A sprite sheet is a special kind of animated sprite. Each frame has a fixed size. The sheet is a matrix of frames. Look at this picture to understand it.<br>
+   A sprite sheet is a special kind of animated sprite. Each frame has a
+   fixed size. The sheet is a matrix of frames. Look at this picture to
+   understand it.<br>
    <br>
    <img alt="" src="sheet.png" height="249" width="380"><br>
    <br>
    <u>The rows and columns.</u><br>
    <br>
-   The row index start at 1. The column index starts at 0.
+   The row index start at 1. The column index starts at 0. <br>
    <br>
-   <br><u>Working with the sheet.</u><br>
+   <u>Working with the sheet.</u><br>
    <br>
    The <i>Sheet</i> class provides access to the sprite sheet subsystem. It is derived from three classes: <i>Billboard</i>, <i>Picture</i>, and <i>Animation</i>. Let's look at the publicly available methods.<br>
    <br>
@@ -958,23 +1008,26 @@
    <br>
    <i>bool Sheet::load(const char *name, const unsigned int row_amount, const unsigned int column_amount); -</i> Load a sprite sheet from a target file and return true if it is loaded.<br>
    <br>
-   <i>Sheet *Sheet::get_pointer(); -</i> Return the pointer to the sprite sheet.<br>
-   <u><br>A sprite sheet texture</u><br>
+   <i>Sheet *Sheet::get_pointer(); -</i> Return a pointer to the sprite sheet.<br>
+   <u><br>
+    A sprite sheet texture</u><br>
    <br>
-   A sprite sheet doesn't draw if the sprite sheet texture doesn't exist. It will be automatically created when you load a sheet.<br>
+   A sprite sheet isn't drawn if the sprite sheet texture doesn't exist. It will be automatically created when you load a sheet.<br>
   </big>
   <h2><a id="mozTocId31034" class="mozTocH2"></a><big> Chapter 17. Text</big></h2>
   <big><u>How to print text?</u><br>
    <br>
-   Use the text subsystem to print the text. This subsystem needs a font for text printing. You must load a font before starting to print the text. The font is just a sprite sheet with 16 rows and 16 columns.
+   Use the text subsystem to print the text. This subsystem needs a font
+   for text printing. You must load a font before starting to print the
+   text. The font is just a sprite sheet with 16 rows and 16 columns. <br>
+   <u><br>
+    The supported characters.</u><br>
    <br>
-   <u><br>The supported characters.</u><br>
+   Only 8-bit characters are supported. <br>
    <br>
-   Only 8-bit characters are supported.
+   <u>The text orientation.</u><br>
    <br>
-   <br><u>The text orientation.</u><br>
-   <br>
-   The text orientation corresponds to the predefined constants. You can see it below.<br>
+   The text orientation correspond to the predefined constants. You can see it below.<br>
    <br>
   </big>
   <table style="width: 437px; height: 85px;" border="1">
@@ -995,11 +1048,12 @@
     </tr>
    </tbody>
   </table>
-  <big><br><u>Working with the text.</u><br>
+  <big><br>
+   <u>Working with the text.</u><br>
    <br>
    The <i>Text</i> class provides a simple interface to the text subsystem. Let's look at the publicly available methods.<br>
    <br>
-   <i>Text *Text::get_pointer(); -</i> Return the pointer to the text printing subsystem.<br>
+   <i>Text *Text::get_pointer(); -</i> Return a pointer to the text printing subsystem.<br>
    <br>
    <i>GRAYGDK::TEXT_KIND Text::get_orientation() const; -</i> Get the current text orientation.<br>
    <br>
@@ -1048,45 +1102,50 @@
    <br>
    Use the image loader to load an image from a file. The <i>Image</i> class provides simple access to the image loader. It is a simple class with a few methods.<br>
    <br>
-   <i>unsigned char *Image::load(const char *name); -</i> Load a Truevision TGA image and return the pointer to the image buffer.<br>
+   <i>unsigned char *Image::load(const char *name); -</i> Load a Truevision TGA image and return a pointer to the image buffer.<br>
    <br>
-   <i>unsigned char *Image::get_data(); -</i> Return the pointer to the image buffer.<br>
+   <i>unsigned char *Image::get_data(); -</i> Return a pointer to the image buffer.<br>
    <br>
    <i>unsigned int Image::get_width() const; -</i> Return the width of the current image.<br>
    <br>
    <i>unsigned int Image::get_height() const; -</i> Return the height of the current image.<br>
-   <br>   
-   <i>size_t Image::get_pixel_amount() const; -</i> Return the amount of the image pixels.<br>
-   <br>   
+   <br>
+   <i>size_t Image::get_pixel_amount() const; -</i> Return the number of the image pixels.<br>
+   <br>
    <i>size_t Image::get_length() const; -</i> Return the length of the image buffer in bytes.<br>
    <br>
-   <i>Image *Image::get_pointer(); -</i> Return the pointer to the image loader.<br>
+   <i>Image *Image::get_pointer(); -</i> Return a pointer to the image loader.<br>
    <br>
    <i>void Image::destroy_image(); -</i> Destroy the current image and free the image buffer.<br>
    <br>
    <u>An important note.</u><br>
    <br>
-   A new image will replace the current image if the current image already exists. An incorrect image will be ignored and will fail to load.<br>
-   The source image will be converted to the <a href="https://en.wikipedia.org/wiki/RGBA">RGBA</a> format. The pixels matching the top-left pixel will be marked as transparent.
+   A new image will replace the current image if the current image already
+   exists. An incorrect image will be ignored and will fail to load.<br>
+   The source image will be converted to the <a href="https://en.wikipedia.org/wiki/RGBA">RGBA</a> format. The pixels matching the top-left pixel will be marked as transparent. <br>
    <br>
-   <br><u>The supported format.</u><br>
+   <u>The supported format.</u><br>
    <br>
-   All loading images must have the correct specifications. You can load an image from a 24-bit <a href="https://en.wikipedia.org/wiki/Truevision_TGA">Truevision TGA</a> picture.
+   All loading images must have the correct specifications. You can load an image from a 24-bit <a
+
+    href="https://en.wikipedia.org/wiki/Truevision_TGA">Truevision TGA</a> picture. <br>
+   <u><br>
+    The recommended software.</u><br>
    <br>
-   <u><br>The recommended software.</u><br>
-   <br>
-   You can use a wide range of graphics software to convert your images to the correct format. I recommend using <a href="https://www.gimp.org">GIMP</a> to do it. It is a powerful image editor.<br>
+   You can use a wide range of graphics software to convert your images to the correct format. I recommend using <a
+
+    href="https://www.gimp.org">GIMP</a> to do it. It is a powerful image editor.<br>
   </big>
   <h2><a id="mozTocId65856" class="mozTocH2"></a><big> Chapter 19. Camera</big></h2>
   <big><u>A few words about the camera.</u><br>
    <br>
-   The 2D camera defines the visible world area. During rendering, this area is scaled to match the screen resolution.
+   The 2D camera defines the visible world area. During rendering, this area is scaled to match the screen. <br>
    <br>
-   <br><u>Working with the camera.</u><br>
+   <u>Working with the camera.</u><br>
    <br>
    The <i>Camera</i> class provides simple access to the camera subsystem. Let's look at the publicly available methods.<br>
    <br>
-   <i>Camera *Camera::get_pointer(); -</i> Return the pointer to the camera subsystem.<br>
+   <i>Camera *Camera::get_pointer(); -</i> Return a pointer to the camera subsystem.<br>
    <br>
    <i>unsigned int Camera::increase_x(); -</i> Increase the horizontal camera offset and return it.<br>
    <br>
@@ -1116,9 +1175,9 @@
    <br>
    <i>unsigned int Camera::get_highest_y() const; -</i> Return the highest allowable y-coordinate of the current visible area.<br>
    <br>
-   <i>unsigned int Camera::get_highest_x_offset() const; -</i> Return the highest allowable x-offset of the camera.<br>
+   <i>unsigned int Camera::get_highest_x_offset() const; -</i> Return the highest allowable horizontal camera offset.<br>
    <br>
-   <i>unsigned int Camera::get_highest_y_offset() const; -</i> Return the highest allowable y-offset of the camera.<br>
+   <i>unsigned int Camera::get_highest_y_offset() const; -</i> Return the highest allowable vertical camera.<br>
    <br>
    <i>unsigned int Camera::get_world_x(const unsigned screen_int x) const; -</i> Convert the screen x-coordinate to the world x-coordinate.<br>
    <br>
@@ -1141,11 +1200,11 @@
    <i>void Camera::set_viewport(const unsigned int width, const unsigned int height); -</i> Set the viewport settings.<br>
    <br>
    <i>void Camera::set_offset(const unsigned int x, const unsigned int y); -</i> Set the camera offset.<br>
-   <br>   
+   <br>
    <i>bool Camera::check_horizontal_border(const unsigned int x, const unsigned int width) const; -</i> Return true if a game object has collided with the horizontal visible area border.<br>
    <br>
    <i>bool Camera::check_vertical_border(const unsigned int y, const unsigned int height) const; -</i> Return true if a game object has collided with the vertical visible area border.<br>
-   <br>   
+   <br>
    <i>bool Camera::check_horizontal_border(const GRAYGDK::BOX target) const; -</i> Return true if a game object has collided with the horizontal visible area border.<br>
    <br>
    <i>bool Camera::check_vertical_border(const GRAYGDK::BOX target) const; -</i> Return true if a game object has collided with the vertical visible area border.<br>
@@ -1154,16 +1213,15 @@
    <br>
    <i>void Camera::update(const unsigned int x, const unsigned int y); -</i> Set the offsets and update the camera.<br>
    <br>
-   <i>void Camera::reset(); -</i> Reset the camera settings.
+   <i>void Camera::reset(); -</i> Reset the camera settings. <br>
    <br>
-   <br><u>An important note.</u><br>
+   <u>An important note.</u><br>
    <br>
    Always set the viewport size after initializing the camera. Always update the camera before drawing.<br>
   </big>
   <h1><a id="mozTocId327202" class="mozTocH1"></a><big> Part 4. Transformation</big></h1>
   <h2><a id="mozTocId544004" class="mozTocH2"></a><big> Chapter 1. Sub-namespace</big></h2>
-  <big>
-   All classes in this section are declared in the <i>Transformation</i> sub-namespace.<br>
+  <big> All classes in this section are declared in the <i>Transformation</i> sub-namespace.<br>
   </big>
   <h2><a id="mozTocId839963" class="mozTocH2"></a><big> Chapter 2. Cartesian coordinates and the screen coordinates</big></h2>
   <big><u>The Cartesian coordinates.</u><br>
@@ -1174,11 +1232,13 @@
    <br>
    <u>Coordinate conversion.</u><br>
    <br>
-   You can convert the Cartesian coordinates to the screen coordinates. You can also convert the screen coordinates to the Cartesian coordinates.<br>
+   You can convert the Cartesian coordinates to the screen coordinates.
+   You can also convert the screen coordinates to the Cartesian
+   coordinates.<br>
    <br>
    Use the <i>Coordinates</i> class to do it. Let's look at the publicly available methods.<br>
    <br>
-   <i>Coordinates *Coordinates::get_pointer(); -</i> Return the pointer to the coordinates conversion subsystem.<br>
+   <i>Coordinates *Coordinates::get_pointer(); -</i> Return a pointer to the coordinates conversion subsystem.<br>
    <br>
    <i>void Coordinates::initialize(const int viewport_width, const int viewport_height); -</i> Initialize the subsystem.<br>
    <br>
@@ -1209,11 +1269,13 @@
   <h2><a id="mozTocId740107" class="mozTocH2"></a><big> Chapter 3. Cartesian coordinates and the isometric coordinates</big></h2>
   <big><u>A few words about the isometric games.</u><br>
    <br>
-   <a href="https://en.wikipedia.org/wiki/Isometric_projection"> Isometric projection</a> is a very popular way for pseudo-3D games. Many old-school games are isometric games.
+   <a href="https://en.wikipedia.org/wiki/Isometric_projection"> Isometric projection</a> is a very popular way for pseudo-3D games. Many old-school games are isometric games. <br>
    <br>
-   <br><u>Coordinate conversion.</u><br>
+   <u>Coordinate conversion.</u><br>
    <br>
-   You can convert the Cartesian coordinates to the isometric coordinates. You can also convert the isometric coordinates to the Cartesian coordinates. Use the <i>Isometric</i> class to do it. Let's look at the publicly available methods.<br>
+   You can convert the Cartesian coordinates to the isometric coordinates.
+   You can also convert the isometric coordinates to the Cartesian
+   coordinates. Use the <i>Isometric</i> class to do it. Let's look at the publicly available methods.<br>
    <br>
    <i>static int Isometric::get_isometric_x(const int x, const int y); -</i> Convert the x-coordinate from the Cartesian system to the isometric system.<br>
    <br>
@@ -1224,14 +1286,13 @@
    <i>static int Isometric::get_cartesian_y(const int x, const int y); -</i> Convert the y-coordinate from the isometric system to the Cartesian system.<br>
   </big>
   <h2><a id="mozTocId882270" class="mozTocH2"></a><big> Chapter 4. Isometric Level</big></h2>
-  <big>
-   The isometric level subsystem is intended to help you create an isometric level. Use the <i>Level</i> class to do it. Let's look at the publicly available methods.<br>
+  <big> The isometric level subsystem is intended to help you create an isometric level. Use the <i>Level</i> class to do it. Let's look at the publicly available methods.<br>
    <br>
-   <i>Level *Level::get_pointer(); -</i> Return the pointer to the isometric level subsystem.<br>
+   <i>Level *Level::get_pointer(); -</i> Return a pointer to the isometric level subsystem.<br>
    <br>
    <i>void Level::initialize(const int tile_width, const int tile_height); -</i> Initialize the subsystem.<br>
    <br>
-   <i>void Level::set_offset(const int x_offset, const int y_offset); -</i> Set the coordinates offset.<br>
+   <i>void Level::set_offset(const int x_offset, const int y_offset); -</i> Set the coordinate offset.<br>
    <br>
    <i>int Level::get_x_offset() const; -</i> Return the x-offset.<br>
    <br>
@@ -1243,39 +1304,40 @@
   </big>
   <h1><a id="mozTocId667365" class="mozTocH1"></a><big> Part 5. Common things</big></h1>
   <h2><a id="mozTocId391697" class="mozTocH2"></a><big> Chapter 1. Sub-namespace</big></h2>
-  <big>
-   All classes in this section are declared in the <i>Common</i> sub-namespace.<br>
+  <big> All classes in this section are declared in the <i>Common</i> sub-namespace.<br>
   </big>
   <h2><a id="mozTocId568018" class="mozTocH2"></a><big> Chapter 2. Terminating the application</big></h2>
-  <big>
-   You can use the <i>Halt</i> function to terminate a program. This function is declared in the <i>GRAYGDK</i> namespace.<br>
+  <big> You can use the <i>Halt</i> function to terminate a program. This function is declared in the <i>GRAYGDK</i> namespace.<br>
    <br>
    <i>void GRAYGDK::Halt(const char *message); -</i> Terminate the program. Write an error message to the log file if logging is enabled.<br>
   </big>
   <h2><a id="mozTocId463271" class="mozTocH2"></a><big> Chapter 3. Timers</big></h2>
-  <big>
-   A timer is a very useful thing. Use the <i>Timer</i> class to work with the timer. Let's look at the publicly available methods.<br>
+  <big> A timer is a very useful thing. Use the <i>Timer</i> class to work with the timer. Let's look at the publicly available methods.<br>
    <br>
    <i>Timer::Timer(const double seconds); -</i> Create the timer and set it.<br>
    <br>
-   <i>Timer *Timer::get_pointer(); -</i> Return the pointer to the timer.<br>
+   <i>Timer *Timer::get_pointer(); -</i> Return a pointer to the timer.<br>
    <br>
    <i>void Timer::set_timer(const double seconds); -</i> Set the timer interval and initialize the start point.<br>
    <br>
    <i>double Timer::get_interval() const; -</i> Return the current timer interval.<br>
    <br>
-   <i>bool Timer::check_timer(); -</i> Return true and reinitialize the start point if the interval between the stop and start points is larger than or equal to a specific number of seconds.<br>
+   <i>bool Timer::check_timer(); -</i>
+   Return true and reinitialize the start point if the interval between
+   the stop and start points is greater or equal to a specific number of
+   seconds.<br>
   </big>
   <h2><a id="mozTocId165107" class="mozTocH2"></a><big> Chapter 4. Collision detection<br>
    </big></h2>
-  <big>
-   <u>An important thing for any game.</u><br>
+  <big> <u>An important thing for any game.</u><br>
    <br>
-   What is an important thing for a video game? A collision.
+   What is an important thing for a video game? A collision. <br>
+   <u><br>
+    The collision details</u><br>
    <br>
-   <u><br>The collision details</u><br>
-   <br>
-   The detector uses the bounding box collision method to detect a collision. The collision-related information is stored in a custom data type.<br>
+   The detector uses the bounding box collision method to detect a
+   collision. The collision-related information is stored in a custom data
+   type.<br>
    <br>
    <i>typedef struct<br>
     {<br>
@@ -1283,34 +1345,38 @@
     unsigned int y;<br>
     unsigned int width;<br>
     unsigned int height;<br>
-    } BOX;</i>
+    } BOX;</i> <br>
    <br>
-   <br><u>Working with the collision detector.</u><br>
+   <u>Working with the collision detector.</u><br>
    <br>
-   The <i>Collision</i> class provides easy access to the collision detectors. It is a simple class with a few methods. Let's look at the publicly available methods.<br>
+   The <i>Collision</i>
+   class provides easy access to the collision detectors. It is a simple
+   class with a few methods. Let's look at the publicly available methods.<br>
    <br>
-   <i>Collision *Collision::get_pointer(); -</i> Return the pointer to the collision detector.<br>
+   <i>Collision *Collision::get_pointer(); -</i> Return a pointer to the collision detector.<br>
    <br>
    <i>void Collision::set_target(const GRAYGDK::BOX first_target, const GRAYGDK::BOX second_target); -</i> Set the targets for the collision detector.<br>
    <br>
-   <i>bool Collision::check_collision() const; -</i> Return true if the collision between two objects is accepted.<br>
+   <i>bool Collision::check_collision() const; -</i> Return true if the collision between two objects is detected.<br>
    <br>
    <i>bool Collision::check_collision(const GRAYGDK::BOX first_target, const GRAYGDK::BOX second_target); -</i> Set the targets and check the collision between them.<br>
   </big>
   <h2><a id="mozTocId56340" class="mozTocH2"></a><big> Chapter 5. Tilemaps</big></h2>
   <big><u>A few words about the tilemap.</u><br>
    <br>
-   The tilemap is a tile matrix. A tile is a small, non-transparent sprite. A tilemap is a very useful thing for the background.
+   The tilemap is a tile matrix. A tile is a small, non-transparent sprite. A tilemap is a very useful thing for the background. <br>
    <br>
-   <br><u>The rows and columns.</u><br>
+   <u>The rows and columns.</u><br>
    <br>
-   The row index starts at 0. The column index starts at 0.
+   The row index starts at 0. The column index starts at 0. <br>
    <br>
-   <br><u>Working with the tilemap.</u><br>
+   <u>Working with the tilemap.</u><br>
    <br>
-   The <i>Tilemap</i> class provides easy access to the tilemap. It is a simple class with a few methods. Let's look at the publicly available methods.<br>
+   The <i>Tilemap</i>
+   class provides easy access to the tilemap. It is a simple class with a
+   few methods. Let's look at the publicly available methods.<br>
    <br>
-   <i>Tilemap *Tilemap::get_pointer(); -</i> Return the pointer to the tilemap subsystem.<br>
+   <i>Tilemap *Tilemap::get_pointer(); -</i> Return a pointer to the tilemap subsystem.<br>
    <br>
    <i>void Tilemap::initialize(const unsigned int tile_width, const unsigned int tile_height); -</i> Initialize the subsystem.<br>
    <br>
@@ -1336,24 +1402,27 @@
    <br>
    <i>bool Tilemap::check_column(const unsigned int column, const unsigned int viewport_height) const; -</i> Return true if the column is valid.<br>
    <br>
-   GRAYGDK::BOX Tilemap::get_box(const unsigned int row, const unsigned int column) const; - Return the collision-related information.<br>
+   GRAYGDK::BOX Tilemap::get_box(const unsigned int row, const unsigned
+   int column) const; - Return the collision-related information.<br>
   </big>
   <h1><a id="mozTocId793172" class="mozTocH1"></a><big> Part 6. Other important things</big></h1>
   <h2><a id="mozTocId436789" class="mozTocH2"></a><big> Chapter 1. Sub-namespace</big></h2>
-  <big>
-   All classes in this section are declared in the <i>Misc</i> sub-namespace.<br>
+  <big> All classes in this section are declared in the <i>Misc</i> sub-namespace.<br>
   </big>
   <h2><a id="mozTocId794878" class="mozTocH2"></a><big>Chapter 2. Memory</big></h2>
-  <big>
-   RAM is an important resource. Use the <i>Memory</i> class to get the total memory size and the free memory size. Let's look at the publicly available methods.<br>
+  <big> RAM is an important resource. Use the <i>Memory</i> class to get the total memory size and the free memory size. Let's look at the publicly available methods.<br>
    <br>
    <i>unsigned long long int Memory::get_total_physical(); -</i> Return the total physical memory size in bytes.<br>
    <br>
    <i>unsigned long long int Memory::get_free_physical(); -</i> Return the free physical memory size in bytes.<br>
    <br>
-   <i>unsigned long long int Memory::get_total_virtual(); -</i> Return the total <a href="https://en.wikipedia.org/wiki/Virtual_memory">virtual memory</a> size in bytes.<br>
+   <i>unsigned long long int Memory::get_total_virtual(); -</i> Return the total <a
+
+    href="https://en.wikipedia.org/wiki/Virtual_memory">virtual memory</a> size in bytes.<br>
    <br>
-   <i>unsigned long long int Memory::get_free_virtual(); -</i> Return the free <a href="https://en.wikipedia.org/wiki/Virtual_memory">virtual memory</a> size in bytes.<br>
+   <i>unsigned long long int Memory::get_free_virtual(); -</i> Return the free <a
+
+    href="https://en.wikipedia.org/wiki/Virtual_memory">virtual memory</a> size in bytes.<br>
    <br>
    <i>unsigned long long int Memory::get_physical_usage(); -</i> Return the physical memory usage in bytes.<br>
    <br>
@@ -1364,13 +1433,17 @@
   <h2><a id="mozTocId126242" class="mozTocH2"></a><big>Chapter 3. Audio</big></h2>
   <big><u>A few words about the audio subsystem.</u><br>
    <br>
-   This subsystem is intended for playing music and sounds. <a href="https://en.wikipedia.org/wiki/WAV">Waveform Audio File Format</a>, <a href="https://en.wikipedia.org/wiki/MP3">MPEG Audio Layer 3</a>, and <a href="https://en.wikipedia.org/wiki/Windows_Media_Audio">Windows Media Audio</a> are supported.
+   This subsystem is intended for playing music and sounds. <a href="https://en.wikipedia.org/wiki/WAV">Waveform Audio File Format</a>, <a
+
+    href="https://en.wikipedia.org/wiki/MP3">MPEG Audio Layer 3</a>, and <a
+
+    href="https://en.wikipedia.org/wiki/Windows_Media_Audio">Windows Media Audio</a> are supported. <br>
    <br>
-   <br><u>Additional formats.</u><br>
+   <u>Additional formats.</u><br>
    <br>
-   You can use an additional format if you install third-party codecs.
+   You can use an additional format if you install third-party codecs. <br>
    <br>
-   <br><u>Working with audio.</u><br>
+   <u>Working with audio.</u><br>
    <br>
    Use the <i>Audio</i> class to work with audio. Let's look at the publicly available methods.<br>
    <br>
@@ -1392,8 +1465,7 @@
   </big>
   <h1><a id="mozTocId191696" class="mozTocH1"></a><big> Part 7. Misc</big></h1>
   <h2><a id="mozTocId410673" class="mozTocH2"></a><big> Chapter 1. Filesystem</big></h2>
-  <big>
-   This module is implemented as two simple functions. All these functions are declared in the <i>Filesystem</i> sub-namespace.<br>
+  <big> This module is implemented as two simple functions. All these functions are declared in the <i>Filesystem</i> sub-namespace.<br>
    <br>
    <i>file_exists</i>: Check the target file to see if one exists.<br>
    <br>
@@ -1402,8 +1474,7 @@
    All functions take the target file name as an argument and return false if the operation failed.<br>
   </big>
   <h2><a id="mozTocId820442" class="mozTocH2"></a><big> Chapter 2. Tools</big></h2>
-  <big>
-   This module is implemented as a few functions. All these functions are declared in the <i>Tools</i> sub-namespace.<br>
+  <big> This module is implemented as a few functions. All these functions are declared in the <i>Tools</i> sub-namespace.<br>
    <br>
    <i>void quit(); -</i> Exit from your program and return the user to the operating system.<br>
    <br>
@@ -1411,7 +1482,7 @@
    <br>
    <i>void randomize(); -</i> Initialize the random number generator.<br>
    <br>
-   <i>unsigned int get_random(const unsigned int number); -</i> Return a random value between zero and the number.<br>
+   <i>unsigned int get_random(const unsigned int number); -</i> Return a random value between zero and the given number.<br>
    <br>
    <i>unsigned int get_texture_size(); -</i> Return the maximum width or height of the texture.<br>
    <br>
@@ -1419,9 +1490,15 @@
   </big>
   <h2><a id="mozTocId814270" class="mozTocH2"></a><big> Chapter 3. Resource management</big></h2>
   <big>
-   A resource is an instance of a user-defined class or structure. The resource manager is implemented as a few template functions. All these functions are declared in the <i>Resource</i> sub-namespace.<br>
+   A resource is an instance of a user-defined class or structure. The
+   resource manager is implemented as a few template functions. All these
+   functions are declared in the <i>Resource</i> sub-namespace.<br>
    <br>
-   <i>create</i>: Create a resource. The first form of this function creates a single resource. It takes a pointer to a resource pointer as an argument. The second form creates an array of the resources. It takes a pointer to a resource pointer and a resource amount.<br>
+   <i>create</i>:
+   Create a resource. The first form of this function creates a single
+   resource. It takes a pointer to a resource pointer as an argument. The
+   second form creates an array of the resources. It takes a pointer to a
+   resource pointer and a resource amount.<br>
    <br>
    <i>destroy</i>: Delete a resource if it already exists. This function takes a resource pointer as an argument.<br>
    <br>
@@ -1429,8 +1506,7 @@
   </big>
   <h1><a id="mozTocId653714" class="mozTocH1"></a><big> Part 8. Binary files</big></h1>
   <h2><a id="mozTocId691190" class="mozTocH2"></a><big> Chapter 1. Sub-namespace</big></h2>
-  <big>
-   All classes in this section are declared in the <i>File</i> sub-namespace.<br>
+  <big> All classes in this section are declared in the <i>File</i> sub-namespace.<br>
   </big>
   <h2><a id="mozTocId674282" class="mozTocH2"></a><big> Chapter 2. Base binary file subsystem</big></h2>
   <big><u>Working with the binary files.</u><br>
@@ -1447,27 +1523,25 @@
    <br>
    <i>bool Binary_File::check_error(); -</i> Return true if the last file operation failed.<br>
    <br>
-   <i>bool Binary_File::is_open() const; -</i> Return true if the file was successfully opened.
+   <i>bool Binary_File::is_open() const; -</i> Return true if the file was successfully opened. <br>
    <br>
-   <br><u>An important notice.</u><br>
+   <u>An important notice.</u><br>
    <br>
    The target file size limit is 2 gigabytes.<br>
   </big>
   <h2><a id="mozTocId482478" class="mozTocH2"></a><big> Chapter 3. File reading</big></h2>
-  <big>
-   The file reader is intended to read data from the binary files. The <i>Input_File</i> class provides access to a file reader. It is derived from the <i>Binary_File</i> class. Let's look at the publicly available methods.<br>
+  <big> The file reader is intended to read data from binary files. The <i>Input_File</i> class provides access to a file reader. It is derived from the <i>Binary_File</i> class. Let's look at the publicly available methods.<br>
    <br>
-   <i>Input_File* Input_File::get_pointer(); -</i> Return the pointer to the file reader.<br>
+   <i>Input_File* Input_File::get_pointer(); -</i> Return a pointer to the file reader.<br>
    <br>
    <i>void Input_File::open(const char *name); -</i> Open a file to read.<br>
    <br>
    <i>size_t Input_File::read(void *buffer, const size_t length); -</i> Read data from the file and return the number of read bytes.<br>
   </big>
   <h2><a id="mozTocId335215" class="mozTocH2"></a><big> Chapter 4. File writing</big></h2>
-  <big>
-   The file writer is intended to write data to the binary files. The <i>Output_File</i> class provides access to a file writer. It is derived from the <i>Binary_File</i> class. Let's look at the publicly available methods.<br>
+  <big> The file writer is intended to write data to binary files. The <i>Output_File</i> class provides access to a file writer. It is derived from the <i>Binary_File</i> class. Let's look at the publicly available methods.<br>
    <br>
-   <i>Output_File* Output_File::get_pointer(); -</i> Return the pointer to the file writer.<br>
+   <i>Output_File* Output_File::get_pointer(); -</i> Return a pointer to the file writer.<br>
    <br>
    <i>void Output_File::open(const char *name); -</i> Open a file to write.<br>
    <br>
@@ -1479,15 +1553,16 @@
   </big>
   <h1><a id="mozTocId918192" class="mozTocH1"></a><big> Part 9. User input.</big></h1>
   <h2><a id="mozTocId665509" class="mozTocH2"></a><big> Chapter 1. Sub-namespace</big></h2>
-  <big>
-   All classes in this section are declared in the <i>Input</i> sub-namespace.<br>
+  <big> All classes in this section are declared in the <i>Input</i> sub-namespace.<br>
   </big>
   <h2><a id="mozTocId411784" class="mozTocH2"></a><big> Chapter 2. Keyboard</big></h2>
   <big><u>Low-level input.</u><br>
    <br>
-   Any keyboard contains a built-in controller. It generates a special code when the user presses or releases the key. This code is called a «scan code».
+   Any keyboard contains a built-in controller. It generates a special
+   code when the user presses or releases the key. This code is called a
+   «scan code». <br>
    <br>
-   <br><u>Working with the keyboard.</u><br>
+   <u>Working with the keyboard.</u><br>
    <br>
    Use the <i>Keyboard</i> class to work with a keyboard. Let's look at the publicly available methods.<br>
    <br>
@@ -1499,9 +1574,9 @@
    <br>
    <i>bool Keyboard::check_release(const unsigned char code); -</i> Return true if a key with a specific scan code was released.<br>
    <br>
-   <i>bool Keyboard::is_ready() const; -</i> Return true if the subsystem is already initialized.
-   <br>
-   <u><br>The list of the supported scan codes.</u><br>
+   <i>bool Keyboard::is_ready() const; -</i> Return true if the subsystem is already initialized. <br>
+   <u><br>
+    The list of the supported scan codes.</u><br>
    <br>
    You can see a list of the scan codes below.<br>
    <br>
@@ -1602,7 +1677,7 @@
      <td><big>" or '</big></td>
      <td><big>40</big></td>
      <td><big>F11</big></td>
-     <td><big>133</big></td>
+     <td><big>87</big></td>
     </tr>
     <tr>
      <td><big>_ or |</big></td>
@@ -1610,7 +1685,7 @@
      <td><big>~ or `</big></td>
      <td><big>41</big></td>
      <td><big>F12</big></td>
-     <td><big>134</big></td>
+     <td><big>88</big></td>
     </tr>
     <tr>
      <td><big>+ or =</big></td>
@@ -1756,9 +1831,9 @@
   <h2><a id="mozTocId342572" class="mozTocH2"></a><big> Chapter 3. Mouse</big></h2>
   <big><u>A few words about mice.</u><br>
    <br>
-   A mouse is very useful for interaction with a graphical user interface. But the mouse can also be used in video games.
+   A mouse is very useful for interaction with a graphical user interface. But the mouse can also be used in video games. <br>
    <br>
-   <br><u>Working with the mouse.</u><br>
+   <u>Working with the mouse.</u><br>
    <br>
    Use the <i>Mouse</i> class to work with a mouse. Let's look at the publicly available methods.<br>
    <br>
@@ -1808,17 +1883,20 @@
   <h2><a id="mozTocId325304" class="mozTocH2"></a><big> Chapter 4. Gamepad</big></h2>
   <big><u>The best friend of a retro gamer.</u><br>
    <br>
-   What is a good choice for a game control device when the user plays an arcade or an old-school video game? A gamepad. This engine provides simple access to it.
+   What is a good choice for a game control device when the user plays an
+   arcade or an old-school video game? A gamepad. This engine provides
+   simple access to it. <br>
    <br>
-   <br><u>The number of the connected gamepads.</u><br>
+   <u>The number of the connected gamepads.</u><br>
    <br>
-   You can connect a few gamepads. Any connected gamepad has an internal index. The first gamepad index is 0. It will be activated by default.
+   You can connect several gamepads. Any connected gamepad has an internal
+   index. The first gamepad index is 0. It will select by default. <br>
    <br>
-   <br><u>The standard button codes.</u><br>
+   <u>The standard button codes.</u><br>
    <br>
-   The standard button codes corresponds to the predefined constants. The first button is <i>GAMEPAD_BUTTON1</i>. The last button is <i>GAMEPAD_BUTTON32</i>.
+   The standard button codes correspond to the predefined constants. The first button is <i>GAMEPAD_BUTTON1</i>. The last button is <i>GAMEPAD_BUTTON32</i>. <br>
    <br>
-   <br><u>The D-pad button codes.</u><br>
+   <u>The D-pad button codes.</u><br>
    <br>
    The D-pad button codes correspond to the predefined constants. You can see it below.<br>
    <br>
@@ -1868,9 +1946,10 @@
     </tr>
    </tbody>
   </table>
-  <big><br><u>The stick identifiers.</u><br>
+  <big><br>
+   <u>The stick identifiers.</u><br>
    <br>
-   The stick identifiers correspond to the predefined constants. You can see it below.<br>
+   The stick identifiers corresponds to the predefined constants. You can see it below.<br>
    <br>
   </big>
   <table border="1">
@@ -1889,9 +1968,10 @@
     </tr>
    </tbody>
   </table>
-  <big><u><br>The stick direction.</u><br>
+  <big><u><br>
+    The stick direction.</u><br>
    <br>
-   The stick direction correspond to the predefined constants. You can see it below.<br>
+   The stick direction corresponds to the predefined constants. You can see it below.<br>
    <br>
   </big>
   <table border="1">
@@ -1918,7 +1998,8 @@
     </tr>
    </tbody>
   </table>
-  <big><br><u>Working with the gamepad.</u><br>
+  <big><br>
+   <u>Working with the gamepad.</u><br>
    <br>
    Use the <i>Gamepad</i> class to work with a gamepad. Let's look at the publicly available methods.<br>
    <br>
@@ -1955,23 +2036,25 @@
   <h1><a id="mozTocId807827" class="mozTocH1"></a><big> Part 10. Internal details of the engine subsystems</big></h1>
   <h2><a id="mozTocId124737" class="mozTocH2"></a><big> Chapter 1. Few words for a curious programmer</big></h2>
   <big>
-   The engine subsystems have a different internal structure. It has been hidden from you, and you don't have access to it. Do you want to know about the hidden things? Just read the next chapter.<br>
+   The engine subsystems have a different internal structure. They is
+   hidden from you, and you don't have access to it. Do you want to know
+   about the hidden things? Just read the next chapter.<br>
   </big>
   <h2><a id="mozTocId166916" class="mozTocH2"></a><big> Chapter 2. Internal classes</big></h2>
   <big><u>The internal classes.</u><br>
    <br>
-   Some classes are designed for internal use only. Don't touch them. What do these strange classes do?
+   Some classes are designed for internal use only. Don't touch them. What do these strange classes do? <br>
    <br>
-   <br><u>Microsoft Windows-specific classes.</u><br>
+   <u>Microsoft Windows-specific classes.</u><br>
    <br>
    All Microsoft Windows-specific classes are declared in the Internal sub-namespace.<br>
    <br>
    <i>Engine</i> creates the game window and does message processing.<br>
    <i>Synchronization</i> implements the synchronization timer.<br>
    <i>Display</i> implements the display manager.<br>
-   <i>WINGL</i> contains Windows-specific OpenGL initialization code.
+   <i>WINGL</i> contains Windows-specific OpenGL initialization code. <br>
    <br>
-   <br><u>The core classes.</u><br>
+   <u>The core classes.</u><br>
    <br>
    All engine core classes and functions are declared in the Core sub-namespace.<br>
    <br>
@@ -1985,13 +2068,15 @@
   <h2><a id="mozTocId984210" class="mozTocH2"></a><big> Chapter 3. Base graphics subsystem</big></h2>
   <big><u>The visible object.</u><br>
    <br>
-   Any visible object is a textured rectangle.
+   Any visible object is a textured rectangle. <br>
    <br>
-   <br><u>Textures.</u><br>
+   <u>Textures.</u><br>
    <br>
-   A texture width must be a power of two. A texture height also must be a power of two. Any image will be automatically resized before uploading.
+   A texture width must be a power of two. A texture height also must be a
+   power of two. Any image will be automatically resized before uploading.
    <br>
-   <br><u>The vertex array and the texture coordinate array.</u><br>
+   <br>
+   <u>The vertex array and the texture coordinate array.</u><br>
    <br>
    Any rectangle needs four vertices and four texture coordinates.<br>
    A single vertex represents the following custom data type:<br>
@@ -2013,17 +2098,16 @@
    All these custom types are declared in the <i>Core</i> sub-namespace.<br>
   </big>
   <h2><a id="mozTocId351034" class="mozTocH2"></a><big> Chapter 4. Gamepad</big></h2>
-  <big>
-   The gamepad subsystem works on the <a href="https://msdn.microsoft.com/ru-ru/library/windows/desktop/dd757116%28v=vs.85%29.aspx">Joystick Multimedia API</a>.<br>
+  <big> The gamepad subsystem works on the top of the <a href="https://msdn.microsoft.com/ru-ru/library/windows/desktop/dd757116%28v=vs.85%29.aspx">Joystick Multimedia API</a>.<br>
   </big>
-  <h2><a id="mozTocId405480" class="mozTocH2"></a><big> Chapter 5. User input.</big></h2>
+  <h2><a id="mozTocId754840" class="mozTocH2"></a><big> Chapter 5. User input</big></h2>
   <big><u>The input backend.</u><br>
    <br>
-   The input subsystem is a simple thing. It works on the standard Microsoft Windows API.
+   The input subsystem is a simple thing. It works on the top of the standard Microsoft Windows API. <br>
    <br>
-   <br><u>The internal key state.</u><br>
+   <u>The internal key state.</u><br>
    <br>
-   The internal state of a key correspond to the predefined constants. You can see it below.<br>
+   The internal state of a key corresponds to the predefined constants. You can see it below.<br>
    <br>
   </big>
   <table border="1">
@@ -2045,355 +2129,357 @@
   <big><br>
   </big>
   <h2><a id="mozTocId37996" class="mozTocH2"></a><big> Chapter 6. Audio</big></h2>
-  <big>
-   The audio subsystem works on the <a href="https://docs.microsoft.com/en-us/windows/desktop/DirectShow/directshow">DirectShow</a>. It is available as part of <a href="https://en.wikipedia.org/wiki/DirectX">DirectX</a>. DirectX is pre-installed by default under the modern versions of Windows.<br>
+  <big> The audio subsystem works on the top of the <a href="https://docs.microsoft.com/en-us/windows/desktop/DirectShow/directshow">DirectShow</a>. It is available as part of <a
+
+    href="https://en.wikipedia.org/wiki/DirectX">DirectX</a>. DirectX is pre-installed by default under the modern versions of Windows.<br>
   </big>
   <h1><a id="mozTocId863711" class="mozTocH1"></a><big>Version history</big></h1>
   <big> 0.1-1.9.8: The old branch.<br>
-   1.9.9: The changes have merged with the Eugene Game Development Kit 6.2.6.<br>
+   1.9.9: The changes have been merged with the Eugene Game Development Kit 6.2.6.<br>
    2.0-2.0.2: The small changes.<br>
    2.0.2.1: The source code was recompiled under Open Watcom V2 Fork.<br>
-   2.0.3: The changes have merged with the Eugene Game Development Kit 6.2.7.<br>
-   2.0.4: The changes have merged with the Eugene Game Development Kit 6.2.8.<br>
+   2.0.3: The changes have been merged with the Eugene Game Development Kit 6.2.7.<br>
+   2.0.4: The changes have been merged with the Eugene Game Development Kit 6.2.8.<br>
    2.0.4.1: The documentation has been updated.<br>
-   2.0.5: The changes have merged with the Eugene Game Development Kit 6.2.9.<br>
-   2.0.6: The changes have merged with the Eugene Game Development Kit 6.3.<br>
-   2.0.7: The changes have merged with the Eugene Game Development Kit 6.3.1.<br>
-   2.0.8: The changes have merged with the Eugene Game Development Kit 6.3.2.<br>
+   2.0.5: The changes have been merged with the Eugene Game Development Kit 6.2.9.<br>
+   2.0.6: The changes have been merged with the Eugene Game Development Kit 6.3.<br>
+   2.0.7: The changes have been merged with the Eugene Game Development Kit 6.3.1.<br>
+   2.0.8: The changes have been merged with the Eugene Game Development Kit 6.3.2.<br>
    2.0.9: The memory subsystem has been improved.<br>
    2.1: The simple sound subsystem was ported from Neon Game Development Kit 5.8.1.<br>
-   2.1.1: The changes have merged with the Eugene Game Development Kit 6.3.3.<br>
-   2.1.2: The changes have merged with the Eugene Game Development Kit 6.3.4.<br>
-   2.1.3: The changes have merged with the Eugene Game Development Kit 6.3.5.<br>
-   2.1.4: The changes have merged with the Eugene Game Development Kit 6.3.8.<br>
-   2.1.5: The changes have merged with the Eugene Game Development Kit 6.3.9.<br>
-   2.1.6: The changes have merged with the Eugene Game Development Kit 6.4.<br>
-   2.1.7: The changes have merged with the Eugene Game Development Kit 6.4.1.<br>
+   2.1.1: The changes have been merged with the Eugene Game Development Kit 6.3.3.<br>
+   2.1.2: The changes have been merged with the Eugene Game Development Kit 6.3.4.<br>
+   2.1.3: The changes have been merged with the Eugene Game Development Kit 6.3.5.<br>
+   2.1.4: The changes have been merged with the Eugene Game Development Kit 6.3.8.<br>
+   2.1.5: The changes have been merged with the Eugene Game Development Kit 6.3.9.<br>
+   2.1.6: The changes have been merged with the Eugene Game Development Kit 6.4.<br>
+   2.1.7: The changes have been merged with the Eugene Game Development Kit 6.4.1.<br>
    2.1.7.1: The documentation has been updated.<br>
-   2.1.8: The changes have merged with the Eugene Game Development Kit 6.4.2.<br>
-   2.1.9: The changes have merged with the Eugene Game Development Kit 6.4.9.<br>
-   2.2: The changes have merged with the Eugene Game Development Kit 6.5.2.<br>
-   2.2.1: The changes have merged with the Eugene Game Development Kit 6.5.4.<br>
-   2.2.2: The changes have merged with the Eugene Game Development Kit 6.5.5.<br>
-   2.2.3: The changes have merged with the Eugene Game Development Kit 6.5.6.<br>
-   2.2.4: The changes have merged with the Eugene Game Development Kit 6.5.7.<br>
-   2.2.5: The changes have merged with the Eugene Game Development Kit 6.5.8.<br>
-   2.2.6: The changes have merged with the Eugene Game Development Kit 6.5.9.<br>
+   2.1.8: The changes have been merged with the Eugene Game Development Kit 6.4.2.<br>
+   2.1.9: The changes have been merged with the Eugene Game Development Kit 6.4.9.<br>
+   2.2: The changes have been merged with the Eugene Game Development Kit 6.5.2.<br>
+   2.2.1: The changes have been merged with the Eugene Game Development Kit 6.5.4.<br>
+   2.2.2: The changes have been merged with the Eugene Game Development Kit 6.5.5.<br>
+   2.2.3: The changes have been merged with the Eugene Game Development Kit 6.5.6.<br>
+   2.2.4: The changes have been merged with the Eugene Game Development Kit 6.5.7.<br>
+   2.2.5: The changes have been merged with the Eugene Game Development Kit 6.5.8.<br>
+   2.2.6: The changes have been merged with the Eugene Game Development Kit 6.5.9.<br>
    2.2.7: The small changes.<br>
    2.2.8: The synchronization timer is backported from Neon Game Development Kit 6.0.2.<br>
-   2.2.9: The changes have merged with the Eugene Game Development Kit 6.6.1.<br>
+   2.2.9: The changes have been merged with the Eugene Game Development Kit 6.6.1.<br>
    2.3-2.3.1: The small changes.<br>
    2.3.2: The synchronization timer was totally rewritten.<br>
    2.3.3-2.3.4: The synchronization timer has been improved.<br>
    2.3.5: The small changes.<br>
-   2.3.6: The changes have merged with the Eugene Game Development Kit 6.6.6.<br>
-   2.3.7: The changes have merged with the Eugene Game Development Kit 6.7.<br>
-   2.3.8: The changes have merged with the Eugene Game Development Kit 6.7.1.<br>
-   2.3.9: The changes have merged with the Eugene Game Development Kit 6.7.6.<br>
-   2.4: The changes have merged with the Eugene Game Development Kit 6.7.7.<br>
-   2.4.1: The changes have merged with the Eugene Game Development Kit 6.7.8.<br>
-   2.4.2: The changes have merged with the Eugene Game Development Kit 6.7.9.<br>
-   2.4.3: The changes have merged with the Eugene Game Development Kit 6.8.<br>
-   2.4.4: The changes have merged with the Eugene Game Development Kit 6.8.2.<br>
-   2.4.5: The changes have merged with the Eugene Game Development Kit 6.8.4.<br>
-   2.4.6: The changes have merged with the Eugene Game Development Kit 6.8.5.<br>
-   2.4.7: The changes have merged with the Eugene Game Development Kit 6.8.6.<br>
-   2.4.8: The changes have merged with the Eugene Game Development Kit 6.8.7.<br>
-   2.4.9: The changes have merged with the Eugene Game Development Kit 6.8.9.<br>
-   2.5: The changes have merged with the Eugene Game Development Kit 6.9.<br>
-   2.5.1: The changes have merged with the Eugene Game Development Kit 6.9.1.<br>
-   2.5.2: The changes have merged with the Eugene Game Development Kit 6.9.2.<br>
-   2.5.3: The changes have merged with the Neon Game Development Kit 6.2.6.<br>
+   2.3.6: The changes have been merged with the Eugene Game Development Kit 6.6.6.<br>
+   2.3.7: The changes have been merged with the Eugene Game Development Kit 6.7.<br>
+   2.3.8: The changes have been merged with the Eugene Game Development Kit 6.7.1.<br>
+   2.3.9: The changes have been merged with the Eugene Game Development Kit 6.7.6.<br>
+   2.4: The changes have been merged with the Eugene Game Development Kit 6.7.7.<br>
+   2.4.1: The changes have been merged with the Eugene Game Development Kit 6.7.8.<br>
+   2.4.2: The changes have been merged with the Eugene Game Development Kit 6.7.9.<br>
+   2.4.3: The changes have been merged with the Eugene Game Development Kit 6.8.<br>
+   2.4.4: The changes have been merged with the Eugene Game Development Kit 6.8.2.<br>
+   2.4.5: The changes have been merged with the Eugene Game Development Kit 6.8.4.<br>
+   2.4.6: The changes have been merged with the Eugene Game Development Kit 6.8.5.<br>
+   2.4.7: The changes have been merged with the Eugene Game Development Kit 6.8.6.<br>
+   2.4.8: The changes have been merged with the Eugene Game Development Kit 6.8.7.<br>
+   2.4.9: The changes have been merged with the Eugene Game Development Kit 6.8.9.<br>
+   2.5: The changes have been merged with the Eugene Game Development Kit 6.9.<br>
+   2.5.1: The changes have been merged with the Eugene Game Development Kit 6.9.1.<br>
+   2.5.2: The changes have been merged with the Eugene Game Development Kit 6.9.2.<br>
+   2.5.3: The changes have been merged with the Neon Game Development Kit 6.2.6.<br>
    2.5.4: The synchronization timer has been improved.<br>
-   2.5.5: The changes have merged with the Eugene Game Development Kit 6.9.4.<br>
-   2.5.6: The changes have merged with the Neon Game Development Kit 6.3.4.<br>
+   2.5.5: The changes have been merged with the Eugene Game Development Kit 6.9.4.<br>
+   2.5.6: The changes have been merged with the Neon Game Development Kit 6.3.4.<br>
    2.5.7: Visual C++ 2003 support has been added.<br>
    2.5.8: The small changes.<br>
-   2.5.9: The changes have merged with the Eugene Game Development Kit 6.9.7.<br>
+   2.5.9: The changes have been merged with the Eugene Game Development Kit 6.9.7.<br>
    2.6: The small changes.<br>
-   2.6.1: The changes have merged with the Eugene Game Development Kit 6.9.9.<br>
-   2.6.2: The changes have merged with the Neon Game Development Kit 6.3.6.<br>
-   2.6.3: The changes have merged with the Eugene Game Development Kit 7.0.1.<br>
-   2.6.4: The changes have merged with the Eugene Game Development Kit 7.0.2.<br>
-   2.6.5: The changes have merged with the Eugene Game Development Kit 7.0.5.<br>
-   2.6.6: The changes have merged with the Eugene Game Development Kit 7.0.6.<br>
-   2.6.7: The changes have merged with the Eugene Game Development Kit 7.0.9.<br>
-   2.6.8: The changes have merged with the Eugene Game Development Kit 7.1.<br>
-   2.6.9: The changes have merged with the Eugene Game Development Kit 7.1.3.<br>
-   2.7: The changes have merged with the Eugene Game Development Kit 7.1.4.<br>
-   2.7.1: The changes have merged with the Eugene Game Development Kit 7.1.5.<br>
-   2.7.2: The changes have merged with the Eugene Game Development Kit 7.1.6.<br>
-   2.7.3: The changes have merged with the Eugene Game Development Kit 7.1.7.<br>
-   2.7.4: The changes have merged with the Eugene Game Development Kit 7.1.8.<br>
-   2.7.5: The changes have merged with the Eugene Game Development Kit 7.1.9.<br>
-   2.7.6: The changes have merged with the Eugene Game Development Kit 7.2.<br>
-   2.7.7: The changes have merged with the Eugene Game Development Kit 7.2.1.<br>
-   2.7.8: The changes have merged with the Eugene Game Development Kit 7.2.2.<br>
-   2.7.9: The changes have merged with the Eugene Game Development Kit 7.2.4.<br>
-   2.8: The changes have merged with the Eugene Game Development Kit 7.2.5.<br>
-   2.8.1: The changes have merged with the Eugene Game Development Kit 7.2.6.<br>
-   2.8.2: The changes have merged with the Eugene Game Development Kit 7.2.7.<br>
-   2.8.3: The changes have merged with the Eugene Game Development Kit 7.2.8.<br>
-   2.8.4: The changes have merged with the Eugene Game Development Kit 7.2.9.<br>
-   2.8.5: The changes have merged with the Eugene Game Development Kit 7.3.<br>
-   2.8.6: The changes have merged with the Eugene Game Development Kit 7.3.1.<br>
-   2.8.7: The changes have merged with the Eugene Game Development Kit 7.3.2.<br>
-   2.8.8: The changes have merged with the Eugene Game Development Kit 7.3.3.<br>
-   2.8.9: The changes have merged with the Eugene Game Development Kit 7.3.4.<br>
-   2.9: The changes have merged with the Eugene Game Development Kit 7.3.5.<br>
-   2.9.1: The changes have merged with the Simple Windows Game Framework 7.3.5.<br>
-   2.9.2: The changes have merged with the Eugene Game Development Kit 7.3.7.<br>
-   2.9.3: The changes have merged with the Eugene Game Development Kit 7.4.4.<br>
-   2.9.4: The changes have merged with the Eugene Game Development Kit 7.4.5.<br>
-   2.9.5: The changes have merged with the Eugene Game Development Kit 7.5.<br>
-   2.9.6: The changes have merged with the Eugene Game Development Kit 7.5.3.<br>
-   2.9.7: The changes have merged with the Eugene Game Development Kit 7.5.4.<br>
-   2.9.8: The changes have merged with the Eugene Game Development Kit 7.5.8.<br>
-   2.9.9: The changes have merged with the Eugene Game Development Kit 7.6.3.<br>
-   3.0: The changes have merged with the Eugene Game Development Kit 7.6.4.<br>
-   3.0.1: The changes have merged with the Eugene Game Development Kit 7.6.5.<br>
-   3.0.2: The changes have merged with the Eugene Game Development Kit 7.6.6.<br>
-   3.0.3: The changes have merged with the Eugene Game Development Kit 7.6.8.<br>
-   3.0.4: The changes have merged with the Eugene Game Development Kit 7.6.9.<br>
-   3.0.5: The changes have merged with the Eugene Game Development Kit 7.7.<br>
-   3.0.6: The changes have merged with the Eugene Game Development Kit 7.7.2.<br>
-   3.0.7: The changes have merged with the Eugene Game Development Kit 7.7.3.<br>
-   3.0.8: The changes have merged with the Eugene Game Development Kit 7.7.4.<br>
-   3.0.9: The changes have merged with the Eugene Game Development Kit 7.7.5.<br>
-   3.1: The changes have merged with the Eugene Game Development Kit 7.7.6.<br>
-   3.1.1: The changes have merged with the Eugene Game Development Kit 7.8.<br>
-   3.1.2: The changes have merged with the Eugene Game Development Kit 7.8.1.<br>
-   3.1.3: The changes have merged with the Eugene Game Development Kit 7.8.2.<br>
-   3.1.4: The changes have merged with the Eugene Game Development Kit 7.8.4.<br>
-   3.1.5: The changes have merged with the Eugene Game Development Kit 7.8.5.<br>
-   3.1.6: The changes have merged with the Eugene Game Development Kit 7.8.6.<br>
-   3.1.7: The changes have merged with the Eugene Game Development Kit 7.8.8.<br>
-   3.1.8: The changes have merged with the Eugene Game Development Kit 7.8.9.<br>
-   3.1.9: The changes have merged with the Eugene Game Development Kit 7.9.<br>
-   3.2: The changes have merged with the Eugene Game Development Kit 7.9.1.<br>
-   3.2.1: The changes have merged with the Eugene Game Development Kit 7.9.2.<br>
-   3.2.2: The changes have merged with the Eugene Game Development Kit 7.9.3.<br>
-   3.2.3: The changes have merged with the Eugene Game Development Kit 7.9.4.<br>
-   3.2.4: The changes have merged with the Eugene Game Development Kit 7.9.5.<br>
-   3.2.5: The changes have merged with the Eugene Game Development Kit 7.9.6.<br>
-   3.2.6: The changes have merged with the Eugene Game Development Kit 7.9.7.<br>
-   3.2.7: The changes have merged with the Eugene Game Development Kit 7.9.8.<br>
-   3.2.8: The changes have merged with the Eugene Game Development Kit 8.0.3.<br>
-   3.2.9: The changes have merged with the Eugene Game Development Kit 8.0.4.<br>
-   3.3: The changes have merged with the Eugene Game Development Kit 8.0.5.<br>
-   3.3.1: The changes have merged with the Eugene Game Development Kit 8.0.8.<br>
-   3.3.2: The changes have merged with the Eugene Game Development Kit 8.0.9.<br>
-   3.3.3: The changes have merged with the Eugene Game Development Kit 8.1.4.<br>
-   3.3.4: The changes have merged with the Eugene Game Development Kit 8.1.5.<br>
-   3.3.5: The changes have merged with the Eugene Game Development Kit 8.1.6.<br>
-   3.3.6: The changes have merged with the Eugene Game Development Kit 8.1.7.<br>
-   3.3.7: The changes have merged with the Eugene Game Development Kit 8.1.8.<br>
-   3.3.8: The changes have merged with the Eugene Game Development Kit 8.1.9.<br>
-   3.3.9: The changes have merged with the Eugene Game Development Kit 8.2.1.<br>
-   3.4: The changes have merged with the Eugene Game Development Kit 8.2.2.<br>
-   3.4.1: The changes have merged with the Eugene Game Development Kit 8.2.3.<br>
-   3.4.2: The changes have merged with the Eugene Game Development Kit 8.2.4.<br>
-   3.4.3: The changes have merged with the Eugene Game Development Kit 8.2.5.<br>
-   3.4.4: The changes have merged with the Eugene Game Development Kit 8.2.6.<br>
-   3.4.5: The changes have merged with the Eugene Game Development Kit 8.2.8.<br>
-   3.4.6: The changes have merged with the Eugene Game Development Kit 8.3.<br>
-   3.4.7: The changes have merged with the Eugene Game Development Kit 8.3.1.<br>
-   3.4.8: The changes have merged with the Eugene Game Development Kit 8.3.2.<br>
-   3.4.9: The changes have merged with the Eugene Game Development Kit 8.3.3.<br>
-   3.5: The changes have merged with the Eugene Game Development Kit 8.3.4.<br>
-   3.5.1: The changes have merged with the Neon Game Development Kit 7.2.9.<br>
-   3.5.2: The changes have merged with the Neon Game Development Kit 7.3.<br>
-   3.5.3: The changes have merged with the Neon Game Development Kit 7.3.1.<br>
-   3.5.4: The changes have merged with the Neon Game Development Kit 7.3.2.<br>
-   3.5.5: The changes have merged with the Neon Game Development Kit 7.3.3.<br>
-   3.5.6: The changes have merged with the Eugene Game Development Kit 8.4.1.<br>
-   3.5.7: The changes have merged with the Eugene Game Development Kit 8.4.2.<br>
-   3.5.8: The changes have merged with the Eugene Game Development Kit 8.4.3.<br>
-   3.5.9: The changes have merged with the Eugene Game Development Kit 8.4.4.<br>
-   3.6: The changes have merged with the Eugene Game Development Kit 8.4.5.<br>
-   3.6.1: The changes have merged with the Eugene Game Development Kit 8.4.6.<br>
-   3.6.2: The changes have merged with the Eugene Game Development Kit 8.4.8.<br>
-   3.6.3: The changes have merged with the Eugene Game Development Kit 8.5.<br>
-   3.6.4: The changes have merged with the Eugene Game Development Kit 8.5.5.<br>
-   3.6.5: The changes have merged with the Eugene Game Development Kit 8.5.6.<br>
-   3.6.6: The changes have merged with the Eugene Game Development Kit 8.5.7.<br>
-   3.6.7: The changes have merged with the Eugene Game Development Kit 8.5.8.<br>
-   3.6.8: The changes have merged with the Eugene Game Development Kit 8.5.9.<br>
-   3.6.9: The changes have merged with the Eugene Game Development Kit 8.6.<br>
-   3.7: The changes have merged with the Eugene Game Development Kit 8.6.1.<br>
-   3.7.1: The changes have merged with the Eugene Game Development Kit 8.6.2.<br>
-   3.7.2: The changes have merged with the Eugene Game Development Kit 8.6.3.<br>
-   3.7.3: The changes have merged with the Eugene Game Development Kit 8.6.4.<br>
-   3.7.4: The changes have merged with the Eugene Game Development Kit 8.6.5.<br>
-   3.7.5: The changes have merged with the Eugene Game Development Kit 8.6.6.<br>
-   3.7.6: The changes have merged with the Eugene Game Development Kit 8.6.8.<br>
+   2.6.1: The changes have been merged with the Eugene Game Development Kit 6.9.9.<br>
+   2.6.2: The changes have been merged with the Neon Game Development Kit 6.3.6.<br>
+   2.6.3: The changes have been merged with the Eugene Game Development Kit 7.0.1.<br>
+   2.6.4: The changes have been merged with the Eugene Game Development Kit 7.0.2.<br>
+   2.6.5: The changes have been merged with the Eugene Game Development Kit 7.0.5.<br>
+   2.6.6: The changes have been merged with the Eugene Game Development Kit 7.0.6.<br>
+   2.6.7: The changes have been merged with the Eugene Game Development Kit 7.0.9.<br>
+   2.6.8: The changes have been merged with the Eugene Game Development Kit 7.1.<br>
+   2.6.9: The changes have been merged with the Eugene Game Development Kit 7.1.3.<br>
+   2.7: The changes have been merged with the Eugene Game Development Kit 7.1.4.<br>
+   2.7.1: The changes have been merged with the Eugene Game Development Kit 7.1.5.<br>
+   2.7.2: The changes have been merged with the Eugene Game Development Kit 7.1.6.<br>
+   2.7.3: The changes have been merged with the Eugene Game Development Kit 7.1.7.<br>
+   2.7.4: The changes have been merged with the Eugene Game Development Kit 7.1.8.<br>
+   2.7.5: The changes have been merged with the Eugene Game Development Kit 7.1.9.<br>
+   2.7.6: The changes have been merged with the Eugene Game Development Kit 7.2.<br>
+   2.7.7: The changes have been merged with the Eugene Game Development Kit 7.2.1.<br>
+   2.7.8: The changes have been merged with the Eugene Game Development Kit 7.2.2.<br>
+   2.7.9: The changes have been merged with the Eugene Game Development Kit 7.2.4.<br>
+   2.8: The changes have been merged with the Eugene Game Development Kit 7.2.5.<br>
+   2.8.1: The changes have been merged with the Eugene Game Development Kit 7.2.6.<br>
+   2.8.2: The changes have been merged with the Eugene Game Development Kit 7.2.7.<br>
+   2.8.3: The changes have been merged with the Eugene Game Development Kit 7.2.8.<br>
+   2.8.4: The changes have been merged with the Eugene Game Development Kit 7.2.9.<br>
+   2.8.5: The changes have been merged with the Eugene Game Development Kit 7.3.<br>
+   2.8.6: The changes have been merged with the Eugene Game Development Kit 7.3.1.<br>
+   2.8.7: The changes have been merged with the Eugene Game Development Kit 7.3.2.<br>
+   2.8.8: The changes have been merged with the Eugene Game Development Kit 7.3.3.<br>
+   2.8.9: The changes have been merged with the Eugene Game Development Kit 7.3.4.<br>
+   2.9: The changes have been merged with the Eugene Game Development Kit 7.3.5.<br>
+   2.9.1: The changes have been merged with the Simple Windows Game Framework 7.3.5.<br>
+   2.9.2: The changes have been merged with the Eugene Game Development Kit 7.3.7.<br>
+   2.9.3: The changes have been merged with the Eugene Game Development Kit 7.4.4.<br>
+   2.9.4: The changes have been merged with the Eugene Game Development Kit 7.4.5.<br>
+   2.9.5: The changes have been merged with the Eugene Game Development Kit 7.5.<br>
+   2.9.6: The changes have been merged with the Eugene Game Development Kit 7.5.3.<br>
+   2.9.7: The changes have been merged with the Eugene Game Development Kit 7.5.4.<br>
+   2.9.8: The changes have been merged with the Eugene Game Development Kit 7.5.8.<br>
+   2.9.9: The changes have been merged with the Eugene Game Development Kit 7.6.3.<br>
+   3.0: The changes have been merged with the Eugene Game Development Kit 7.6.4.<br>
+   3.0.1: The changes have been merged with the Eugene Game Development Kit 7.6.5.<br>
+   3.0.2: The changes have been merged with the Eugene Game Development Kit 7.6.6.<br>
+   3.0.3: The changes have been merged with the Eugene Game Development Kit 7.6.8.<br>
+   3.0.4: The changes have been merged with the Eugene Game Development Kit 7.6.9.<br>
+   3.0.5: The changes have been merged with the Eugene Game Development Kit 7.7.<br>
+   3.0.6: The changes have been merged with the Eugene Game Development Kit 7.7.2.<br>
+   3.0.7: The changes have been merged with the Eugene Game Development Kit 7.7.3.<br>
+   3.0.8: The changes have been merged with the Eugene Game Development Kit 7.7.4.<br>
+   3.0.9: The changes have been merged with the Eugene Game Development Kit 7.7.5.<br>
+   3.1: The changes have been merged with the Eugene Game Development Kit 7.7.6.<br>
+   3.1.1: The changes have been merged with the Eugene Game Development Kit 7.8.<br>
+   3.1.2: The changes have been merged with the Eugene Game Development Kit 7.8.1.<br>
+   3.1.3: The changes have been merged with the Eugene Game Development Kit 7.8.2.<br>
+   3.1.4: The changes have been merged with the Eugene Game Development Kit 7.8.4.<br>
+   3.1.5: The changes have been merged with the Eugene Game Development Kit 7.8.5.<br>
+   3.1.6: The changes have been merged with the Eugene Game Development Kit 7.8.6.<br>
+   3.1.7: The changes have been merged with the Eugene Game Development Kit 7.8.8.<br>
+   3.1.8: The changes have been merged with the Eugene Game Development Kit 7.8.9.<br>
+   3.1.9: The changes have been merged with the Eugene Game Development Kit 7.9.<br>
+   3.2: The changes have been merged with the Eugene Game Development Kit 7.9.1.<br>
+   3.2.1: The changes have been merged with the Eugene Game Development Kit 7.9.2.<br>
+   3.2.2: The changes have been merged with the Eugene Game Development Kit 7.9.3.<br>
+   3.2.3: The changes have been merged with the Eugene Game Development Kit 7.9.4.<br>
+   3.2.4: The changes have been merged with the Eugene Game Development Kit 7.9.5.<br>
+   3.2.5: The changes have been merged with the Eugene Game Development Kit 7.9.6.<br>
+   3.2.6: The changes have been merged with the Eugene Game Development Kit 7.9.7.<br>
+   3.2.7: The changes have been merged with the Eugene Game Development Kit 7.9.8.<br>
+   3.2.8: The changes have been merged with the Eugene Game Development Kit 8.0.3.<br>
+   3.2.9: The changes have been merged with the Eugene Game Development Kit 8.0.4.<br>
+   3.3: The changes have been merged with the Eugene Game Development Kit 8.0.5.<br>
+   3.3.1: The changes have been merged with the Eugene Game Development Kit 8.0.8.<br>
+   3.3.2: The changes have been merged with the Eugene Game Development Kit 8.0.9.<br>
+   3.3.3: The changes have been merged with the Eugene Game Development Kit 8.1.4.<br>
+   3.3.4: The changes have been merged with the Eugene Game Development Kit 8.1.5.<br>
+   3.3.5: The changes have been merged with the Eugene Game Development Kit 8.1.6.<br>
+   3.3.6: The changes have been merged with the Eugene Game Development Kit 8.1.7.<br>
+   3.3.7: The changes have been merged with the Eugene Game Development Kit 8.1.8.<br>
+   3.3.8: The changes have been merged with the Eugene Game Development Kit 8.1.9.<br>
+   3.3.9: The changes have been merged with the Eugene Game Development Kit 8.2.1.<br>
+   3.4: The changes have been merged with the Eugene Game Development Kit 8.2.2.<br>
+   3.4.1: The changes have been merged with the Eugene Game Development Kit 8.2.3.<br>
+   3.4.2: The changes have been merged with the Eugene Game Development Kit 8.2.4.<br>
+   3.4.3: The changes have been merged with the Eugene Game Development Kit 8.2.5.<br>
+   3.4.4: The changes have been merged with the Eugene Game Development Kit 8.2.6.<br>
+   3.4.5: The changes have been merged with the Eugene Game Development Kit 8.2.8.<br>
+   3.4.6: The changes have been merged with the Eugene Game Development Kit 8.3.<br>
+   3.4.7: The changes have been merged with the Eugene Game Development Kit 8.3.1.<br>
+   3.4.8: The changes have been merged with the Eugene Game Development Kit 8.3.2.<br>
+   3.4.9: The changes have been merged with the Eugene Game Development Kit 8.3.3.<br>
+   3.5: The changes have been merged with the Eugene Game Development Kit 8.3.4.<br>
+   3.5.1: The changes have been merged with the Neon Game Development Kit 7.2.9.<br>
+   3.5.2: The changes have been merged with the Neon Game Development Kit 7.3.<br>
+   3.5.3: The changes have been merged with the Neon Game Development Kit 7.3.1.<br>
+   3.5.4: The changes have been merged with the Neon Game Development Kit 7.3.2.<br>
+   3.5.5: The changes have been merged with the Neon Game Development Kit 7.3.3.<br>
+   3.5.6: The changes have been merged with the Eugene Game Development Kit 8.4.1.<br>
+   3.5.7: The changes have been merged with the Eugene Game Development Kit 8.4.2.<br>
+   3.5.8: The changes have been merged with the Eugene Game Development Kit 8.4.3.<br>
+   3.5.9: The changes have been merged with the Eugene Game Development Kit 8.4.4.<br>
+   3.6: The changes have been merged with the Eugene Game Development Kit 8.4.5.<br>
+   3.6.1: The changes have been merged with the Eugene Game Development Kit 8.4.6.<br>
+   3.6.2: The changes have been merged with the Eugene Game Development Kit 8.4.8.<br>
+   3.6.3: The changes have been merged with the Eugene Game Development Kit 8.5.<br>
+   3.6.4: The changes have been merged with the Eugene Game Development Kit 8.5.5.<br>
+   3.6.5: The changes have been merged with the Eugene Game Development Kit 8.5.6.<br>
+   3.6.6: The changes have been merged with the Eugene Game Development Kit 8.5.7.<br>
+   3.6.7: The changes have been merged with the Eugene Game Development Kit 8.5.8.<br>
+   3.6.8: The changes have been merged with the Eugene Game Development Kit 8.5.9.<br>
+   3.6.9: The changes have been merged with the Eugene Game Development Kit 8.6.<br>
+   3.7: The changes have been merged with the Eugene Game Development Kit 8.6.1.<br>
+   3.7.1: The changes have been merged with the Eugene Game Development Kit 8.6.2.<br>
+   3.7.2: The changes have been merged with the Eugene Game Development Kit 8.6.3.<br>
+   3.7.3: The changes have been merged with the Eugene Game Development Kit 8.6.4.<br>
+   3.7.4: The changes have been merged with the Eugene Game Development Kit 8.6.5.<br>
+   3.7.5: The changes have been merged with the Eugene Game Development Kit 8.6.6.<br>
+   3.7.6: The changes have been merged with the Eugene Game Development Kit 8.6.8.<br>
    3.7.7: The synchronization timer has been improved.<br>
-   3.7.8: The changes have merged with the Eugene Game Development Kit 8.6.9.<br>
-   3.7.9: The changes have merged with the Eugene Game Development Kit 8.7.1.<br>
-   3.8: The changes have merged with the Eugene Game Development Kit 8.7.2.<br>
-   3.8.1: The changes have merged with the Eugene Game Development Kit 8.7.3.<br>
-   3.8.2: The changes have merged with the Black Game Development Kit 5.6.8.<br>
-   3.8.3: The changes have merged with the Black Game Development Kit 5.6.9.<br>
-   3.8.4: The changes have merged with the Eugene Game Development Kit 8.7.6.<br>
-   3.8.5: The changes have merged with the Eugene Game Development Kit 8.7.7.<br>
-   3.8.6: The changes have merged with the Eugene Game Development Kit 8.7.8.<br>
-   3.8.7: The changes have merged with the Eugene Game Development Kit 8.7.9.<br>
-   3.8.8: The changes have merged with the Black Game Development Kit 5.7.6.<br>
-   3.8.9: The changes have merged with the Eugene Game Development Kit 8.8.3.<br>
-   3.9: The changes have merged with the Eugene Game Development Kit 8.8.4.<br>
-   3.9.1: The changes have merged with the Eugene Game Development Kit 8.8.5.<br>
-   3.9.2: The changes have merged with the Black Game Development Kit 5.8.2.<br>
-   3.9.3: The changes have merged with the Eugene Game Development Kit 8.8.7.<br>
-   3.9.4: The changes have merged with the Eugene Game Development Kit 8.8.8.<br>
-   3.9.5: The changes have merged with the Black Game Development Kit 5.8.7.<br>
-   3.9.6: The changes have merged with the Black Game Development Kit 5.8.8.<br>
-   3.9.7: The changes have merged with the Black Game Development Kit 5.9.<br>
-   3.9.8: The changes have merged with the Black Game Development Kit 5.9.4.<br>
-   3.9.9: The changes have merged with the Black Game Development Kit 5.9.6.<br>
+   3.7.8: The changes have been merged with the Eugene Game Development Kit 8.6.9.<br>
+   3.7.9: The changes have been merged with the Eugene Game Development Kit 8.7.1.<br>
+   3.8: The changes have been merged with the Eugene Game Development Kit 8.7.2.<br>
+   3.8.1: The changes have been merged with the Eugene Game Development Kit 8.7.3.<br>
+   3.8.2: The changes have been merged with the Black Game Development Kit 5.6.8.<br>
+   3.8.3: The changes have been merged with the Black Game Development Kit 5.6.9.<br>
+   3.8.4: The changes have been merged with the Eugene Game Development Kit 8.7.6.<br>
+   3.8.5: The changes have been merged with the Eugene Game Development Kit 8.7.7.<br>
+   3.8.6: The changes have been merged with the Eugene Game Development Kit 8.7.8.<br>
+   3.8.7: The changes have been merged with the Eugene Game Development Kit 8.7.9.<br>
+   3.8.8: The changes have been merged with the Black Game Development Kit 5.7.6.<br>
+   3.8.9: The changes have been merged with the Eugene Game Development Kit 8.8.3.<br>
+   3.9: The changes have been merged with the Eugene Game Development Kit 8.8.4.<br>
+   3.9.1: The changes have been merged with the Eugene Game Development Kit 8.8.5.<br>
+   3.9.2: The changes have been merged with the Black Game Development Kit 5.8.2.<br>
+   3.9.3: The changes have been merged with the Eugene Game Development Kit 8.8.7.<br>
+   3.9.4: The changes have been merged with the Eugene Game Development Kit 8.8.8.<br>
+   3.9.5: The changes have been merged with the Black Game Development Kit 5.8.7.<br>
+   3.9.6: The changes have been merged with the Black Game Development Kit 5.8.8.<br>
+   3.9.7: The changes have been merged with the Black Game Development Kit 5.9.<br>
+   3.9.8: The changes have been merged with the Black Game Development Kit 5.9.4.<br>
+   3.9.9: The changes have been merged with the Black Game Development Kit 5.9.6.<br>
    4.0: The keyboard input subsystem is backported from the Neon Game Development Kit 7.9.1.<br>
-   4.0.1: The changes have merged with the Eugene Game Development Kit 8.9.7.<br>
-   4.0.2: The changes have merged with the Eugene Game Development Kit 8.9.8.<br>
-   4.0.3: The changes have merged with the Eugene Game Development Kit 8.9.9.<br>
-   4.0.4: The changes have merged with the Eugene Game Development Kit 9.0.<br>
-   4.0.5: The changes have merged with the Eugene Game Development Kit 9.0.1.<br>
-   4.0.6: The changes have merged with the Black Game Development Kit 6.0.3.<br>
-   4.0.7: The changes have merged with the Eugene Game Development Kit 9.0.3.<br>
-   4.0.8: The changes have merged with the Eugene Game Development Kit 9.0.4.<br>
-   4.0.9: The changes have merged with the Eugene Game Development Kit 9.0.5.<br>
-   4.1: The changes have merged with the Eugene Game Development Kit 9.0.6.<br>
-   4.1.1: The changes have merged with the Eugene Game Development Kit 9.0.7.<br>
-   4.1.2: The changes have merged with the Eugene Game Development Kit 9.0.8.<br>
-   4.1.3: The changes have merged with the Eugene Game Development Kit 9.0.9.<br>
-   4.1.4: The changes have merged with the Eugene Game Development Kit 9.1.<br>
+   4.0.1: The changes have been merged with the Eugene Game Development Kit 8.9.7.<br>
+   4.0.2: The changes have been merged with the Eugene Game Development Kit 8.9.8.<br>
+   4.0.3: The changes have been merged with the Eugene Game Development Kit 8.9.9.<br>
+   4.0.4: The changes have been </big><big>have merged</big><big>merged with the Eugene Game Development Kit 9.0.<br>
+   4.0.5: The changes have been merged with the Eugene Game Development Kit 9.0.1.<br>
+   4.0.6: The changes have been merged with the Black Game Development Kit 6.0.3.<br>
+   4.0.7: The changes have been merged with the Eugene Game Development Kit 9.0.3.<br>
+   4.0.8: The changes have been merged with the Eugene Game Development Kit 9.0.4.<br>
+   4.0.9: The changes have been merged with the Eugene Game Development Kit 9.0.5.<br>
+   4.1: The changes have been merged with the Eugene Game Development Kit 9.0.6.<br>
+   4.1.1: The changes have been merged with the Eugene Game Development Kit 9.0.7.<br>
+   4.1.2: The changes have been merged with the Eugene Game Development Kit 9.0.8.<br>
+   4.1.3: The changes have been merged with the Eugene Game Development Kit 9.0.9.<br>
+   4.1.4: The changes have been merged with the Eugene Game Development Kit 9.1.<br>
    4.1.4.1-4.1.4.7: The documentation has been updated.<br>
-   4.1.5: The changes have merged with the Eugene Game Development Kit 9.2.<br>
+   4.1.5: The changes have been merged with the Eugene Game Development Kit 9.2.<br>
    4.1.5.1-4.1.5.3: The documentation has been updated.<br>
-   4.1.6: The changes have merged with the Eugene Game Development Kit 9.2.1.<br>
-   4.1.7: The changes have merged with the Eugene Game Development Kit 9.2.2.<br>
+   4.1.6: The changes have been merged with the Eugene Game Development Kit 9.2.1.<br>
+   4.1.7: The changes have been merged with the Eugene Game Development Kit 9.2.2.<br>
    4.1.7.1-4.1.7.2: The documentation has been updated.<br>
-   4.1.8: The changes have merged with the Eugene Game Development Kit 9.2.3.<br>
-   4.1.9: The changes have merged with the Eugene Game Development Kit 9.2.4.<br>
+   4.1.8: The changes have been merged with the Eugene Game Development Kit 9.2.3.<br>
+   4.1.9: The changes have been merged with the Eugene Game Development Kit 9.2.4.<br>
    4.1.9.1-4.1.9.4: The documentation has been updated.<br>
    4.2: The small changes.<br>
-   4.2.1: The changes have merged with the Eugene Game Development Kit 9.2.6.<br>
-   4.2.2: The changes have merged with the Eugene Game Development Kit 9.2.7.<br>
+   4.2.1: The changes have been merged with the Eugene Game Development Kit 9.2.6.<br>
+   4.2.2: The changes have been merged with the Eugene Game Development Kit 9.2.7.<br>
    4.2.2.1: The documentation has been updated.<br>
-   4.2.3: The changes have merged with the Eugene Game Development Kit 9.2.8.<br>
-   4.2.4: The changes have merged with the Eugene Game Development Kit 9.2.9.<br>
-   4.2.5: The changes have merged with the Eugene Game Development Kit 9.3.<br>
-   4.2.6: The changes have merged with the Eugene Game Development Kit 9.3.1.<br>
-   4.2.7: The changes have merged with the Eugene Game Development Kit 9.3.5.<br>
-   4.2.8: The changes have merged with the Eugene Game Development Kit 9.3.6.<br>
-   4.2.9: The changes have merged with the Eugene Game Development Kit 9.3.9.<br>
-   4.3: The changes have merged with the Eugene Game Development Kit 9.4.<br>
-   4.3.1: The changes have merged with the Eugene Game Development Kit 9.4.1.<br>
-   4.3.2: The changes have merged with the Eugene Game Development Kit 9.4.2.<br>
-   4.3.3: The changes have merged with the Eugene Game Development Kit 9.4.3.<br>
-   4.3.4: The changes have merged with the Eugene Game Development Kit 9.4.4.<br>
-   4.3.5: The changes have merged with the Eugene Game Development Kit 9.4.5.<br>
-   4.3.6: The changes have merged with the Eugene Game Development Kit 9.4.6.<br>
-   4.3.7: The changes have merged with the Eugene Game Development Kit 9.4.7.<br>
-   4.3.8: The changes have merged with the Eugene Game Development Kit 9.4.8.<br>
-   4.3.9: The changes have merged with the Eugene Game Development Kit 9.4.9.<br>
-   4.4: The changes have merged with the Black Game Development Kit 6.4.7.<br>
-   4.4.1: The changes have merged with the Black Game Development Kit 6.4.9.<br>
-   4.4.2: The changes have merged with the Black Game Development Kit 6.5.1.<br>
-   4.4.3: The changes have merged with the Eugene Game Development Kit 9.5.3.<br>
-   4.4.4: The changes have merged with the Eugene Game Development Kit 9.5.4.<br>
-   4.4.5: The changes have merged with the Eugene Game Development Kit 9.5.5.<br>
-   4.4.6: The changes have merged with the Eugene Game Development Kit 9.5.6.<br>
-   4.4.7: The changes have merged with the Eugene Game Development Kit 9.5.7.<br>
-   4.4.8: The changes have merged with the Black Game Development Kit 7.3.3.<br>
-   4.4.9: The changes have merged with the Black Game Development Kit 7.3.5.<br>
-   4.5: The changes have merged with the Black Game Development Kit 7.3.8.<br>
-   4.5.1: The changes have merged with the Black Game Development Kit 7.3.9.<br>
-   4.5.2: The changes have merged with the Eugene Game Development Kit 9.6.2.<br>
-   4.5.3: The changes have merged with the Black Game Development Kit 7.4.8.<br>
-   4.5.4: The changes have merged with the Black Game Development Kit 7.5.<br>
-   4.5.5: The changes have merged with the Black Game Development Kit 7.5.1.<br>
+   4.2.3: The changes have been merged with the Eugene Game Development Kit 9.2.8.<br>
+   4.2.4: The changes have been merged with the Eugene Game Development Kit 9.2.9.<br>
+   4.2.5: The changes have been merged with the Eugene Game Development Kit 9.3.<br>
+   4.2.6: The changes have been merged with the Eugene Game Development Kit 9.3.1.<br>
+   4.2.7: The changes have been merged with the Eugene Game Development Kit 9.3.5.<br>
+   4.2.8: The changes have been merged with the Eugene Game Development Kit 9.3.6.<br>
+   4.2.9: The changes have been merged with the Eugene Game Development Kit 9.3.9.<br>
+   4.3: The changes have been merged with the Eugene Game Development Kit 9.4.<br>
+   4.3.1: The changes have been merged with the Eugene Game Development Kit 9.4.1.<br>
+   4.3.2: The changes have been merged with the Eugene Game Development Kit 9.4.2.<br>
+   4.3.3: The changes have been merged with the Eugene Game Development Kit 9.4.3.<br>
+   4.3.4: The changes have been merged with the Eugene Game Development Kit 9.4.4.<br>
+   4.3.5: The changes have been merged with the Eugene Game Development Kit 9.4.5.<br>
+   4.3.6: The changes have been merged with the Eugene Game Development Kit 9.4.6.<br>
+   4.3.7: The changes have been merged with the Eugene Game Development Kit 9.4.7.<br>
+   4.3.8: The changes have been merged with the Eugene Game Development Kit 9.4.8.<br>
+   4.3.9: The changes have been merged with the Eugene Game Development Kit 9.4.9.<br>
+   4.4: The changes have been merged with the Black Game Development Kit 6.4.7.<br>
+   4.4.1: The changes have been merged with the Black Game Development Kit 6.4.9.<br>
+   4.4.2: The changes have been merged with the Black Game Development Kit 6.5.1.<br>
+   4.4.3: The changes have been merged with the Eugene Game Development Kit 9.5.3.<br>
+   4.4.4: The changes have been merged with the Eugene Game Development Kit 9.5.4.<br>
+   4.4.5: The changes have been merged with the Eugene Game Development Kit 9.5.5.<br>
+   4.4.6: The changes have been merged with the Eugene Game Development Kit 9.5.6.<br>
+   4.4.7: The changes have been merged with the Eugene Game Development Kit 9.5.7.<br>
+   4.4.8: The changes have been merged with the Black Game Development Kit 7.3.3.<br>
+   4.4.9: The changes have been merged with the Black Game Development Kit 7.3.5.<br>
+   4.5: The changes have been merged with the Black Game Development Kit 7.3.8.<br>
+   4.5.1: The changes have been merged with the Black Game Development Kit 7.3.9.<br>
+   4.5.2: The changes have been merged with the Eugene Game Development Kit 9.6.2.<br>
+   4.5.3: The changes have been merged with the Black Game Development Kit 7.4.8.<br>
+   4.5.4: The changes have been merged with the Black Game Development Kit 7.5.<br>
+   4.5.5: The changes have been merged with the Black Game Development Kit 7.5.1.<br>
    4.5.5.1: The documentation has been updated.<br>
-   4.5.6: The changes have merged with the Black Game Development Kit 7.5.2.<br>
-   4.5.7: The changes have merged with the Eugene Game Development Kit 9.6.7.<br>
-   4.5.8: The changes have merged with the Eugene Game Development Kit 9.6.8.<br>
-   4.5.9: The changes have merged with the Eugene Game Development Kit 9.6.9.<br>
+   4.5.6: The changes have been merged with the Black Game Development Kit 7.5.2.<br>
+   4.5.7: The changes have been merged with the Eugene Game Development Kit 9.6.7.<br>
+   4.5.8: The changes have been merged with the Eugene Game Development Kit 9.6.8.<br>
+   4.5.9: The changes have been merged with the Eugene Game Development Kit 9.6.9.<br>
    4.5.9.1-4.5.9.3: The documentation has been updated.<br>
    4.5.9.4: The project files are updated.<br>
    4.5.9.5: The documentation has been updated.<br>
-   4.6: The changes have merged with the Eugene Game Development Kit 9.7.<br>
+   4.6: The changes have been merged with the Eugene Game Development Kit 9.7.<br>
    4.6.0.1-4.6.0.5: The documentation has been updated.<br>
-   4.6.1: The changes have merged with the Eugene Game Development Kit 9.7.1.<br>
-   4.6.2: The changes have merged with the Eugene Game Development Kit 9.7.2.<br>
-   4.6.3: The changes have merged with the Eugene Game Development Kit 9.7.3.<br>
-   4.6.4: The changes have merged with the Eugene Game Development Kit 9.7.4.<br>
-   4.6.5: The changes have merged with the Eugene Game Development Kit 9.7.5.<br>
-   4.6.6: The changes have merged with the Eugene Game Development Kit 9.7.6.<br>
+   4.6.1: The changes have been merged with the Eugene Game Development Kit 9.7.1.<br>
+   4.6.2: The changes have been merged with the Eugene Game Development Kit 9.7.2.<br>
+   4.6.3: The changes have been merged with the Eugene Game Development Kit 9.7.3.<br>
+   4.6.4: The changes have been merged with the Eugene Game Development Kit 9.7.4.<br>
+   4.6.5: The changes have been merged with the Eugene Game Development Kit 9.7.5.<br>
+   4.6.6: The changes have been merged with the Eugene Game Development Kit 9.7.6.<br>
    4.6.6.1: The documentation has been updated.<br>
-   4.6.7: The changes have merged with the Eugene Game Development Kit 9.7.7.<br>
-   4.6.8: The changes have merged with the Eugene Game Development Kit 9.7.8.<br>
-   4.6.9: The changes have merged with the Eugene Game Development Kit 9.8.<br>
-   4.7: The changes have merged with the Eugene Game Development Kit 9.8.1.<br>
-   4.7.1: The changes have merged with the Eugene Game Development Kit 9.8.2.<br>
-   4.7.2: The changes have merged with the Eugene Game Development Kit 9.8.3.<br>
-   4.7.3: The changes have merged with the Eugene Game Development Kit 9.8.4.<br>
-   4.7.4: The changes have merged with the Eugene Game Development Kit 9.8.5.<br>
-   4.7.5: The changes have merged with the Eugene Game Development Kit 9.8.6.<br>
-   4.7.6: The changes have merged with the Eugene Game Development Kit 9.8.7.<br>
-   4.7.7: The changes have merged with the Eugene Game Development Kit 9.8.8.<br>
-   4.7.8: The changes have merged with the Eugene Game Development Kit 9.8.9.<br>
-   4.7.9: The changes have merged with the Eugene Game Development Kit 9.9.<br>
-   4.8: The changes have merged with the Eugene Game Development Kit 9.9.1.<br>
-   4.8.1: The changes have merged with the Eugene Game Development Kit 9.9.2.<br>
-   4.8.2: The changes have merged with the Eugene Game Development Kit 9.9.3.<br>
-   4.8.3: The changes have merged with the Eugene Game Development Kit 9.9.4.<br>
-   4.8.4: The changes have merged with the Eugene Game Development Kit 9.9.5.<br>
-   4.8.5: The changes have merged with the Eugene Game Development Kit 9.9.7.<br>
-   4.8.6: The changes have merged with the Eugene Game Development Kit 9.9.8.<br>
-   4.8.7: The changes have merged with the Eugene Game Development Kit 10.1.1.<br>
-   4.8.8: The changes have merged with the Eugene Game Development Kit 10.1.2.<br>
-   4.8.9: The changes have merged with the Black Game Development Kit 7.9.1.<br>
-   4.9: The changes have merged with the Black Game Development Kit 7.9.2.<br>
-   4.9.1: The changes have merged with the Black Game Development Kit 7.9.3.<br>
-   4.9.2: The changes have merged with the Black Game Development Kit 7.9.4.<br>
+   4.6.7: The changes have been merged with the Eugene Game Development Kit 9.7.7.<br>
+   4.6.8: The changes have been merged with the Eugene Game Development Kit 9.7.8.<br>
+   4.6.9: The changes have been merged with the Eugene Game Development Kit 9.8.<br>
+   4.7: The changes have been merged with the Eugene Game Development Kit 9.8.1.<br>
+   4.7.1: The changes have been merged with the Eugene Game Development Kit 9.8.2.<br>
+   4.7.2: The changes have been merged with the Eugene Game Development Kit 9.8.3.<br>
+   4.7.3: The changes have been merged with the Eugene Game Development Kit 9.8.4.<br>
+   4.7.4: The changes have been merged with the Eugene Game Development Kit 9.8.5.<br>
+   4.7.5: The changes have been merged with the Eugene Game Development Kit 9.8.6.<br>
+   4.7.6: The changes have been merged with the Eugene Game Development Kit 9.8.7.<br>
+   4.7.7: The changes have been merged with the Eugene Game Development Kit 9.8.8.<br>
+   4.7.8: The changes have been merged with the Eugene Game Development Kit 9.8.9.<br>
+   4.7.9: The changes have been merged with the Eugene Game Development Kit 9.9.<br>
+   4.8: The changes have been merged with the Eugene Game Development Kit 9.9.1.<br>
+   4.8.1: The changes have been merged with the Eugene Game Development Kit 9.9.2.<br>
+   4.8.2: The changes have been merged with the Eugene Game Development Kit 9.9.3.<br>
+   4.8.3: The changes have been merged with the Eugene Game Development Kit 9.9.4.<br>
+   4.8.4: The changes have been merged with the Eugene Game Development Kit 9.9.5.<br>
+   4.8.5: The changes have been merged with the Eugene Game Development Kit 9.9.7.<br>
+   4.8.6: The changes have been merged with the Eugene Game Development Kit 9.9.8.<br>
+   4.8.7: The changes have been merged with the Eugene Game Development Kit 10.1.1.<br>
+   4.8.8: The changes have been merged with the Eugene Game Development Kit 10.1.2.<br>
+   4.8.9: The changes have been merged with the Black Game Development Kit 7.9.1.<br>
+   4.9: The changes have been merged with the Black Game Development Kit 7.9.2.<br>
+   4.9.1: The changes have been merged with the Black Game Development Kit 7.9.3.<br>
+   4.9.2: The changes have been merged with the Black Game Development Kit 7.9.4.<br>
    4.9.2.1-4.9.2.3: The documentation has been updated.<br>
-   4.9.3: The changes have merged with the Eugene Game Development Kit 10.1.7.<br>
-   4.9.4: The changes have merged with the Eugene Game Development Kit 10.1.8.<br>
-   4.9.5: The changes have merged with the Eugene Game Development Kit 10.1.9.<br>
-   4.9.6: The changes have merged with the Eugene Game Development Kit 10.2.<br>
-   4.9.7: The changes have merged with the Eugene Game Development Kit 10.2.1.<br>
-   4.9.8: The changes have merged with the Eugene Game Development Kit 10.2.2.<br>
-   4.9.9: The changes have merged with the Eugene Game Development Kit 10.2.3.<br>
-   5.0: The changes have merged with the Eugene Game Development Kit 10.2.4.<br>
-   5.0.1: The changes have merged with the Eugene Game Development Kit 10.2.5.<br>
-   5.0.2: The changes have merged with the Eugene Game Development Kit 10.2.6.<br>
-   5.0.3: The changes have merged with the Eugene Game Development Kit 10.2.7.<br>
-   5.0.4: The changes have merged with the Eugene Game Development Kit 10.2.8.<br>
+   4.9.3: The changes have been merged with the Eugene Game Development Kit 10.1.7.<br>
+   4.9.4: The changes have been merged with the Eugene Game Development Kit 10.1.8.<br>
+   4.9.5: The changes have been merged with the Eugene Game Development Kit 10.1.9.<br>
+   4.9.6: The changes have been merged with the Eugene Game Development Kit 10.2.<br>
+   4.9.7: The changes have been merged with the Eugene Game Development Kit 10.2.1.<br>
+   4.9.8: The changes have been merged with the Eugene Game Development Kit 10.2.2.<br>
+   4.9.9: The changes have been merged with the Eugene Game Development Kit 10.2.3.<br>
+   5.0: The changes have been merged with the Eugene Game Development Kit 10.2.4.<br>
+   5.0.1: The changes have been merged with the Eugene Game Development Kit 10.2.5.<br>
+   5.0.2: The changes have been merged with the Eugene Game Development Kit 10.2.6.<br>
+   5.0.3: The changes have been merged with the Eugene Game Development Kit 10.2.7.<br>
+   5.0.4: The changes have been merged with the Eugene Game Development Kit 10.2.8.<br>
    5.0.4.1: The documentation has been updated.<br>
-   5.0.5: The changes have merged with the Eugene Game Development Kit 10.2.9.<br>
-   5.0.6: The changes have merged with the Black Game Development Kit 8.1.<br>
+   5.0.5: The changes have been merged with the Eugene Game Development Kit 10.2.9.<br>
+   5.0.6: The changes have been merged with the Black Game Development Kit 8.1.<br>
    5.0.6.1: The documentation has been updated.<br>
-   5.0.7: The changes have merged with the Eugene Game Development Kit 10.3.1.<br>
-   5.0.8: The changes have merged with the Eugene Game Development Kit 10.3.2.<br>
-   5.0.9: The changes have merged with the Eugene Game Development Kit 10.3.3.<br>
-   5.1: The changes have merged with the Eugene Game Development Kit 10.5.1.<br>
+   5.0.7: The changes have been merged with the Eugene Game Development Kit 10.3.1.<br>
+   5.0.8: The changes have been merged with the Eugene Game Development Kit 10.3.2.<br>
+   5.0.9: The changes have been merged with the Eugene Game Development Kit 10.3.3.<br>
+   5.1: The changes have been merged with the Eugene Game Development Kit 10.5.1.<br>
    5.1.1-5.1.2: The small changes.<br>
-   5.1.3: The changes have merged with the Neon Game Development Kit 9.1.4.<br>
+   5.1.3: The changes have been merged with the Neon Game Development Kit 9.1.4.<br>
    5.1.4: The small changes.<br>
-   5.1.5: The changes have merged with the Neon Game Development Kit 9.1.6.<br>
-   5.1.6: The changes have merged with the Eugene Game Development Kit 10.5.6.<br>
-   5.1.7: The changes have merged with the Neon Game Development Kit 9.1.8.<br>
-   5.1.8: The changes have merged with the Neon Game Development Kit 9.1.9.<br>
-   5.1.9: The changes have merged with the Neon Game Development Kit 9.2.<br>
-   5.2: The changes have merged with the Eugene Game Development Kit 10.6.<br>
-   5.2.1: The changes have merged with the Eugene Game Development Kit 10.6.1.<br>
-   5.2.2: The changes have merged with the Eugene Game Development Kit 10.6.2.<br>
-   5.2.3: The changes have merged with the Eugene Game Development Kit 10.6.3.<br>
-   5.2.4: The changes have merged with the Eugene Game Development Kit 10.6.4.<br>
-   5.2.5: The changes have merged with the Eugene Game Development Kit 10.6.5.<br>
-   5.2.6: The changes have merged with the Eugene Game Development Kit 10.6.6.<br>
-   5.2.7: The changes have merged with the Eugene Game Development Kit 10.6.7.<br>
-   5.2.8: The changes have merged with the Eugene Game Development Kit 10.6.8.<br>
-   5.2.9: The changes have merged with the Eugene Game Development Kit 10.6.9.<br>
-   5.3: The changes have merged with the Eugene Game Development Kit 10.7.<br>
+   5.1.5: The changes have been merged with the Neon Game Development Kit 9.1.6.<br>
+   5.1.6: The changes have been merged with the Eugene Game Development Kit 10.5.6.<br>
+   5.1.7: The changes have been merged with the Neon Game Development Kit 9.1.8.<br>
+   5.1.8: The changes have been merged with the Neon Game Development Kit 9.1.9.<br>
+   5.1.9: The changes have been merged with the Neon Game Development Kit 9.2.<br>
+   5.2: The changes have been merged with the Eugene Game Development Kit 10.6.<br>
+   5.2.1: The changes have been merged with the Eugene Game Development Kit 10.6.1.<br>
+   5.2.2: The changes have been merged with the Eugene Game Development Kit 10.6.2.<br>
+   5.2.3: The changes have been merged with the Eugene Game Development Kit 10.6.3.<br>
+   5.2.4: The changes have been merged with the Eugene Game Development Kit 10.6.4.<br>
+   5.2.5: The changes have been merged with the Eugene Game Development Kit 10.6.5.<br>
+   5.2.6: The changes have been merged with the Eugene Game Development Kit 10.6.6.<br>
+   5.2.7: The changes have been merged with the Eugene Game Development Kit 10.6.7.<br>
+   5.2.8: The changes have been merged with the Eugene Game Development Kit 10.6.8.<br>
+   5.2.9: The changes have been merged with the Eugene Game Development Kit 10.6.9.<br>
+   5.3: The changes have been merged with the Eugene Game Development Kit 10.7.<br>
+   5.3.0.1: The documentation has been updated.<br>
   </big>
-</body>
+ </body>
 </html>
