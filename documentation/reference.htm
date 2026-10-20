@@ -38,7 +38,7 @@
      <li><a href="#mozTocId183933">Chapter 6. Background</a></li>
      <li><a href="#mozTocId398246">Chapter 7. Segment</a></li>
      <li><a href="#mozTocId654980">Chapter 8. Section</a></li>
-     <li><a href="#mozTocId60013">Chapter 9. Static background</a></li>
+     <li><a href="#mozTocId645102">Chapter 9. Static Background</a></li>
      <li><a href="#mozTocId902550">Chapter 10. Parallax Background</a></li>
      <li><a href="#mozTocId447884">Chapter 11. Base sprite subsystem</a></li>
      <li><a href="#mozTocId772180">Chapter 12. Animated sprites</a></li>
@@ -114,7 +114,11 @@
   <h2><a id="mozTocId318817" class="mozTocH2"></a><big>Chapter 1. About the engine</big></h2>
   <big><u>About the engine.</u><br>
    <br>
-   Hello! My name is Popov Evgeniy Alekseyevich. I am a solo programmer. I enjoy creating software. I also like old-school video games. Do you want to develop video games for Microsoft Windows? You need a good game engine to do so. I made my own engine. I hope that my C++ game engine will be useful for many programmers. <br>
+   Hello! My name is Popov Evgeniy Alekseyevich. I am a solo programmer. I
+   enjoy creating software. I also like old-school video games. Do you
+   want to develop video games for Microsoft Windows? You need a good game
+   engine to do so. I made my own engine. I hope that my C++ game engine
+   will be useful for many programmers. <br>
    <br>
    <u>Features.</u><br>
    <br>
@@ -124,8 +128,7 @@
    <li><big>Open-source code.</big></li>
    <li><big>Very fast.</big></li>
    <li><big>An easy-to-use object-oriented design.</big></li>
-   <li><big>A minimum set of external dependencies: <a href="https://learn.microsoft.com/en-us/windows/win32/directx">DirectX</a>, <a
-
+   <li><big>A minimum set of external dependencies: <a href="https://learn.microsoft.com/en-us/windows/win32/directx">DirectX</a>, <a
       href="https://opengl.org">OpenGL</a>, and the standard <a href="https://learn.microsoft.com/en-us/windows/win32/apiindex/windows-api-list">Windows API</a> libraries.</big></li>
    <li><big>You don't need to link a main program with the engine binary file. The engine is just the source code files.</big></li>
   </ul>
@@ -144,7 +147,7 @@
    Yes. This is really all you need to do.<br>
   </big>
   <h2><a id="mozTocId906813" class="mozTocH2"></a><big>Chapter 2. Special thanks</big></h2>
-  <big> I want to say «Big thanks for the technical consultation» to these people:<br>
+  <big>Special thanks for the technical consultation go to these people:<br>
   </big>
   <ul>
    <li><a href="https://github.com/dmitrysmagin"><big>Dmitry Smagin</big></a></li>
@@ -191,7 +194,13 @@
    the following conditions:<br>
    The above copyright notice and this permission notice shall be included<br>
    in all copies or substantial portions of the Materials.<br>
-   THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.<br>
+   THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.<br>
   </big>
   <h2><a id="mozTocId873492" class="mozTocH2"></a><big>Chapter 4. System requirements</big></h2>
   <big> You can see the minimum system requirements below.<br>
@@ -286,13 +295,13 @@
   <big><br>
    <u>Windows SDK and DirectX SDK.</u><br>
    <br>
-   You need the <a href="https://www.microsoft.com/en-us/download/details.aspx?id=15656">Windows Server 2003 SP1 Platform SDK</a> and the <a
-
+   You need the <a href="https://www.microsoft.com/en-us/download/details.aspx?id=15656">Windows Server 2003 SP1 Platform SDK</a> and the <a
     href="https://archive.org/details/dxsdk_feb2005">DirectX SDK February 2005</a> if you are using Visual C++ 2005 Express. <br>
    <br>
    <u>A note for the Visual C++ users.</u><br>
    <br>
-   Disable the precompiled headers before starting compilation. The old Visual C++ users can do it via the project creation wizard.<br>
+   Disable the precompiled headers before starting compilation. The old
+   Visual C++ users can do it via the project creation wizard.<br>
    The Visual C++ 2017 or higher users must follow these steps:<br>
    <br>
    Go to «Project Properties — C/C++ — Precompiled Headers»<br>
@@ -323,7 +332,10 @@
   </big>
   <h1><a id="mozTocId260181" class="mozTocH1"></a><big> Part 2. Base things</big></h1>
   <h2><a id="mozTocId185852" class="mozTocH2"></a><big> Chapter 1. Coordinate system</big></h2>
-  <big> The engine uses the standard coordinate system by default. The coordinates start at the top-left corner. Look at this picture to understand it.<br>
+  <big>
+   The engine uses the standard coordinate system by default. The
+   coordinates start at the top-left corner. Look at this picture to
+   understand it.<br>
    <br>
    <img alt="" src="coordinate_system.png" height="111" width="107"><br>
    <br>
@@ -342,17 +354,23 @@
   <h2><a id="mozTocId177708" class="mozTocH2"></a><big> Chapter 2. Base graphics subsystem</big></h2>
   <big><u>About the base graphics subsystem.</u><br>
    <br>
-   The base graphics subsystem renders a game scene. This subsystem uses <a
-
-    href="http://opengl.org">OpenGL</a> for rendering. All modern video cards support hardware acceleration. The software implementation will activate if the acceleration is not available. <br>
+   The base graphics subsystem renders a game scene. This subsystem uses <a
+    href="http://opengl.org">OpenGL</a>
+   for rendering. All modern video cards support hardware acceleration.
+   The software implementation will be activated if hardware acceleration
+   is not available. <br>
    <br>
    <u>The rendering performance.</u><br>
    <br>
-   Always use the latest video card drivers. It may improve the rendering performance. You can also try to change the screen resolution if you have low rendering performance. <br>
+   Always use the latest video card drivers. It may improve the rendering
+   performance. You can also try to change the screen resolution if you
+   have low rendering performance. <br>
    <br>
    <u>The FPS limitation.</u><br>
    <br>
-   FPS is an important thing. A high FPS is needed for a smoot animation, but it also needs high processor usage. The FPS limit is 60 by default. <br>
+   FPS is an important thing. A high FPS is needed for a smoot animation,
+   but it also needs high processor usage. The FPS limit is 60 by default.
+   <br>
    <br>
    <u>Working with the base graphics subsystem.</u><br>
    <br>
@@ -440,7 +458,7 @@
    <br>
    <i>unsigned int Animation::get_frame() const; -</i> Return the current frame.<br>
    <br>
-   <i>bool Animation::is_last_frame() const; -</i> Return true if the current frame is the last frame one.<br>
+   <i>bool Animation::is_last_frame() const; -</i> Return true if the current frame is the last one.<br>
    <br>
    <i>bool Animation::check_frame(const unsigned int target) const; -</i> Return true if the target frame is valid.<br>
   </big>
@@ -480,9 +498,14 @@
   <big><br>
   </big>
   <h2><a id="mozTocId183933" class="mozTocH2"></a><big> Chapter 6. Background</big></h2>
-  <big> A background is a big image with a few frames. Any game has a background. The background will be scaled to fit the screen. The background transparency is always disabled.<br>
+  <big>
+   A background is a big image with a few frames. Any game has a
+   background. The background will be scaled to fit the screen. The
+   background transparency is always disabled.<br>
    <br>
-   The horizontal animated backgrounds look like the horizontal photo ribbons. The vertical animated backgrounds look like the vertical photo ribbons.</big><br>
+   The horizontal
+   animated backgrounds look like horizontal photo ribbons. The vertical
+   animated backgrounds look like vertical photo ribbons.</big><br>
   <h2><a id="mozTocId398246" class="mozTocH2"></a><big>Chapter 7. Segment</big></h2>
   <big><u>A few words about the segment.</u><br>
    <br>
@@ -534,9 +557,9 @@
    <br>
    <i>void Segment::destroy();</i> - Completely destroy the background.<br>
    <br>
-   <i>bool Segment::is_load() const;</i> - Return true if a background has already been loaded.<br>
+   <i>bool Segment::is_loaded() const;</i> - Return true if a background has already been loaded.<br>
    <br>
-   <i>bool Segment::is_last_frame() const;</i> - Return true if the current frame is the last frame one.<br>
+   <i>bool Segment::is_last_frame() const;</i> - Return true if the current frame is the last one.<br>
    <br>
    <i>bool Segment::check_frame(const unsigned int target) const;</i> - Return true if the target frame is valid.<br>
    <br>
@@ -550,7 +573,7 @@
    <br>
    <u>A background texture.</u><br>
    <br>
-   The background isn't drawn if the background texture doesn't exist. It will create when you load an image. <br>
+   The background isn't drawn if the background texture doesn't exist. It will be created when you load an image. <br>
    <u><br>
     An important notice.</u><br>
    <br>
@@ -606,9 +629,9 @@
    <br>
    <i>void Section::destroy();</i> - Completely destroy the background.<br>
    <br>
-   <i>bool Section::is_load() const;</i> - Return true if a background has already been loaded.<br>
+   <i>bool Section::is_loaded() const;</i> - Return true if a background has already been loaded.<br>
    <br>
-   <i>bool Section::is_last_frame() const;</i> - Return true if the current frame is the last frame one.<br>
+   <i>bool Section::is_last_frame() const;</i> - Return true if the current frame is the last one.<br>
    <br>
    <i>bool Section::check_frame(const unsigned int target) const;</i> - Return true if the target frame is valid.<br>
    <br>
@@ -622,13 +645,13 @@
    <br>
    <u>A background texture.</u><br>
    <br>
-   The background isn't drawn if the background texture doesn't exist. It will create when you load an image. <br>
+   The background isn't drawn if the background texture doesn't exist. It will be created when you load an image. <br>
    <u><br>
     An important notice.</u><br>
    <br>
    Always call the <i>prepare</i> method after the background has been loaded.<br>
   </big>
-  <h2><a id="mozTocId60013" class="mozTocH2"></a><big> Chapter 9. Static background</big></h2>
+  <h2><a id="mozTocId645102" class="mozTocH2"></a><big> Chapter 9. Static Background</big></h2>
   <big><u>A few words about the static background.</u><br>
    <br>
    The static background is a simple kind of background. It contains one frame only. <br>
@@ -671,9 +694,9 @@
    <br>
    <i>void Scene::destroy_image(); -</i> Destroy the background image.<br>
    <br>
-   <i>void Scene::destroy(); -</i> Destroy the background image and destroy the texture.<br>
+   <i>void Scene::destroy(); -</i> Completely destroy the background.<br>
    <br>
-   <i>bool Scene::is_load() const; -</i> Return true if a static background has already been loaded.<br>
+   <i>bool Scene::is_loaded() const; -</i> Return true if a static background has already been loaded.<br>
    <br>
    <i>unsigned int Scene::get_width() const; -</i> Return the width of the background.<br>
    <br>
@@ -681,7 +704,7 @@
    <br>
    <u>A background texture</u><br>
    <br>
-   The background isn't drawn if the background texture doesn't exist. It will create when you load an image.<br>
+   The background isn't drawn if the background texture doesn't exist. It will be created when you load an image.<br>
    <br>
    <u>An important notice.</u><br>
    <br>
@@ -745,9 +768,9 @@
    <br>
    <i>void Parallax::destroy_image(); -</i> Destroy the background image.<br>
    <br>
-   <i>void Parallax::destroy(); -</i> Destroy the background image and destroy the texture.<br>
+   <i>void Parallax::destroy(); -</i> Completely destroy the background image.<br>
    <br>
-   <i>bool Parallax::is_load() const; -</i> Return true if a parallax background has already been loaded.<br>
+   <i>bool Parallax::is_loaded() const; -</i> Return true if a parallax background has already been loaded.<br>
    <br>
    <i>unsigned int Parallax::get_width() const; -</i> Return the width of the background.<br>
    <br>
@@ -755,7 +778,7 @@
    <br>
    <u>A background texture.</u><br>
    <br>
-   The background isn't drawn if the background texture doesn't exist. It will create when you load an image.<br>
+   The background isn't drawn if the background texture doesn't exist. It will be created when you load an image.<br>
    <br>
    <u>An important notice.</u><br>
    <br>
@@ -818,7 +841,7 @@
    <br>
    <i>unsigned int Billboard::get_height() const; -</i> Return the height of the sprite.<br>
    <br>
-   <i>bool Billboard::is_load() const; -</i> Return true if the sprite is already loaded.<br>
+   <i>bool Billboard::is_loaded() const; -</i> Return true if the sprite is already loaded.<br>
    <br>
    <i>GRAYGDK::BOX Billboard::get_box() const; -</i> Return the collision-related information.<br>
    <br>
@@ -853,7 +876,9 @@
    <i>void Billboard::draw(const bool transparency, const unsigned int x, const unsigned int y); -</i> Set the transparent mode and draw a sprite at the target position.<br>
   </big>
   <h2><a id="mozTocId772180" class="mozTocH2"></a><big> Chapter 12. Animated sprites</big></h2>
-  <big> There are two kinds of animated sprites: the horizontal strips and the vertical strips. Each sprite is a small image with a few frames.<br>
+  <big>
+   There are two kinds of animated sprites: the horizontal strips and the
+   vertical strips. Each sprite is a small image with a few frames.<br>
    The horizontal strip looks like the horizontal photo ribbon. The vertical strip looks like the vertical photo ribbon.</big><br>
   <h2><a id="mozTocId212182" class="mozTocH2"></a><big>Chapter 13. Ribbons<br>
    </big></h2>
@@ -881,7 +906,7 @@
    <br>
    <u>A sprite texture</u><br>
    <br>
-   A sprite isn't drawn if the sprite texture doesn't exist. It will create when you load a sprite.<br>
+   A sprite isn't drawn if the sprite texture doesn't exist. It will be created when you load a sprite.<br>
   </big>
   <h2><a id="mozTocId15783" class="mozTocH2"></a><big>Chapter 14. The tier</big></h2>
   <big><u>A few words about the tier.</u><br>
@@ -908,7 +933,7 @@
    <br>
    <u>A sprite texture</u><br>
    <br>
-   A sprite isn't drawn if the sprite texture doesn't exist. It will create when you load a sprite.<br>
+   A sprite isn't drawn if the sprite texture doesn't exist. It will be created when you load a sprite.<br>
   </big>
   <h2><a id="mozTocId186226" class="mozTocH2"></a><big> Chapter 15. Static sprites</big></h2>
   <big><u>A few words about static sprites.</u><br>
@@ -931,12 +956,14 @@
    <br>
    <u>A sprite texture</u><br>
    <br>
-   A sprite isn't drawn if the sprite texture doesn't exist. It will create when you load a sprite.<br>
+   A sprite isn't drawn if the sprite texture doesn't exist. It will be created when you load a sprite.<br>
   </big>
   <h2><a id="mozTocId640907" class="mozTocH2"></a><big> Chapter 16. Sprite sheet</big></h2>
   <big> <u>Some words about the sprite sheet.</u><br>
    <br>
-   A sprite sheet is a special kind of animated sprite. Each frame has a fixed size. The sheet is a matrix of frames. Look at this picture to understand it.<br>
+   A sprite sheet is a special kind of animated sprite. Each frame has a
+   fixed size. The sheet is a matrix of frames. Look at this picture to
+   understand it.<br>
    <br>
    <img alt="" src="sheet.png" height="249" width="380"><br>
    <br>
@@ -982,12 +1009,14 @@
    <u><br>
     A sprite sheet texture</u><br>
    <br>
-   A sprite sheet isn't drawn if the sprite sheet texture doesn't exist. It will create when you load a sheet.<br>
+   A sprite sheet isn't drawn if the sprite sheet texture doesn't exist. It will be created when you load a sheet.<br>
   </big>
   <h2><a id="mozTocId31034" class="mozTocH2"></a><big> Chapter 17. Text</big></h2>
   <big><u>How to print text?</u><br>
    <br>
-   Use the text subsystem to print the text. This subsystem needs a font for text printing. You must load a font before starting to print the text. The font is just a sprite sheet with 16 rows and 16 columns. <br>
+   Use the text subsystem to print the text. This subsystem needs a font
+   for text printing. You must load a font before starting to print the
+   text. The font is just a sprite sheet with 16 rows and 16 columns. <br>
    <u><br>
     The supported characters.</u><br>
    <br>
@@ -1063,7 +1092,7 @@
    <br>
    <i>void Text::destroy_image(); -</i> Destroy a font image.<br>
    <br>
-   <i>void Text::destroy_font(); -</i> Destroy a font image and the texture.<br>
+   <i>void Text::destroy_font(); -</i> Completely destroy a font image.<br>
   </big>
   <h2><a id="mozTocId991298" class="mozTocH2"></a><big> Chapter 18. Loading an image</big></h2>
   <big><u>Load an image from a file.</u><br>
@@ -1088,19 +1117,18 @@
    <br>
    <u>An important note.</u><br>
    <br>
-   A new image will replace the current image if the current image already exists. An incorrect image will be ignored and will fail to load.<br>
+   A new image will replace the current image if the current image already
+   exists. An incorrect image will be ignored and will fail to load.<br>
    The source image will be converted to the <a href="https://en.wikipedia.org/wiki/RGBA">RGBA</a> format. The pixels matching the top-left pixel will be marked as transparent. <br>
    <br>
    <u>The supported format.</u><br>
    <br>
-   All loading images must have the correct specifications. You can load an image from a 24-bit <a
-
+   All images must comply with the correct specifications. You can load an image from a 24-bit <a
     href="https://en.wikipedia.org/wiki/Truevision_TGA">Truevision TGA</a> picture. <br>
    <u><br>
     The recommended software.</u><br>
    <br>
-   You can use a wide range of graphics software to convert your images to the correct format. I recommend using <a
-
+   You can use a wide range of graphics software to convert your images to the correct format. I recommend using <a
     href="https://www.gimp.org">GIMP</a> to do it. It is a powerful image editor.<br>
   </big>
   <h2><a id="mozTocId65856" class="mozTocH2"></a><big> Chapter 19. Camera</big></h2>
@@ -1199,7 +1227,9 @@
    <br>
    <u>Coordinate conversion.</u><br>
    <br>
-   You can convert the Cartesian coordinates to the screen coordinates. You can also convert the screen coordinates to the Cartesian coordinates.<br>
+   You can convert the Cartesian coordinates to the screen coordinates.
+   You can also convert the screen coordinates to the Cartesian
+   coordinates.<br>
    <br>
    Use the <i>Coordinates</i> class to do it. Let's look at the publicly available methods.<br>
    <br>
@@ -1238,7 +1268,9 @@
    <br>
    <u>Coordinate conversion.</u><br>
    <br>
-   You can convert the Cartesian coordinates to the isometric coordinates. You can also convert the isometric coordinates to the Cartesian coordinates. Use the <i>Isometric</i> class to do it. Let's look at the publicly available methods.<br>
+   You can convert the Cartesian coordinates to the isometric coordinates.
+   You can also convert the isometric coordinates to the Cartesian
+   coordinates. Use the <i>Isometric</i> class to do it. Let's look at the publicly available methods.<br>
    <br>
    <i>static int Isometric::get_isometric_x(const int x, const int y); -</i> Convert the x-coordinate from the Cartesian system to the isometric system.<br>
    <br>
@@ -1285,7 +1317,10 @@
    <br>
    <i>double Timer::get_interval() const; -</i> Return the current timer interval.<br>
    <br>
-   <i>bool Timer::check_timer(); -</i> Return true and reinitialize the start point if the interval between the stop and start points is greater than or equal to a specified number of seconds.<br>
+   <i>bool Timer::check_timer(); -</i>
+   Return true and reinitialize the start point if the interval between
+   the stop and start points is greater than or equal to thr specified
+   number of seconds.<br>
   </big>
   <h2><a id="mozTocId165107" class="mozTocH2"></a><big> Chapter 4. Collision detection<br>
    </big></h2>
@@ -1295,7 +1330,9 @@
    <u><br>
     The collision details</u><br>
    <br>
-   The detector uses the bounding box collision method to detect a collision. The collision-related information is stored in a custom data type.<br>
+   The detector uses the bounding box collision method to detect a
+   collision. The collision-related information is stored in a custom data
+   type.<br>
    <br>
    <i>typedef struct<br>
     {<br>
@@ -1307,7 +1344,9 @@
    <br>
    <u>Working with the collision detector.</u><br>
    <br>
-   The <i>Collision</i> class provides easy access to the collision detectors. It is a simple class with a few methods. Let's look at the publicly available methods.<br>
+   The <i>Collision</i>
+   class provides easy access to the collision detectors. It is a simple
+   class with a few methods. Let's look at the publicly available methods.<br>
    <br>
    <i>Collision *Collision::get_pointer(); -</i> Return a pointer to the collision detector.<br>
    <br>
@@ -1320,8 +1359,7 @@
   <h2><a id="mozTocId56340" class="mozTocH2"></a><big> Chapter 5. Tilemaps</big></h2>
   <big><u>A few words about the tilemap.</u><br>
    <br>
-   The tilemap is a tile matrix. A tile is a small, non-transparent
-   sprite. A tilemap is a very useful thing for the background. <br>
+   The tilemap is a tile matrix. A tile is a small, non-transparent sprite. A tilemap is a very useful thing for the background. <br>
    <br>
    <u>The rows and columns.</u><br>
    <br>
@@ -1329,7 +1367,9 @@
    <br>
    <u>Working with the tilemap.</u><br>
    <br>
-   The <i>Tilemap</i> class provides easy access to the tilemap. It is a simple class with a few methods. Let's look at the publicly available methods.<br>
+   The <i>Tilemap</i>
+   class provides easy access to the tilemap. It is a simple class with a
+   few methods. Let's look at the publicly available methods.<br>
    <br>
    <i>Tilemap *Tilemap::get_pointer(); -</i> Return a pointer to the tilemap subsystem.<br>
    <br>
@@ -1347,9 +1387,9 @@
    <br>
    <i>unsigned int Tilemap::get_column(const unsigned int y) const; -</i> Return the column from the y-coordinate.<br>
    <br>
-   <i>unsigned int Tilemap::get_row_amount(const unsigned int viewport_width) const; -</i> Return the maximum number of the visible rows.<br>
+   <i>unsigned int Tilemap::get_row_amount(const unsigned int viewport_width) const; -</i> Return the maximum number of visible rows.<br>
    <br>
-   <i>unsigned int Tilemap::get_column_amount(const unsigned int viewport_width) const; -</i> Return the maximum number of the visible columns.<br>
+   <i>unsigned int Tilemap::get_column_amount(const unsigned int viewport_width) const; -</i> Return the maximum number of visible columns.<br>
    <br>
    <i>unsigned int Tilemap::get_tile_amount(const unsigned int viewport_width, const unsigned int viewport_height) const; -</i> Return the maximum number of the visible tiles.<br>
    <br>
@@ -1357,7 +1397,8 @@
    <br>
    <i>bool Tilemap::check_column(const unsigned int column, const unsigned int viewport_height) const; -</i> Return true if the column is valid.<br>
    <br>
-   GRAYGDK::BOX Tilemap::get_box(const unsigned int row, const unsigned int column) const; - Return the collision-related information.<br>
+   GRAYGDK::BOX Tilemap::get_box(const unsigned int row, const unsigned
+   int column) const; - Return the collision-related information.<br>
   </big>
   <h1><a id="mozTocId793172" class="mozTocH1"></a><big> Part 6. Other important things</big></h1>
   <h2><a id="mozTocId436789" class="mozTocH2"></a><big> Chapter 1. Sub-namespace</big></h2>
@@ -1370,12 +1411,10 @@
    <br>
    <i>unsigned long long int Memory::get_free_physical(); -</i> Return the free physical memory size in bytes.<br>
    <br>
-   <i>unsigned long long int Memory::get_total_virtual(); -</i> Return the total <a
-
+   <i>unsigned long long int Memory::get_total_virtual(); -</i> Return the total <a
     href="https://en.wikipedia.org/wiki/Virtual_memory">virtual memory</a> size in bytes.<br>
    <br>
-   <i>unsigned long long int Memory::get_free_virtual(); -</i> Return the free <a
-
+   <i>unsigned long long int Memory::get_free_virtual(); -</i> Return the free <a
     href="https://en.wikipedia.org/wiki/Virtual_memory">virtual memory</a> size in bytes.<br>
    <br>
    <i>unsigned long long int Memory::get_physical_usage(); -</i> Return the physical memory usage in bytes.<br>
@@ -1387,10 +1426,8 @@
   <h2><a id="mozTocId126242" class="mozTocH2"></a><big>Chapter 3. Audio</big></h2>
   <big><u>A few words about the audio subsystem.</u><br>
    <br>
-   This subsystem is intended for playing music and sounds. <a href="https://en.wikipedia.org/wiki/WAV">Waveform Audio File Format</a>, <a
-
-    href="https://en.wikipedia.org/wiki/MP3">MPEG Audio Layer 3</a>, and <a
-
+   This subsystem is intended for playing music and sounds. <a href="https://en.wikipedia.org/wiki/WAV">Waveform Audio File Format</a>, <a
+    href="https://en.wikipedia.org/wiki/MP3">MPEG Audio Layer 3</a>, and <a
     href="https://en.wikipedia.org/wiki/Windows_Media_Audio">Windows Media Audio</a> are supported. <br>
    <br>
    <u>Additional formats.</u><br>
@@ -1443,9 +1480,16 @@
    <i>GRAYGDK::BOX generate_box(const unsigned int x, const unsigned int y, const unsigned int width, const unsigned int height); -</i> Generate the collision-related information.<br>
   </big>
   <h2><a id="mozTocId814270" class="mozTocH2"></a><big> Chapter 3. Resource management</big></h2>
-  <big> A resource is an instance of a user-defined class or structure. The resource manager is implemented as a few template functions. All these functions are declared in the <i>Resource</i> sub-namespace.<br>
+  <big>
+   A resource is an instance of a user-defined class or structure. The
+   resource manager is implemented as a few template functions. All these
+   functions are declared in the <i>Resource</i> sub-namespace.<br>
    <br>
-   <i>create</i>: Create a resource. The first form of this function creates a single resource. It takes a pointer to a resource pointer as an argument. The second form creates an array of the resources. It takes a pointer to a resource pointer and a resource amount.<br>
+   <i>create</i>:
+   Create a resource. The first form of this function creates a single
+   resource. It takes a pointer to a resource pointer as an argument. The
+   second form creates an array of the resources. It takes a pointer to a
+   resource pointer and a resource amount.<br>
    <br>
    <i>destroy</i>: Delete a resource if it already exists. This function takes a resource pointer as an argument.<br>
    <br>
@@ -1505,7 +1549,9 @@
   <h2><a id="mozTocId411784" class="mozTocH2"></a><big> Chapter 2. Keyboard</big></h2>
   <big><u>Low-level input.</u><br>
    <br>
-   Any keyboard contains a built-in controller. It generates a special code when the user presses or releases the key. This code is called a «scan code». <br>
+   Any keyboard contains a built-in controller. It generates a special
+   code when the user presses or releases the key. This code is called a
+   «scan code». <br>
    <br>
    <u>Working with the keyboard.</u><br>
    <br>
@@ -1828,11 +1874,14 @@
   <h2><a id="mozTocId325304" class="mozTocH2"></a><big> Chapter 4. Gamepad</big></h2>
   <big><u>The best friend of a retro gamer.</u><br>
    <br>
-   What is a good choice for a game control device when the user plays an arcade or an old-school video game? A gamepad. This engine provides simple access to it. <br>
+   What is a good choice for a game control device when the user plays an
+   arcade or an old-school video game? A gamepad. This engine provides
+   simple access to it. <br>
    <br>
    <u>The number of the connected gamepads.</u><br>
    <br>
-   You can connect several gamepads. Any connected gamepad has an internal index. The first gamepad index is 0. It is selected by default. <br>
+   You can connect several gamepads. Any connected gamepad has an internal
+   index. The first gamepad index is 0. It is selected by default. <br>
    <br>
    <u>The standard button codes.</u><br>
    <br>
@@ -1977,7 +2026,10 @@
   </big>
   <h1><a id="mozTocId807827" class="mozTocH1"></a><big> Part 10. Internal details of the engine subsystems</big></h1>
   <h2><a id="mozTocId124737" class="mozTocH2"></a><big> Chapter 1. Few words for a curious programmer</big></h2>
-  <big>Each subsystem has its own internal structure. They is hidden from you, and you don't have access to it. Do you want to know about the hidden things? Just read the next chapter.<br>
+  <big>Each
+   subsystem has its own internal structure. They is hidden from you, and
+   you don't have access to it. Do you want to know about the hidden
+   things? Just read the next chapter.<br>
   </big>
   <h2><a id="mozTocId166916" class="mozTocH2"></a><big> Chapter 2. Internal classes</big></h2>
   <big><u>The internal classes.</u><br>
@@ -2011,7 +2063,8 @@
    <br>
    <u>Textures.</u><br>
    <br>
-   A texture width must be a power of two. A texture height must also be a power of two. Any image will be automatically resized before uploading. <br>
+   The texture width must be a power of two. The texture height must also
+   be a power of two. Any image will be resized before uploading. <br>
    <br>
    <u>The vertex array and the texture coordinate array.</u><br>
    <br>
@@ -2066,14 +2119,13 @@
   <big><br>
   </big>
   <h2><a id="mozTocId37996" class="mozTocH2"></a><big> Chapter 6. Audio</big></h2>
-  <big> The audio subsystem works on the top of the <a href="https://docs.microsoft.com/en-us/windows/desktop/DirectShow/directshow">DirectShow</a>. It is available as part of <a
-
+  <big> The audio subsystem works on the top of the <a href="https://docs.microsoft.com/en-us/windows/desktop/DirectShow/directshow">DirectShow</a>. It is available as part of <a
     href="https://en.wikipedia.org/wiki/DirectX">DirectX</a>. DirectX is pre-installed by default under the modern versions of Windows.<br>
   </big>
   <h1><a id="mozTocId863711" class="mozTocH1"></a><big>Version history</big></h1>
   <big> 0.1-1.9.8: The old branch.<br>
    1.9.9: The changes have been merged with the Eugene Game Development Kit 6.2.6.<br>
-   2.0-2.0.2: A small changes.<br>
+   2.0-2.0.2: The small changes.<br>
    2.0.2.1: The source code was recompiled under Open Watcom V2 Fork.<br>
    2.0.3: The changes have been merged with the Eugene Game Development Kit 6.2.7.<br>
    2.0.4: The changes have been merged with the Eugene Game Development Kit 6.2.8.<br>
@@ -2101,13 +2153,13 @@
    2.2.4: The changes have been merged with the Eugene Game Development Kit 6.5.7.<br>
    2.2.5: The changes have been merged with the Eugene Game Development Kit 6.5.8.<br>
    2.2.6: The changes have been merged with the Eugene Game Development Kit 6.5.9.<br>
-   2.2.7: A small changes.<br>
+   2.2.7: The small changes.<br>
    2.2.8: The synchronization timer has been ported from Neon Game Development Kit 6.0.2.<br>
    2.2.9: The changes have been merged with the Eugene Game Development Kit 6.6.1.<br>
-   2.3-2.3.1: A small changes.<br>
+   2.3-2.3.1: The small changes.<br>
    2.3.2: The synchronization timer was totally rewritten.<br>
    2.3.3-2.3.4: The synchronization timer has been improved.<br>
-   2.3.5: A small changes.<br>
+   2.3.5: The small changes.<br>
    2.3.6: The changes have been merged with the Eugene Game Development Kit 6.6.6.<br>
    2.3.7: The changes have been merged with the Eugene Game Development Kit 6.7.<br>
    2.3.8: The changes have been merged with the Eugene Game Development Kit 6.7.1.<br>
@@ -2130,9 +2182,9 @@
    2.5.5: The changes have been merged with the Eugene Game Development Kit 6.9.4.<br>
    2.5.6: The changes have been merged with the Neon Game Development Kit 6.3.4.<br>
    2.5.7: Visual C++ 2003 support has been added.<br>
-   2.5.8: A small changes.<br>
+   2.5.8: The small changes.<br>
    2.5.9: The changes have been merged with the Eugene Game Development Kit 6.9.7.<br>
-   2.6: A small changes.<br>
+   2.6: The small changes.<br>
    2.6.1: The changes have been merged with the Eugene Game Development Kit 6.9.9.<br>
    2.6.2: The changes have been merged with the Neon Game Development Kit 6.3.6.<br>
    2.6.3: The changes have been merged with the Eugene Game Development Kit 7.0.1.<br>
@@ -2296,7 +2348,7 @@
    4.1.8: The changes have been merged with the Eugene Game Development Kit 9.2.3.<br>
    4.1.9: The changes have been merged with the Eugene Game Development Kit 9.2.4.<br>
    4.1.9.1-4.1.9.4: The documentation has been updated.<br>
-   4.2: A small changes.<br>
+   4.2: The small changes.<br>
    4.2.1: The changes have been merged with the Eugene Game Development Kit 9.2.6.<br>
    4.2.2: The changes have been merged with the Eugene Game Development Kit 9.2.7.<br>
    4.2.2.1: The documentation has been updated.<br>
@@ -2397,9 +2449,9 @@
    5.0.8: The changes have been merged with the Eugene Game Development Kit 10.3.2.<br>
    5.0.9: The changes have been merged with the Eugene Game Development Kit 10.3.3.<br>
    5.1: The changes have been merged with the Eugene Game Development Kit 10.5.1.<br>
-   5.1.1-5.1.2: A small changes.<br>
+   5.1.1-5.1.2: The small changes.<br>
    5.1.3: The changes have been merged with the Neon Game Development Kit 9.1.4.<br>
-   5.1.4: A small changes.<br>
+   5.1.4: The small changes.<br>
    5.1.5: The changes have been merged with the Neon Game Development Kit 9.1.6.<br>
    5.1.6: The changes have been merged with the Eugene Game Development Kit 10.5.6.<br>
    5.1.7: The changes have been merged with the Neon Game Development Kit 9.1.8.<br>
@@ -2417,6 +2469,7 @@
    5.2.9: The changes have been merged with the Eugene Game Development Kit 10.6.9.<br>
    5.3: The changes have been merged with the Eugene Game Development Kit 10.7.<br>
    5.3.0.1-5.3.0.2: The documentation has been updated.<br>
+   5.3.1: The changes have been merged with the Eugene Game Development Kit 10.7.1.<br>
   </big>
  </body>
 </html>
