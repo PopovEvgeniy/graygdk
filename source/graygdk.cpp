@@ -3427,6 +3427,10 @@ namespace GRAYGDK
    {
     row=target%rows;
    }
+   else
+   {
+    row=this->get_frame()%rows;
+   }
    return row;
   }
 
@@ -3437,6 +3441,10 @@ namespace GRAYGDK
    {
     column=target/rows;
    }
+   else
+   {
+    column=this->get_frame()/rows;
+   }
    return column;
   }
 
@@ -3446,6 +3454,10 @@ namespace GRAYGDK
    if (this->check_cell(row,column)==true)
    {
     target=row+(column*rows);
+   }
+   else
+   {
+    target=this->get_frame();
    }
    return target;
   }
